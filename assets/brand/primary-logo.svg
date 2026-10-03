@@ -1,0 +1,7 @@
+<svg width="800" height="240" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="240" fill="white"/>
+<path d="M80 40H180C220 40 260 80 260 120C260 160 220 200 180 200H80L130 150H180C196 150 210 136 210 120C210 104 196 90 180 90H80V40Z" fill="black"/>
+<path d="M90 170L150 110H210L150 170H90Z" fill="black"/>
+<text x="320" y="145" font-family="Poppins, Arial" font-size="92" letter-spacing="14" fill="black">DRIFT</text>
+<text x="325" y="190" font-family="Inter, Arial" font-size="28" letter-spacing="8" fill="#7A7F87">CREATIVE SYSTEMS</text>
+</svg>

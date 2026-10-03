@@ -1,0 +1,10 @@
+/* Module: Hero (also used by 404 and the front page fallback). */
+.hero { padding-block: clamp(4.5rem, 11vw, 8.5rem); border-bottom: 1px solid var(--line); overflow: hidden; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.hero__title { max-width: 13ch; margin: 0; font-size: clamp(2.9rem, 1.5rem + 6vw, 6.75rem); font-weight: 600; letter-spacing: -0.04em; line-height: 0.98; }
+.hero__lead { max-width: 46ch; margin: 1.75rem 0 0; font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem); line-height: 1.5; color: var(--grey); }
+.hero__art { position: relative; aspect-ratio: 1; display: grid; place-items: center; border-radius: 28%; background: var(--black); color: var(--white); }
+.hero__mark { width: 56%; }
+.hero__art::after { content: ""; position: absolute; right: 12%; bottom: 12%; width: 9%; aspect-ratio: 1; border-radius: 50%; background: var(--music); }
+.hero--small { padding-block: clamp(4rem, 9vw, 7rem); }
+@media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } .hero__art { width: min(14rem, 50vw); } }

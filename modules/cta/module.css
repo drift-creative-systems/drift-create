@@ -1,0 +1,15 @@
+/* Module: CTA band — black, accent on the eyebrow rule and accent buttons. */
+.cta { background: var(--black); color: var(--white); }
+.cta .lead { color: #b6bac0; }
+.cta .eyebrow--accent { color: var(--white); }
+.cta :focus-visible { outline-color: var(--white); }
+.cta__inner { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem clamp(2rem, 6vw, 5rem); }
+.cta__inner > div { max-width: 44rem; }
+.cta .h2 { margin-bottom: 0; }
+.cta .lead { margin: 1rem 0 0; }
+.cta .btns { margin: 0; }
+/* "Dark" buttons would vanish on black — show them as white. */
+.cta .btn--dark { background: var(--white); color: var(--black); }
+.cta .btn--dark:hover { background: #d9dbde; }
+.cta .btn--line { border-color: var(--white); color: var(--white); }
+.cta .btn--line:hover { background: var(--white); color: var(--black); }

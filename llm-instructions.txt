@@ -1,0 +1,82 @@
+LLM INSTRUCTIONS — Drift Creative Systems (WordPress theme)
+=============================================================
+For any AI assistant working on this theme. Read DESIGN.md for visual rules and MEMORY.md for decisions and open issues.
+
+PROJECT
+- Theme: Drift Creative Systems (folder: drift-create), v1.0.0
+- Repo: https://github.com/drift-creative-systems/drift-create (public). Branches: main = released, develop = work.
+- Purpose: marketing site for Drift apps (Music Suite, WP Agency Kit, SEO)
+- Agency: The Bonsai Digital Collective (Devon, UK)
+- Stack: WordPress 6.3+, PHP 8.0+, ACF Pro (required), jQuery, plain CSS. No build step. No WooCommerce. Classic editor (block editor disabled).
+
+NAMING
+- PHP functions: drift_*   (seed/setup: drift_create_*)
+- Constants: DRIFT_CREATE_*
+- ACF field names: snake_case. Module sub fields use plain names (title, heading, lead, buttons, section_id).
+- ACF field keys: field_drift_{layout}_{name}; layout keys: layout_drift_{layout}; groups: group_drift_*
+- CSS: BEM (.block__element--modifier). Module root class = module name with hyphens (.image-text, .split, .faq, .cta)
+- JS: wrapped in (function($){ ... })(jQuery); function names and event namespaces prefixed bonsai_
+- Copy: UK English. Code: US spelling.
+
+FILE MAP
+- functions.php ........ constants + require inc/*
+- inc/setup.php ........ supports, menus, enqueue, drift_asset_version()
+- inc/acf.php .......... JSON paths, options page "drift-settings", drift_option(), choice filters, no-ACF notice
+- inc/apps.php ......... drift_app CPT, drift_suites(), drift_app_statuses(), drift_app_meta(), drift_apps(), drift_app_is_available()
+- inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), favicons, title parts
+- inc/meta.php ......... meta description + OG (skipped if Yoast/Rank Math/AIOSEO/SEOPress)
+- inc/contact.php ...... drift_contact_handler() (admin-post, nonce, honeypot, wp_mail), drift_contact_form()
+- inc/modules.php ...... drift_module_layouts(), drift_page_layouts(), drift_layouts_for_request(), drift_enqueue_module_style(), drift_render_modules(), drift_h1_used(), drift_section_id(), drift_accent_style(), drift_buttons()
+- inc/upgrade.php ...... first-run seed, 0.1→0.2 and 0.2→0.3 upgrades
+- inc/seed.php ......... seed content (apps, Home page, Home modules)
+- inc/updates.php ...... GitHub release updates (PucFactory, slug drift-create, release asset drift-create.zip)
+- vendor/ .............. Composer, committed. Don't edit; change composer.json and run composer install.
+- modules/{layout}/module.php (+ module.css)
+- parts/app-card.php, parts/app-suites.php, parts/contact.php, parts/encore-flow.php
+- acf-json/group_drift_page_modules.json, group_drift_app_details.json, group_drift_settings.json
+
+ACF FIELD GROUPS
+1. Page modules (pages) — flexible content "page_modules"
+   hero ........ section_id, eyebrow, title*, lead, buttons[link, style], show_mark
+   app_suites .. section_id, featured_app (post_object id), suites[suite, heading, lead]
+   spotlight ... section_id, app* (post_object id), eyebrow, heading, lead, steps[title, text], link_label, show_demo, show_flow
+   split_text .. section_id, heading, body (wysiwyg)
+   image_text .. section_id, image (id), image_position (left|right), soft_background, eyebrow, heading, body, buttons
+   faq ......... section_id, eyebrow, heading, items[question, answer], output_schema
+   cta ......... section_id, accent_suite, eyebrow, heading*, text, buttons
+   contact ..... eyebrow, heading, lead (blank → Drift Settings)
+   Button styles: dark | line | accent | line-light
+2. App details (drift_app, side) — drift_suite, drift_tagline, drift_status, drift_emoji, drift_accent, drift_demo
+   Same keys as the pre-ACF meta box. Read via drift_app_meta() / get_post_meta(), not get_field().
+3. Drift Settings (options page drift-settings) — brand_line, footer_tagline, footer_links[link], contact_recipient, contact_eyebrow, contact_heading, contact_lead, contact_success, default_meta_description
+
+ADDING A MODULE
+1. Add the layout in ACF (Page modules), with a section_id field.
+2. modules/{layout}/module.php — get_sub_field(), escape all output, return early if empty, no <h1>.
+3. Optional modules/{layout}/module.css (uses :root tokens, max-width queries like the rest).
+4. Add the name to drift_module_layouts() AND the switch in drift_render_modules().
+5. Commit acf-json. Update README module table, DESIGN.md §6, CHANGELOG.
+
+ESCAPING
+- Text: esc_html(); attributes: esc_attr(); URLs: esc_url(); WYSIWYG: wp_kses_post()
+- Inline SVG from drift_mark() is static. It's echoed with a phpcs:ignore comment.
+- No iframe fields in this theme yet. If you add one, use bonsai_kses_iframe() (Bonsai standard; function not yet in this theme).
+
+FALLBACKS (never an empty page)
+- No ACF: admin notice; front page = hero + content + apps + contact; pages = editor content.
+- drift_option() returns a fallback for empty options.
+- Unknown flexible layout → error_log, skipped.
+
+TRACKING / CONSENT
+- No analytics in the theme. Add GA4 via GTM behind Cookiebot only. No PII in the dataLayer.
+
+RELEASES
+- Bump style.css Version + DRIFT_CREATE_VERSION together, add a CHANGELOG section, tag vX.Y.Z on main.
+- Release asset must be drift-create.zip with a top-level drift-create/ folder (git archive --prefix=drift-create/). See README "Releasing a new version".
+- Version numbers in inc/upgrade.php (0.2.0, 0.3.0) are data-migration milestones. Leave them alone.
+
+DON'T
+- Don't add accent colours outside drift_suites().
+- Don't hardcode #contact elsewhere or add a second contact section on a page.
+- Don't switch the Apps CPT to get_field() for details.
+- Don't edit acf-json by hand without updating "modified".

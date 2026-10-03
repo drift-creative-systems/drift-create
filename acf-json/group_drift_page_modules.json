@@ -1,0 +1,1389 @@
+{
+    "key": "group_drift_page_modules",
+    "title": "Page modules",
+    "fields": [
+        {
+            "key": "field_drift_page_modules",
+            "label": "Page modules",
+            "name": "page_modules",
+            "aria_label": "",
+            "type": "flexible_content",
+            "instructions": "Build the page from modules. If a page has any modules, they replace the editor content above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_drift_hero": {
+                    "key": "layout_drift_hero",
+                    "name": "hero",
+                    "label": "Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_hero_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_hero"
+                        },
+                        {
+                            "key": "field_drift_hero_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Small spaced caps above the title. Blank = brand name.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_hero"
+                        },
+                        {
+                            "key": "field_drift_hero_title",
+                            "label": "Title",
+                            "name": "title",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Keep it short — it is set very large. The first hero on a page is the page's H1.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_hero"
+                        },
+                        {
+                            "key": "field_drift_hero_lead",
+                            "label": "Lead",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_hero"
+                        },
+                        {
+                            "key": "field_drift_hero_buttons",
+                            "label": "Buttons",
+                            "name": "buttons",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 3,
+                            "collapsed": "field_drift_hero_buttons_link",
+                            "button_label": "Add button",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_hero_buttons_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria_label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_drift_hero_buttons"
+                                },
+                                {
+                                    "key": "field_drift_hero_buttons_style",
+                                    "label": "Style",
+                                    "name": "style",
+                                    "aria_label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "dark": "Black",
+                                        "line": "Outline",
+                                        "accent": "Accent (suite colour)",
+                                        "line-light": "Outline, light (black backgrounds)"
+                                    },
+                                    "default_value": "dark",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_drift_hero_buttons"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_hero"
+                        },
+                        {
+                            "key": "field_drift_hero_show_mark",
+                            "label": "Show logo art",
+                            "name": "show_mark",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "The black rounded logo tile on the right.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_hero"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_app_suites": {
+                    "key": "layout_drift_app_suites",
+                    "name": "app_suites",
+                    "label": "App suites (cards)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_app_suites_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_app_suites"
+                        },
+                        {
+                            "key": "field_drift_app_suites_featured_app",
+                            "label": "Featured app",
+                            "name": "featured_app",
+                            "aria_label": "",
+                            "type": "post_object",
+                            "instructions": "Shown as the large black card. Optional.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "drift_app"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": [],
+                            "parent_layout": "layout_drift_app_suites"
+                        },
+                        {
+                            "key": "field_drift_app_suites_suites",
+                            "label": "Suites",
+                            "name": "suites",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Cards come from Apps (wp-admin → Apps). Choose which suites to show and in what order. A suite with no apps is hidden.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 1,
+                            "max": 0,
+                            "collapsed": "field_drift_app_suites_suites_suite",
+                            "button_label": "Add suite",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_app_suites_suites_suite",
+                                    "label": "Suite",
+                                    "name": "suite",
+                                    "aria_label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "music": "Music Suite",
+                                        "agency": "WP Agency Kit",
+                                        "seo": "SEO"
+                                    },
+                                    "default_value": "music",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_drift_app_suites_suites"
+                                },
+                                {
+                                    "key": "field_drift_app_suites_suites_heading",
+                                    "label": "Heading",
+                                    "name": "heading",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "35",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_app_suites_suites"
+                                },
+                                {
+                                    "key": "field_drift_app_suites_suites_lead",
+                                    "label": "Lead",
+                                    "name": "lead",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_app_suites_suites"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_app_suites"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_spotlight": {
+                    "key": "layout_drift_spotlight",
+                    "name": "spotlight",
+                    "label": "App spotlight",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_spotlight_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_app",
+                            "label": "App",
+                            "name": "app",
+                            "aria_label": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "drift_app"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": [],
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Shown before the app's status, e.g. \"Spotlight · Demo available\".",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Blank = app title.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_lead",
+                            "label": "Lead",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "Blank = app tagline.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_steps",
+                            "label": "Steps",
+                            "name": "steps",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 5,
+                            "collapsed": "field_drift_spotlight_steps_title",
+                            "button_label": "Add step",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_spotlight_steps_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "35",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_spotlight_steps"
+                                },
+                                {
+                                    "key": "field_drift_spotlight_steps_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "65",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_spotlight_steps"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_link_label",
+                            "label": "App page button label",
+                            "name": "link_label",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Find out more",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_show_demo",
+                            "label": "Show demo button",
+                            "name": "show_demo",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "Uses the app's demo link, if set.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_spotlight"
+                        },
+                        {
+                            "key": "field_drift_spotlight_show_flow",
+                            "label": "Show Encore flow illustration",
+                            "name": "show_flow",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "Airtable → Publish → website animation. Encore only.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_spotlight"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_split_text": {
+                    "key": "layout_drift_split_text",
+                    "name": "split_text",
+                    "label": "Split text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_split_text_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_split_text"
+                        },
+                        {
+                            "key": "field_drift_split_text_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_split_text"
+                        },
+                        {
+                            "key": "field_drift_split_text_body",
+                            "label": "Text",
+                            "name": "body",
+                            "aria_label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1,
+                            "parent_layout": "layout_drift_split_text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_image_text": {
+                    "key": "layout_drift_image_text",
+                    "name": "image_text",
+                    "label": "Image + text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_image_text_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_image_text"
+                        },
+                        {
+                            "key": "field_drift_image_text_image",
+                            "label": "Image",
+                            "name": "image",
+                            "aria_label": "",
+                            "type": "image",
+                            "instructions": "At least 800px wide. Set the alt text in the Media Library.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "preview_size": "medium",
+                            "min_width": 800,
+                            "mime_types": "jpg,jpeg,png,webp,avif",
+                            "parent_layout": "layout_drift_image_text"
+                        },
+                        {
+                            "key": "field_drift_image_text_image_position",
+                            "label": "Image position",
+                            "name": "image_position",
+                            "aria_label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "right": "Right"
+                            },
+                            "default_value": "left",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "layout": "horizontal",
+                            "parent_layout": "layout_drift_image_text"
+                        },
+                        {
+                            "key": "field_drift_image_text_soft_background",
+                            "label": "Grey background",
+                            "name": "soft_background",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_image_text"
+                        },
+                        {
+                            "key": "field_drift_image_text_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_image_text"
+                        },
+                        {
+                            "key": "field_drift_image_text_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_image_text"
+                        },
+                        {
+                            "key": "field_drift_image_text_body",
+                            "label": "Text",
+                            "name": "body",
+                            "aria_label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1,
+                            "parent_layout": "layout_drift_image_text"
+                        },
+                        {
+                            "key": "field_drift_image_text_buttons",
+                            "label": "Buttons",
+                            "name": "buttons",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 2,
+                            "collapsed": "field_drift_image_text_buttons_link",
+                            "button_label": "Add button",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_image_text_buttons_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria_label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_drift_image_text_buttons"
+                                },
+                                {
+                                    "key": "field_drift_image_text_buttons_style",
+                                    "label": "Style",
+                                    "name": "style",
+                                    "aria_label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "dark": "Black",
+                                        "line": "Outline",
+                                        "accent": "Accent (suite colour)",
+                                        "line-light": "Outline, light (black backgrounds)"
+                                    },
+                                    "default_value": "dark",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_drift_image_text_buttons"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_image_text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_faq": {
+                    "key": "layout_drift_faq",
+                    "name": "faq",
+                    "label": "FAQ",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_faq_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_faq"
+                        },
+                        {
+                            "key": "field_drift_faq_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_faq"
+                        },
+                        {
+                            "key": "field_drift_faq_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_faq"
+                        },
+                        {
+                            "key": "field_drift_faq_items",
+                            "label": "Questions",
+                            "name": "items",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 1,
+                            "max": 0,
+                            "collapsed": "field_drift_faq_items_question",
+                            "button_label": "Add question",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_faq_items_question",
+                                    "label": "Question",
+                                    "name": "question",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_faq_items"
+                                },
+                                {
+                                    "key": "field_drift_faq_items_answer",
+                                    "label": "Answer",
+                                    "name": "answer",
+                                    "aria_label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 0,
+                                    "delay": 1,
+                                    "parent_repeater": "field_drift_faq_items"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_faq"
+                        },
+                        {
+                            "key": "field_drift_faq_output_schema",
+                            "label": "Add FAQ schema",
+                            "name": "output_schema",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "FAQPage structured data for Google. Use on one FAQ per page; turn off if an SEO plugin already adds it.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_faq"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_cta": {
+                    "key": "layout_drift_cta",
+                    "name": "cta",
+                    "label": "CTA band",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_cta_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_cta"
+                        },
+                        {
+                            "key": "field_drift_cta_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the rule and \"Accent\" buttons.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "music",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_cta"
+                        },
+                        {
+                            "key": "field_drift_cta_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_cta"
+                        },
+                        {
+                            "key": "field_drift_cta_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_cta"
+                        },
+                        {
+                            "key": "field_drift_cta_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_cta"
+                        },
+                        {
+                            "key": "field_drift_cta_buttons",
+                            "label": "Buttons",
+                            "name": "buttons",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 2,
+                            "collapsed": "field_drift_cta_buttons_link",
+                            "button_label": "Add button",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_cta_buttons_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria_label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_drift_cta_buttons"
+                                },
+                                {
+                                    "key": "field_drift_cta_buttons_style",
+                                    "label": "Style",
+                                    "name": "style",
+                                    "aria_label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "dark": "Black",
+                                        "line": "Outline",
+                                        "accent": "Accent (suite colour)",
+                                        "line-light": "Outline, light (black backgrounds)"
+                                    },
+                                    "default_value": "dark",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_drift_cta_buttons"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_cta"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_contact": {
+                    "key": "layout_drift_contact",
+                    "name": "contact",
+                    "label": "Contact form",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_contact_message",
+                            "label": "Contact form",
+                            "name": "",
+                            "aria_label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "The demo / enquiry form, anchored at #contact. Leave the fields blank to use the copy in Drift Settings → Contact. Use once per page.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0,
+                            "parent_layout": "layout_drift_contact"
+                        },
+                        {
+                            "key": "field_drift_contact_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_contact"
+                        },
+                        {
+                            "key": "field_drift_contact_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_contact"
+                        },
+                        {
+                            "key": "field_drift_contact_lead",
+                            "label": "Lead",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_contact"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add module"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Flexible content page builder. Templates: modules/{layout}/module.php.",
+    "show_in_rest": 0,
+    "modified": 1790985600
+}

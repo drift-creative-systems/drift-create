@@ -1,0 +1,293 @@
+{
+    "key": "group_drift_settings",
+    "title": "Drift Settings",
+    "fields": [
+        {
+            "key": "field_drift_settings_tab_brand",
+            "label": "Brand",
+            "name": "",
+            "aria_label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_drift_settings_brand_line",
+            "label": "Name after \"Drift\"",
+            "name": "brand_line",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "Shown under the logo mark, in the footer and page titles. Blank = \"Creative Systems\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Creative Systems",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_footer_tagline",
+            "label": "Footer tagline",
+            "name": "footer_tagline",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Modern. Minimal. Purposeful.",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_tab_footer",
+            "label": "Footer",
+            "name": "",
+            "aria_label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_drift_settings_footer_links",
+            "label": "Footer links",
+            "name": "footer_links",
+            "aria_label": "",
+            "type": "repeater",
+            "instructions": "Under \"Get in touch\", after \"Book a demo\". Empty = GitHub link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_drift_settings_footer_links_link",
+            "button_label": "Add link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_drift_settings_footer_links_link",
+                    "label": "Link",
+                    "name": "link",
+                    "aria_label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_drift_settings_footer_links"
+                }
+            ]
+        },
+        {
+            "key": "field_drift_settings_tab_contact",
+            "label": "Contact",
+            "name": "",
+            "aria_label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_drift_settings_contact_recipient",
+            "label": "Send enquiries to",
+            "name": "contact_recipient",
+            "aria_label": "",
+            "type": "email",
+            "instructions": "Blank = the site admin email (Settings → General).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_contact_eyebrow",
+            "label": "Eyebrow",
+            "name": "contact_eyebrow",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Get in touch",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_contact_heading",
+            "label": "Heading",
+            "name": "contact_heading",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Book a demo, or ask us anything.",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_contact_lead",
+            "label": "Lead",
+            "name": "contact_lead",
+            "aria_label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_drift_settings_contact_success",
+            "label": "Message after sending",
+            "name": "contact_success",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "We'll get back to you within a working day.",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_tab_seo",
+            "label": "SEO",
+            "name": "",
+            "aria_label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_drift_settings_default_meta_description",
+            "label": "Default meta description",
+            "name": "default_meta_description",
+            "aria_label": "",
+            "type": "textarea",
+            "instructions": "Used on pages without their own description. Ignored when Yoast, Rank Math, AIOSEO or SEOPress is active.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 160,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "drift-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790985600
+}

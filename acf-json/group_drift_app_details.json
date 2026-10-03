@@ -1,0 +1,173 @@
+{
+    "key": "group_drift_app_details",
+    "title": "App details",
+    "fields": [
+        {
+            "key": "field_drift_app_suite",
+            "label": "Suite",
+            "name": "drift_suite",
+            "aria_label": "",
+            "type": "select",
+            "instructions": "Sets the accent colour and where the card appears.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "music": "Music Suite",
+                "agency": "WP Agency Kit",
+                "seo": "SEO"
+            },
+            "default_value": "music",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_drift_app_tagline",
+            "label": "Tagline",
+            "name": "drift_tagline",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "One line. Also used as the page's meta description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_app_status",
+            "label": "Status",
+            "name": "drift_status",
+            "aria_label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "live": "Available now",
+                "demo": "Demo available",
+                "development": "In development",
+                "soon": "Coming soon"
+            },
+            "default_value": "soon",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_drift_app_emoji",
+            "label": "Emoji / icon",
+            "name": "drift_emoji",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 8,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_app_accent",
+            "label": "Accent override",
+            "name": "drift_accent",
+            "aria_label": "",
+            "type": "color_picker",
+            "instructions": "Blank = suite colour. Use sparingly.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_drift_app_demo",
+            "label": "Demo / live link",
+            "name": "drift_demo",
+            "aria_label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://"
+        },
+        {
+            "key": "field_drift_app_help",
+            "label": "Cards",
+            "name": "",
+            "aria_label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Card text = the Excerpt. Card order = Page Attributes → Order.",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "drift_app"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Field names match the pre-0.3 meta keys (drift_*), so templates read them with get_post_meta().",
+    "show_in_rest": 0,
+    "modified": 1790985600
+}

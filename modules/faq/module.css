@@ -1,0 +1,14 @@
+/* Module: FAQ — native <details> accordion. */
+.faq__grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.faq__list { border-top: 1px solid var(--line); }
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__q { position: relative; display: block; padding: 1.25rem 2.75rem 1.25rem 0; font-family: var(--font-primary); font-weight: 500; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); line-height: 1.35; cursor: pointer; list-style: none; }
+.faq__q::-webkit-details-marker { display: none; }
+/* Plus / minus drawn with two bars; the vertical one rotates away when open. */
+.faq__q::before, .faq__q::after { content: ""; position: absolute; top: 50%; right: 0.5rem; width: 0.9rem; height: 2px; margin-top: -1px; border-radius: 2px; background: currentColor; transition: transform 0.25s var(--ease); }
+.faq__q::after { transform: rotate(90deg); }
+.faq__item[open] .faq__q::after { transform: rotate(0deg); }
+.faq__q:hover { color: var(--grey); }
+.faq__a { padding: 0 2.75rem 1.5rem 0; color: var(--grey); font-size: 1.05rem; }
+.faq__a strong { color: var(--black); }
+@media (max-width: 860px) { .faq__grid { grid-template-columns: 1fr; } }
