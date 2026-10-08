@@ -1,0 +1,14 @@
+/* Module: Content — heading + rich text in a reading-width column. */
+.content__title { margin-bottom: 0.6em; }
+.content .prose { font-size: 1.125rem; }
+.content .prose > :first-child { margin-top: 0; }
+.content .prose h3 { margin-top: 1.8em; font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem); }
+.content .prose a { color: var(--black); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.content .prose img { max-width: 100%; height: auto; border-radius: var(--radius); }
+.content .prose blockquote { margin: 2em 0; padding-left: 1.25em; border-left: 3px solid var(--black); font-family: var(--font-primary); font-size: 1.25rem; line-height: 1.45; }
+.content .prose hr { margin: 2.5em 0; border: 0; border-top: 1px solid var(--line); }
+.content .prose .alignleft { float: left; margin: 0.3em 1.5em 1em 0; }
+.content .prose .alignright { float: right; margin: 0.3em 0 1em 1.5em; }
+.content .prose .aligncenter { display: block; margin-inline: auto; }
+.content .prose::after { content: ""; display: table; clear: both; }
+@media (max-width: 600px) { .content .prose .alignleft, .content .prose .alignright { float: none; margin: 1em 0; } }

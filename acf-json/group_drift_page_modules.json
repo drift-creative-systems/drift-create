@@ -8,7 +8,7 @@
             "name": "page_modules",
             "aria_label": "",
             "type": "flexible_content",
-            "instructions": "Build the page from modules. If a page has any modules, they replace the editor content above.",
+            "instructions": "Build the page from modules.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -198,6 +198,79 @@
                             "ui_on_text": "",
                             "ui_off_text": "",
                             "parent_layout": "layout_drift_hero"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_content": {
+                    "key": "layout_drift_content",
+                    "name": "content",
+                    "label": "Content",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_content_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_content"
+                        },
+                        {
+                            "key": "field_drift_content_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "The page's main heading (h1) when this is the first module; leave empty to use the page title. Further down the page it's an h2.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_content"
+                        },
+                        {
+                            "key": "field_drift_content_body",
+                            "label": "Content",
+                            "name": "body",
+                            "aria_label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0,
+                            "parent_layout": "layout_drift_content"
                         }
                     ],
                     "min": "",
@@ -1381,9 +1454,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "Flexible content page builder. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1790985600
+    "modified": 1791461379
 }

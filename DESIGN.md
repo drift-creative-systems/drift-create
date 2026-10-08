@@ -115,6 +115,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 | Module | Layout name | Background | Notes |
 |---|---|---|---|
 | Hero | `hero` | white | First hero = page H1. Optional logo-art tile. |
+| Content | `content` | white | Heading + WYSIWYG in the 46rem text column. First on the page = H1 (page title if empty). |
 | App suites | `app_suites` | white | Cards from the Apps CPT, grouped by suite; one featured. |
 | App spotlight | `spotlight` | **black** | "The only place the accent leads." Steps, flow illustration. |
 | Split text | `split_text` | white | Heading left, WYSIWYG right (the About section). |
@@ -140,7 +141,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 - Visible focus: 2px outline, black (white on black sections).
 - Skip link, `main` focus target, `aria-expanded` menu toggle, Esc closes the menu.
 - Decorative SVG and emoji are `aria-hidden`.
-- One H1 per page (hero, page title, or a visually hidden H1 on the front page).
+- One H1 per page (first hero or content module, page title, or a visually hidden H1 on the front page).
 - Images: alt text is set in the Media Library. Flag missing alt before launch.
 - Known issue: grey text contrast (see §2).
 

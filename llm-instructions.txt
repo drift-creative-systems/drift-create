@@ -26,7 +26,7 @@ FILE MAP
 - inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), favicons, title parts
 - inc/meta.php ......... meta description + OG (skipped if Yoast/Rank Math/AIOSEO/SEOPress)
 - inc/contact.php ...... drift_contact_handler() (admin-post, nonce, honeypot, wp_mail), drift_contact_form()
-- inc/modules.php ...... drift_module_layouts(), drift_page_layouts(), drift_layouts_for_request(), drift_enqueue_module_style(), drift_render_modules(), drift_h1_used(), drift_section_id(), drift_accent_style(), drift_buttons()
+- inc/modules.php ...... drift_module_layouts(), drift_page_layouts(), drift_layouts_for_request(), drift_enqueue_module_style(), drift_render_modules(), drift_layout_has_h1(), drift_h1_used(), drift_section_id(), drift_accent_style(), drift_buttons()
 - inc/upgrade.php ...... first-run seed, 0.1→0.2 and 0.2→0.3 upgrades
 - inc/seed.php ......... seed content (apps, Home page, Home modules)
 - inc/updates.php ...... GitHub release updates (PucFactory, slug drift-create, release asset drift-create.zip)
@@ -36,8 +36,9 @@ FILE MAP
 - acf-json/group_drift_page_modules.json, group_drift_app_details.json, group_drift_settings.json
 
 ACF FIELD GROUPS
-1. Page modules (pages) — flexible content "page_modules"
+1. Page modules (pages) — flexible content "page_modules". Hides the page editor (hide_on_screen: the_content).
    hero ........ section_id, eyebrow, title*, lead, buttons[link, style], show_mark
+   content ..... section_id, heading (h1 if first; blank → page title), body (wysiwyg, full toolbar)
    app_suites .. section_id, featured_app (post_object id), suites[suite, heading, lead]
    spotlight ... section_id, app* (post_object id), eyebrow, heading, lead, steps[title, text], link_label, show_demo, show_flow
    split_text .. section_id, heading, body (wysiwyg)
@@ -52,7 +53,7 @@ ACF FIELD GROUPS
 
 ADDING A MODULE
 1. Add the layout in ACF (Page modules), with a section_id field.
-2. modules/{layout}/module.php — get_sub_field(), escape all output, return early if empty, no <h1>.
+2. modules/{layout}/module.php — get_sub_field(), escape all output, return early if empty, no <h1> (hero and content use drift_h1_used(); add a layout to drift_layout_has_h1() if it can print the h1).
 3. Optional modules/{layout}/module.css (uses :root tokens, max-width queries like the rest).
 4. Add the name to drift_module_layouts() AND the switch in drift_render_modules().
 5. Commit acf-json. Update README module table, DESIGN.md §6, CHANGELOG.

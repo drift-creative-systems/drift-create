@@ -3,6 +3,15 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.1.0] - 2026-10-08
+
+### Added
+- **Content** page module (`modules/content/`): heading and a full-toolbar WYSIWYG block in the reading-width column. As the first module it prints the page's H1, using the page title when the heading is empty; further down it's an H2.
+- `drift_layout_has_h1()`, used by `page.php` and `front-page.php` so a page that starts with a Content module doesn't get a second H1.
+
+### Changed
+- The WordPress content editor is hidden on Pages (Page modules field group, `hide_on_screen: the_content`). Pages are built only from modules. Pages with no modules still show any existing editor content on the front end.
+
 ## [1.0.0] - 2026-10-03
 
 First public release.

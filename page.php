@@ -1,8 +1,9 @@
 <?php
 /**
  * Page: page modules if the page has any, otherwise the title and editor
- * content. When the first module isn't a hero, the page title is shown
- * above the modules so the page still has its <h1>.
+ * content. When the first module doesn't print an <h1> (see
+ * drift_layout_has_h1()), the page title is shown above the modules so the
+ * page still has its <h1>.
  *
  * @package Drift_Create
  */
@@ -15,7 +16,7 @@ while ( have_posts() ) :
 	$layouts = function_exists( 'have_rows' ) ? drift_page_layouts( get_the_ID() ) : [];
 
 	if ( $layouts ) :
-		if ( 'hero' !== $layouts[0] ) :
+		if ( ! drift_layout_has_h1( $layouts[0] ) ) :
 			drift_h1_used( true );
 			?>
 			<header class="page-head">

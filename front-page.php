@@ -15,8 +15,8 @@ get_header();
 $front_id = is_page() ? (int) get_queried_object_id() : 0;
 $layouts  = function_exists( 'have_rows' ) ? drift_page_layouts( $front_id ) : [];
 
-// No hero first? Keep a (visually hidden) <h1> for the page.
-if ( $layouts && 'hero' !== $layouts[0] ) {
+// First module doesn't print an <h1>? Keep a (visually hidden) one for the page.
+if ( $layouts && ! drift_layout_has_h1( $layouts[0] ) ) {
 	drift_h1_used( true );
 	echo '<h1 class="sr">' . esc_html( drift_brand_name() ) . '</h1>';
 }

@@ -21,6 +21,7 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-03 | Hero CSS also loads on 404, app pages and the no-module front page | Those templates reuse `.hero` / `.hero__lead`. |
 | 2026-10-03 | Front page modules seeded once via `drift_create_modules_seeded` option | Upgrading sites keep the same look with no manual rebuild. |
 | 2026-10-03 | Theme meta/OG tags skipped when an SEO plugin is active | Avoid duplicate meta descriptions. |
+| 2026-10-08 | Page editor hidden via ACF `hide_on_screen`; Content module replaces it | Pages are built only from modules. Old editor content still renders on pages with no modules, but can't be edited — move it into a Content module. |
 | 0.2.0 | Suites set the accent colour; per-app colours dropped | Brand system: one accent per product suite. |
 
 ## Open issues / to check

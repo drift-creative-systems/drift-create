@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function drift_module_layouts(): array {
-	return [ 'hero', 'app_suites', 'spotlight', 'split_text', 'image_text', 'faq', 'cta', 'contact' ];
+	return [ 'hero', 'content', 'app_suites', 'spotlight', 'split_text', 'image_text', 'faq', 'cta', 'contact' ];
 }
 
 /**
@@ -79,6 +79,7 @@ function drift_render_modules( int $post_id ): bool {
 		$layout = get_row_layout();
 		switch ( $layout ) {
 			case 'hero':
+			case 'content':
 			case 'app_suites':
 			case 'spotlight':
 			case 'split_text':
@@ -94,6 +95,17 @@ function drift_render_modules( int $post_id ): bool {
 		}
 	}
 	return true;
+}
+
+/**
+ * Whether a layout prints the page's <h1> when it's the first module, so
+ * templates know not to add their own title.
+ *
+ * @param string $layout Layout name.
+ * @return bool
+ */
+function drift_layout_has_h1( string $layout ): bool {
+	return in_array( $layout, [ 'hero', 'content' ], true );
 }
 
 /**

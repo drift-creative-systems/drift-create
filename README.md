@@ -36,6 +36,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | Module | What it does |
 |---|---|
 | **Hero** | Eyebrow, big title (H1 if first), lead, buttons, optional logo tile |
+| **Content** | Heading (H1 if first, page title if left empty) and a rich text block, for standard pages |
 | **App suites (cards)** | Apps grouped by suite with optional headings; pick a featured app |
 | **App spotlight** | Black section for one app: steps, app page button, demo button, optional Encore flow animation |
 | **Split text** | Heading left, rich text right |
@@ -46,7 +47,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 
 Every module except Contact has an **Anchor ID** field, so menus and buttons can link to `/#apps`, `/#about` and so on.
 
-A page with **no modules** shows its editor content. A page whose first module isn't a Hero shows the page title as its H1.
+The editor is hidden on Pages, so pages are built only from modules. A page with **no modules** still shows any older editor content. A page whose first module isn't a Hero or Content module shows the page title as its H1.
 
 ---
 
