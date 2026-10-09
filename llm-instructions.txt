@@ -20,7 +20,7 @@ NAMING
 
 FILE MAP
 - functions.php ........ constants + require inc/*
-- inc/setup.php ........ supports, menus, enqueue, drift_asset_version()
+- inc/setup.php ........ supports, menus (primary, legal), enqueue, drift_asset_version()
 - inc/acf.php .......... JSON paths, options page "drift-settings", drift_option(), choice filters, no-ACF notice
 - inc/apps.php ......... drift_app CPT, drift_suites(), drift_app_statuses(), drift_app_meta(), drift_apps(), drift_app_is_available()
 - inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), favicons, title parts
@@ -36,13 +36,15 @@ FILE MAP
 - acf-json/group_drift_page_modules.json, group_drift_app_details.json, group_drift_settings.json
 
 ACF FIELD GROUPS
-1. Page modules (pages) — flexible content "page_modules". Hides the page editor (hide_on_screen: the_content).
+1. Page modules (pages + drift_app) — flexible content "page_modules". Hides the editor (hide_on_screen: the_content; also set on App details so it holds on app screens).
    hero ........ section_id, eyebrow, title*, lead, buttons[link, style], show_mark
    content ..... section_id, heading (h1 if first; blank → page title), body (wysiwyg, full toolbar)
    app_suites .. section_id, featured_app (post_object id), suites[suite, heading, lead]
+   cards ....... section_id, eyebrow, accent_suite, heading, lead, source (manual|apps), columns (2|3|4), cards[icon, title*, text, link], apps (relationship ids; empty = all), buttons
    spotlight ... section_id, app* (post_object id), eyebrow, heading, lead, steps[title, text], link_label, show_demo, show_flow
    split_text .. section_id, heading, body (wysiwyg)
    image_text .. section_id, image (id), image_position (left|right), soft_background, eyebrow, heading, body, buttons
+   pricing ..... section_id, eyebrow, accent_suite, heading, lead, plans[name*, price, period, description, features (one per line), link, featured, badge], note
    faq ......... section_id, eyebrow, heading, items[question, answer], output_schema
    cta ......... section_id, accent_suite, eyebrow, heading*, text, buttons
    contact ..... eyebrow, heading, lead (blank → Drift Settings)

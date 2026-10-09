@@ -27,9 +27,10 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | What | Where |
 |---|---|
 | Page layout and copy | **Pages → (page) → Page modules** |
-| Apps (cards, app pages) | **Apps** — title, excerpt = card text, editor = app page, **App details** box, Page Attributes → Order = card order |
+| Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box, **Page modules** = app page body, Page Attributes → Order = card order |
 | Brand line, footer, contact copy and recipient, default meta description | **Drift Settings** |
 | Main menu | **Appearance → Menus** (location "Main menu"; falls back to Apps / Encore / About) |
+| Legal links (T&Cs, Privacy, Cookies) | **Appearance → Menus** (location "Footer legal links"; falls back to the Privacy Policy page from Settings → Privacy) |
 
 ### Page modules
 
@@ -38,16 +39,20 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Hero** | Eyebrow, big title (H1 if first), lead, buttons, optional logo tile |
 | **Content** | Heading (H1 if first, page title if left empty) and a rich text block, for standard pages |
 | **App suites (cards)** | Apps grouped by suite with optional headings; pick a featured app |
+| **Cards** | Grid of 2–4 columns: your own cards (icon, title, text, link) or chosen Apps |
 | **App spotlight** | Black section for one app: steps, app page button, demo button, optional Encore flow animation |
 | **Split text** | Heading left, rich text right |
 | **Image + text** | Image left or right, optional grey background, buttons |
+| **Pricing table** | Plans with free-text price, period, feature list and button; highlight one with a badge |
 | **FAQ** | Accordion, optional FAQPage schema |
 | **CTA band** | Black band with heading, text, buttons and a suite accent |
 | **Contact form** | Demo / enquiry form (always `#contact`) |
 
 Every module except Contact has an **Anchor ID** field, so menus and buttons can link to `/#apps`, `/#about` and so on.
 
-The editor is hidden on Pages, so pages are built only from modules. A page with **no modules** still shows any older editor content. A page whose first module isn't a Hero or Content module shows the page title as its H1.
+The editor is hidden on Pages and Apps, so both are built only from modules. A page or app with **no modules** still shows any older editor content. A page whose first module isn't a Hero or Content module shows the page title as its H1.
+
+On **app pages** the app hero (from App details) always shows first and holds the H1; modules follow it. The contact form is added at the bottom automatically unless the app has a Contact module.
 
 ---
 

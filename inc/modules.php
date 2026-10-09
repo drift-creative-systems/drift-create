@@ -1,6 +1,6 @@
 <?php
 /**
- * ACF Flexible Content page builder ("Page modules").
+ * ACF Flexible Content page builder ("Page modules"), used on Pages and Apps.
  *
  * Each layout has a folder: modules/{layout_name}/module.php (markup) and an
  * optional module.css that is enqueued only on pages using that layout.
@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function drift_module_layouts(): array {
-	return [ 'hero', 'content', 'app_suites', 'spotlight', 'split_text', 'image_text', 'faq', 'cta', 'contact' ];
+	return [ 'hero', 'content', 'app_suites', 'cards', 'spotlight', 'split_text', 'image_text', 'pricing', 'faq', 'cta', 'contact' ];
 }
 
 /**
@@ -81,9 +81,11 @@ function drift_render_modules( int $post_id ): bool {
 			case 'hero':
 			case 'content':
 			case 'app_suites':
+			case 'cards':
 			case 'spotlight':
 			case 'split_text':
 			case 'image_text':
+			case 'pricing':
 			case 'faq':
 			case 'cta':
 			case 'contact':

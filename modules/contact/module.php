@@ -8,7 +8,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-drift_contact_form( '', [
+// On an app page, preselect that app in the "Interested in" list.
+drift_contact_form( is_singular( 'drift_app' ) ? get_the_title() : '', [
 	'eyebrow' => (string) get_sub_field( 'eyebrow' ),
 	'heading' => (string) get_sub_field( 'heading' ),
 	'lead'    => (string) get_sub_field( 'lead' ),

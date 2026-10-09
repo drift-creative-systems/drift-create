@@ -3,6 +3,19 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.2.0] - 2026-10-09
+
+### Added
+- **Cards** page module (`modules/cards/`): eyebrow, heading, intro and a 2/3/4-column grid of either your own cards (icon, title, text, optional link) or chosen Apps (empty = all apps; the current app is left out on app pages). Optional buttons underneath.
+- **Pricing table** page module (`modules/pricing/`): plans with a free-text price ("£29", "From £499", "POA"), period, short description, feature list (one per line) and button. A highlighted plan is shown in black with an optional badge. Optional small-print line.
+- **Footer legal links** menu location (Appearance → Menus), shown beside the copyright line. Falls back to the Privacy Policy page set in Settings → Privacy.
+
+### Changed
+- Apps can be built with **Page modules**. The app hero (App details) still shows first and holds the H1; modules replace the editor body. Apps with no modules still show their old editor content.
+- The editor is hidden on Apps, like Pages. The excerpt (card text) stays.
+- On app pages, the automatic contact form is skipped when the app has a Contact module, and the Contact module preselects the current app.
+- Footer base line is now a flex row (`div.foot__base`) holding the copyright and the legal menu.
+
 ## [1.1.0] - 2026-10-08
 
 ### Added

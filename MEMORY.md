@@ -2,7 +2,7 @@
 
 Running record of decisions, state and open issues. Newest first.
 
-## Current state (2026-10-03, v1.0.0)
+## Current state (2026-10-09, v1.2.0 unreleased)
 - v1.0.0 released: https://github.com/drift-creative-systems/drift-create/releases/tag/v1.0.0
 - Theme converted to ACF Flexible Content page modules. Not yet tested on a WordPress install.
 - Updates via GitHub releases (Plugin Update Checker 5.7). No GitHub Actions deploy yet. Releases are built by hand (README).
@@ -21,6 +21,9 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-03 | Hero CSS also loads on 404, app pages and the no-module front page | Those templates reuse `.hero` / `.hero__lead`. |
 | 2026-10-03 | Front page modules seeded once via `drift_create_modules_seeded` option | Upgrading sites keep the same look with no manual rebuild. |
 | 2026-10-03 | Theme meta/OG tags skipped when an SEO plugin is active | Avoid duplicate meta descriptions. |
+| 2026-10-09 | Apps use Page modules; app hero stays automatic above them; editor hidden on apps | Same builder everywhere. `hide_on_screen` is set on both Page modules and App details because ACF takes it from the first group on screen and both are `menu_order` 0. |
+| 2026-10-09 | Cards module can show manual cards or apps; pricing price is free text | Covers features/services and app picks with one module. Free text allows "From £…", "POA", "Free". |
+| 2026-10-09 | Legal links via a WP menu location (`legal`), not Drift Settings | Editors already manage menus; the privacy policy page is the fallback. |
 | 2026-10-08 | Page editor hidden via ACF `hide_on_screen`; Content module replaces it | Pages are built only from modules. Old editor content still renders on pages with no modules, but can't be edited — move it into a Content module. |
 | 0.2.0 | Suites set the accent colour; per-app colours dropped | Brand system: one accent per product suite. |
 
@@ -33,6 +36,9 @@ Running record of decisions, state and open issues. Newest first.
 - [ ] CSS is desktop-first (`max-width`), against the Bonsai mobile-first standard. Refactor only as a separate task.
 - [ ] Test on WP: activation seed, 0.2→0.3 upgrade, ACF Sync, contact form delivery (wp_mail / SMTP), each module empty and full.
 - [ ] Set the contact recipient in Drift Settings (defaults to the admin email).
+- [ ] Create T&Cs / Privacy / Cookies pages and assign them to the "Footer legal links" menu.
+- [ ] Seeded apps keep their editor content until it's moved into a Content module (editor is now hidden on apps).
+- [ ] Pricing ticks / badge use the suite accent; SEO green (#57E35B) on white is low contrast. Fine as decoration, but don't rely on it for meaning.
 
 ## Gotchas
 - `drift_page_layouts()` reads the raw `page_modules` post meta (ACF stores the layout names there). Used before the loop to enqueue CSS.

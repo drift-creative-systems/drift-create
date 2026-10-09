@@ -1,6 +1,8 @@
 <?php
 /**
- * Site footer. Tagline and links: Drift Settings → Footer.
+ * Site footer. Tagline and links: Drift Settings → Footer. Legal links:
+ * Appearance → Menus → "Footer legal links" (falls back to the privacy
+ * policy page set in Settings → Privacy).
  *
  * @package Drift_Create
  */
@@ -42,7 +44,23 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 				</ul>
 			</div>
 		</div>
-		<p class="foot__base">&copy; <?php echo esc_html( wp_date( 'Y' ) . ' ' . drift_brand_name() ); ?> · Built in Devon by The Bonsai Digital Collective</p>
+		<div class="foot__base">
+			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) . ' ' . drift_brand_name() ); ?> · Built in Devon by The Bonsai Digital Collective</p>
+			<?php
+			if ( has_nav_menu( 'legal' ) ) {
+				wp_nav_menu( [
+					'theme_location'       => 'legal',
+					'container'            => 'nav',
+					'container_aria_label' => 'Legal',
+					'menu_class'           => 'foot__legal',
+					'depth'                => 1,
+					'fallback_cb'          => false,
+				] );
+			} elseif ( get_privacy_policy_url() ) {
+				echo '<nav aria-label="Legal"><ul class="foot__legal"><li>' . get_the_privacy_policy_link() . '</li></ul></nav>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core function, escaped internally.
+			}
+			?>
+		</div>
 	</div>
 </footer>
 <?php wp_footer(); ?>

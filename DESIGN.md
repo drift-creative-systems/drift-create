@@ -106,7 +106,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 - **App card** `.card` (`parts/app-card.php`) — white, 1px line, lifts 3px on hover, whole card clickable (title link `::after`). `--featured` is black and spans 2×2.
 - **Encore flow** `.flow` (`parts/encore-flow.php`) — decorative Airtable → Publish → site animation. `aria-hidden`; the steps beside it carry the meaning.
 - **Contact form** `.contact` / `.form` (`parts/contact.php`) — soft grey section, 10px-radius fields, honeypot `.hp`.
-- **Header** `.top` — sticky, 90% white with blur. **Footer** `.foot` — black, large spaced wordmark.
+- **Header** `.top` — sticky, 90% white with blur. **Footer** `.foot` — black, large spaced wordmark. Legal menu (`.foot__legal`) sits right of the copyright line in `.foot__base`.
 
 ---
 
@@ -117,9 +117,11 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 | Hero | `hero` | white | First hero = page H1. Optional logo-art tile. |
 | Content | `content` | white | Heading + WYSIWYG in the 46rem text column. First on the page = H1 (page title if empty). |
 | App suites | `app_suites` | white | Cards from the Apps CPT, grouped by suite; one featured. |
+| Cards | `cards` | white | Shared `.card` component in 2/3/4 columns (`.cards--2/--4`). Manual cards or chosen apps. Cards without a link get `.card--static` (no hover lift). |
 | App spotlight | `spotlight` | **black** | "The only place the accent leads." Steps, flow illustration. |
 | Split text | `split_text` | white | Heading left, WYSIWYG right (the About section). |
 | Image + text | `image_text` | white / soft | Image left or right. |
+| Pricing table | `pricing` | white | `.plan` cards; the highlighted plan is black with an accent button and badge. Ticks use `--app`. |
 | FAQ | `faq` | white | `<details>` accordion, optional FAQPage schema. |
 | CTA band | `cta` | **black** | Pick an accent suite; dark/line buttons are inverted on black. |
 | Contact form | `contact` | soft | Always `#contact`, once per page. |

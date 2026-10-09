@@ -1,0 +1,10 @@
+/* Module: Cards — column options for the shared .cards grid (site.css). */
+.cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cards-block .card__title { font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem); }
+.cards-block .card__text:last-child { margin-bottom: 0; }
+/* Cards without a link aren't clickable, so they don't lift on hover. */
+.card--static:hover { border-color: var(--line); box-shadow: none; transform: none; }
+.cards-block .btns { margin-top: clamp(2rem, 4vw, 3rem); }
+@media (max-width: 1100px) { .cards--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .cards--2, .cards--4 { grid-template-columns: 1fr; } }

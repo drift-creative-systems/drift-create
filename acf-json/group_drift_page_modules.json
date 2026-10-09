@@ -431,6 +431,406 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_cards": {
+                    "key": "layout_drift_cards",
+                    "name": "cards",
+                    "label": "Cards",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_cards_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the eyebrow rule and card hover line.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "music",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_lead",
+                            "label": "Intro",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_source",
+                            "label": "Cards from",
+                            "name": "source",
+                            "aria_label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "manual": "Write my own cards",
+                                "apps": "Apps"
+                            },
+                            "default_value": "manual",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "layout": "horizontal",
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_columns",
+                            "label": "Columns",
+                            "name": "columns",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Fewer columns on smaller screens.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "2": "2",
+                                "3": "3",
+                                "4": "4"
+                            },
+                            "default_value": "3",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_cards",
+                            "label": "Cards",
+                            "name": "cards",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_cards_source",
+                                        "operator": "==",
+                                        "value": "manual"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "field_drift_cards_cards_title",
+                            "button_label": "Add card",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_cards_cards_icon",
+                                    "label": "Icon",
+                                    "name": "icon",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "An emoji, e.g. ✦ 🎵 ⚡. Optional.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "20",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_cards_cards"
+                                },
+                                {
+                                    "key": "field_drift_cards_cards_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "80",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_cards_cards"
+                                },
+                                {
+                                    "key": "field_drift_cards_cards_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "aria_label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": 3,
+                                    "placeholder": "",
+                                    "new_lines": "",
+                                    "parent_repeater": "field_drift_cards_cards"
+                                },
+                                {
+                                    "key": "field_drift_cards_cards_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria_label": "",
+                                    "type": "link",
+                                    "instructions": "Optional. Makes the whole card clickable; the link text shows at the bottom of the card.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_drift_cards_cards"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_apps",
+                            "label": "Apps",
+                            "name": "apps",
+                            "aria_label": "",
+                            "type": "relationship",
+                            "instructions": "Pick apps and drag to reorder. Leave empty to show all apps. On an app page, that app is left out.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_cards_source",
+                                        "operator": "==",
+                                        "value": "apps"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "drift_app"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search"
+                            ],
+                            "return_format": "id",
+                            "min": "",
+                            "max": "",
+                            "elements": "",
+                            "bidirectional": 0,
+                            "bidirectional_target": [],
+                            "parent_layout": "layout_drift_cards"
+                        },
+                        {
+                            "key": "field_drift_cards_buttons",
+                            "label": "Buttons",
+                            "name": "buttons",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Optional buttons under the cards.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 2,
+                            "collapsed": "field_drift_cards_buttons_link",
+                            "button_label": "Add button",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_cards_buttons_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria_label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_drift_cards_buttons"
+                                },
+                                {
+                                    "key": "field_drift_cards_buttons_style",
+                                    "label": "Style",
+                                    "name": "style",
+                                    "aria_label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "dark": "Black",
+                                        "line": "Outline",
+                                        "accent": "Accent (suite colour)",
+                                        "line-light": "Outline, light (black backgrounds)"
+                                    },
+                                    "default_value": "dark",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_drift_cards_buttons"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_cards"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_spotlight": {
                     "key": "layout_drift_spotlight",
                     "name": "spotlight",
@@ -988,6 +1388,346 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_pricing": {
+                    "key": "layout_drift_pricing",
+                    "name": "pricing",
+                    "label": "Pricing table",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_pricing_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_pricing"
+                        },
+                        {
+                            "key": "field_drift_pricing_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_pricing"
+                        },
+                        {
+                            "key": "field_drift_pricing_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the feature ticks, badge and highlighted plan button.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "music",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_pricing"
+                        },
+                        {
+                            "key": "field_drift_pricing_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_pricing"
+                        },
+                        {
+                            "key": "field_drift_pricing_lead",
+                            "label": "Intro",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_pricing"
+                        },
+                        {
+                            "key": "field_drift_pricing_plans",
+                            "label": "Plans",
+                            "name": "plans",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Two to four plans work best.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 1,
+                            "max": 0,
+                            "collapsed": "field_drift_pricing_plans_name",
+                            "button_label": "Add plan",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_pricing_plans_name",
+                                    "label": "Plan name",
+                                    "name": "name",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                },
+                                {
+                                    "key": "field_drift_pricing_plans_price",
+                                    "label": "Price",
+                                    "name": "price",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "Free text, e.g. £29, From £499, Free, POA.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                },
+                                {
+                                    "key": "field_drift_pricing_plans_period",
+                                    "label": "Period",
+                                    "name": "period",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "e.g. /month, per site, one-off.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                },
+                                {
+                                    "key": "field_drift_pricing_plans_description",
+                                    "label": "Short description",
+                                    "name": "description",
+                                    "aria_label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": 2,
+                                    "placeholder": "",
+                                    "new_lines": "",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                },
+                                {
+                                    "key": "field_drift_pricing_plans_features",
+                                    "label": "Features",
+                                    "name": "features",
+                                    "aria_label": "",
+                                    "type": "textarea",
+                                    "instructions": "One feature per line.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": 6,
+                                    "placeholder": "",
+                                    "new_lines": "",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                },
+                                {
+                                    "key": "field_drift_pricing_plans_link",
+                                    "label": "Button",
+                                    "name": "link",
+                                    "aria_label": "",
+                                    "type": "link",
+                                    "instructions": "Optional.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                },
+                                {
+                                    "key": "field_drift_pricing_plans_featured",
+                                    "label": "Highlight this plan",
+                                    "name": "featured",
+                                    "aria_label": "",
+                                    "type": "true_false",
+                                    "instructions": "Shown as the black card with an accent button.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                },
+                                {
+                                    "key": "field_drift_pricing_plans_badge",
+                                    "label": "Badge",
+                                    "name": "badge",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "e.g. \"Most popular\".",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_drift_pricing_plans_featured",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_pricing_plans"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_pricing"
+                        },
+                        {
+                            "key": "field_drift_pricing_note",
+                            "label": "Small print",
+                            "name": "note",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional line under the plans, e.g. \"Prices exclude VAT.\"",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_pricing"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_faq": {
                     "key": "layout_drift_faq",
                     "name": "faq",
@@ -1447,6 +2187,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "drift_app"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1458,7 +2205,7 @@
         "the_content"
     ],
     "active": true,
-    "description": "Flexible content page builder. Templates: modules/{layout}/module.php.",
+    "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1791461379
+    "modified": 1791547200
 }

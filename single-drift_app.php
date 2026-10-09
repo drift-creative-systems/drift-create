@@ -1,6 +1,9 @@
 <?php
 /**
- * One app.
+ * One app. The hero comes from App details and always shows; the page
+ * modules (if any) follow it, otherwise the old editor content does. The
+ * hero prints the <h1>, so modules below it use h2s. The contact form is
+ * added at the end unless a Contact module is already on the page.
  *
  * @package Drift_Create
  */
@@ -9,7 +12,8 @@ get_header();
 
 while ( have_posts() ) :
 	the_post();
-	$m = drift_app_meta( get_the_ID() );
+	$m       = drift_app_meta( get_the_ID() );
+	$layouts = function_exists( 'have_rows' ) ? drift_page_layouts( get_the_ID() ) : [];
 	?>
 	<article class="app" style="--app: <?php echo esc_attr( $m['accent'] ); ?>">
 		<header class="app__hero">
@@ -18,6 +22,7 @@ while ( have_posts() ) :
 				<p class="eyebrow"><?php echo esc_html( $m['suite_label'] ); ?></p>
 				<span class="app__emoji" aria-hidden="true"><?php echo esc_html( $m['emoji'] ?: '✦' ); ?></span>
 				<h1 class="app__title"><?php the_title(); ?></h1>
+				<?php drift_h1_used( true ); ?>
 				<?php if ( $m['tagline'] ) : ?><p class="hero__lead"><?php echo esc_html( $m['tagline'] ); ?></p><?php endif; ?>
 				<p class="btns">
 					<span class="pill pill--<?php echo esc_attr( $m['status'] ); ?>"><?php echo esc_html( $m['label'] ); ?></span>
@@ -31,7 +36,9 @@ while ( have_posts() ) :
 			<div class="wrap app__flow"><?php get_template_part( 'parts/encore-flow' ); ?></div>
 		<?php endif; ?>
 
-		<div class="wrap wrap--text prose"><?php the_content(); ?></div>
+		<?php if ( ! $layouts || ! drift_render_modules( get_the_ID() ) ) : ?>
+			<div class="wrap wrap--text prose"><?php the_content(); ?></div>
+		<?php endif; ?>
 	</article>
 
 	<?php
@@ -53,7 +60,9 @@ while ( have_posts() ) :
 	<?php endif; ?>
 
 	<?php
-	drift_contact_form( get_the_title() );
+	if ( ! in_array( 'contact', $layouts, true ) ) {
+		drift_contact_form( get_the_title() );
+	}
 endwhile;
 
 get_footer();

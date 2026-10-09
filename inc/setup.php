@@ -11,7 +11,10 @@ add_action( 'after_setup_theme', static function () {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', [ 'style', 'script', 'search-form' ] );
-	register_nav_menus( [ 'primary' => 'Main menu' ] );
+	register_nav_menus( [
+		'primary' => 'Main menu',
+		'legal'   => 'Footer legal links',
+	] );
 } );
 
 // Classic editor everywhere: pages are built with ACF modules, not blocks.

@@ -201,7 +201,10 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .foot a { text-decoration: none; }
 .foot a:hover { text-decoration: underline; }
 .foot :focus-visible { outline-color: var(--white); }
-.foot__base { margin: 3rem 0 0; padding-top: 1.5rem; border-top: 1px solid #2a2b2e; color: var(--grey); font-size: 0.85rem; }
+.foot__base { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 2rem; margin: 3rem 0 0; padding-top: 1.5rem; border-top: 1px solid #2a2b2e; color: var(--grey); font-size: 0.85rem; }
+.foot__base p { margin: 0; }
+.foot .foot__legal { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+.foot__legal a:hover { color: var(--white); }
 
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
