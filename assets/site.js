@@ -1,4 +1,4 @@
-/* Drift Create: mobile menu, focus the contact form's "sent" notice. */
+/* Drift Create: mobile menu, focus the contact form's "sent" notice, click-to-play videos. */
 (function ($) {
 	'use strict';
 
@@ -27,4 +27,24 @@
 
 	// After a successful send, move focus to the confirmation for screen readers.
 	$('.notice--ok').trigger('focus');
+
+	// Video module: swap the poster button for the player only when clicked,
+	// so YouTube / Vimeo aren't contacted until the visitor asks for the video.
+	$(document).on('click.bonsai_video', '.video__play', function () {
+		var $play = $(this);
+		var src = String($play.data('embed') || '');
+		// Only ever load the two players the theme builds URLs for.
+		if (!/^https:\/\/(www\.youtube-nocookie\.com\/embed\/|player\.vimeo\.com\/video\/)/.test(src)) {
+			return;
+		}
+		var $frame = $('<iframe>', {
+			src: src,
+			title: String($play.data('title') || 'Video'),
+			allow: 'autoplay; fullscreen; picture-in-picture; encrypted-media',
+			allowfullscreen: true,
+			referrerpolicy: 'strict-origin-when-cross-origin'
+		});
+		$play.replaceWith($frame);
+		$frame.trigger('focus');
+	});
 })(jQuery);

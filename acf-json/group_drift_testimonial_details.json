@@ -1,0 +1,85 @@
+{
+    "key": "group_drift_testimonial_details",
+    "title": "Testimonial details",
+    "fields": [
+        {
+            "key": "field_drift_testimonial_quote",
+            "label": "Quote",
+            "name": "drift_quote",
+            "aria_label": "",
+            "type": "textarea",
+            "instructions": "Without quote marks; the design adds them. Blank lines start new paragraphs.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 5,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_drift_testimonial_role",
+            "label": "Role",
+            "name": "drift_role",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "e.g. Drummer, Marketing Manager.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_testimonial_company",
+            "label": "Company / band",
+            "name": "drift_company",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "drift_testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Field names are the meta keys (drift_*), read with get_post_meta() via drift_testimonial_meta().",
+    "show_in_rest": 0,
+    "modified": 1791568800
+}

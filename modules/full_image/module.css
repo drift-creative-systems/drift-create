@@ -1,0 +1,45 @@
+/* Module: Full-width image — width, height crop, focal point, optional overlay. */
+.full-image { padding-block: clamp(2rem, 5vw, 4rem); }
+.full-image--full { padding-block: 0; }
+.full-image__figure { margin-block: 0; }
+.full-image__media { position: relative; overflow: hidden; }
+.full-image--contained .full-image__media { border-radius: var(--radius); }
+.full-image__img { width: 100%; }
+
+/* Fixed heights crop the image; the focal point picks which part stays in view. */
+.full-image--h-short .full-image__img, .full-image--h-medium .full-image__img, .full-image--h-tall .full-image__img { height: var(--h); object-fit: cover; }
+.full-image--h-short { --h: clamp(14rem, 30vw, 22rem); }
+.full-image--h-medium { --h: clamp(20rem, 45vw, 34rem); }
+.full-image--h-tall { --h: clamp(26rem, 70vh, 48rem); }
+.full-image--focus-top .full-image__img { object-position: center top; }
+.full-image--focus-bottom .full-image__img { object-position: center bottom; }
+.full-image--focus-left .full-image__img { object-position: left center; }
+.full-image--focus-right .full-image__img { object-position: right center; }
+
+/* Overlay: text on a black gradient so white type stays readable on any photo. */
+.full-image__overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding-block: clamp(2rem, 5vw, 4rem); color: var(--white); background: linear-gradient(to top, rgba(0, 0, 0, var(--shade)) 0%, rgba(0, 0, 0, calc(var(--shade) * 0.5)) 55%, rgba(0, 0, 0, calc(var(--shade) * 0.15)) 100%); }
+.full-image--shade-light { --shade: 0.55; }
+.full-image--shade-medium { --shade: 0.7; }
+.full-image--shade-strong { --shade: 0.85; }
+.full-image--top-left .full-image__overlay { align-items: flex-start; background: linear-gradient(to bottom, rgba(0, 0, 0, var(--shade)) 0%, rgba(0, 0, 0, calc(var(--shade) * 0.5)) 55%, rgba(0, 0, 0, calc(var(--shade) * 0.15)) 100%); }
+.full-image--center .full-image__overlay { align-items: center; text-align: center; background: rgba(0, 0, 0, calc(var(--shade) * 0.75)); }
+.full-image--center .full-image__copy { display: flex; flex-direction: column; align-items: center; }
+.full-image--center .btns { justify-content: center; }
+.full-image--contained .full-image__copy { width: auto; margin-inline: clamp(1.25rem, 4vw, 3rem); }
+.full-image__copy > * { max-width: 44rem; }
+.full-image__overlay .eyebrow--accent { color: var(--white); }
+.full-image__overlay .lead { color: #e3e5e8; }
+.full-image__overlay .h2 { margin-bottom: 0; }
+.full-image__overlay .lead { margin: 1rem 0 0; }
+.full-image__overlay :focus-visible { outline-color: var(--white); }
+/* Same button inversions as the CTA band. */
+.full-image__overlay .btn--dark { background: var(--white); color: var(--black); }
+.full-image__overlay .btn--dark:hover { background: #d9dbde; }
+.full-image__overlay .btn--line { border-color: var(--white); color: var(--white); }
+.full-image__overlay .btn--line:hover { background: var(--white); color: var(--black); }
+/* Natural-ratio images can be short on phones; give the overlay room. */
+@media (max-width: 620px) {
+	.full-image--overlay.full-image--h-natural .full-image__img { min-height: 24rem; object-fit: cover; }
+}
+
+.full-image__caption { margin-top: 0.9rem; color: var(--grey); font-size: 0.92rem; }

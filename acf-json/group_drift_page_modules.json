@@ -1388,6 +1388,771 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_full_image": {
+                    "key": "layout_drift_full_image",
+                    "name": "full_image",
+                    "label": "Full-width image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_full_image_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_image",
+                            "label": "Image",
+                            "name": "image",
+                            "aria_label": "",
+                            "type": "image",
+                            "instructions": "At least 2400px wide for edge to edge. Set its alt text in the Media Library (ignored when overlay text is on).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_width",
+                            "label": "Width",
+                            "name": "width",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full": "Edge to edge",
+                                "contained": "Page width (rounded corners)"
+                            },
+                            "default_value": "full",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_height",
+                            "label": "Height",
+                            "name": "height",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "natural": "Natural (whole image)",
+                                "short": "Short crop",
+                                "medium": "Medium crop",
+                                "tall": "Tall crop"
+                            },
+                            "default_value": "natural",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_focal_point",
+                            "label": "Keep in view",
+                            "name": "focal_point",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Which part of the image stays visible when cropped.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_height",
+                                        "operator": "!=",
+                                        "value": "natural"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "34",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "center": "Centre",
+                                "top": "Top",
+                                "bottom": "Bottom",
+                                "left": "Left",
+                                "right": "Right"
+                            },
+                            "default_value": "center",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_caption",
+                            "label": "Caption",
+                            "name": "caption",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional line under the image.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_show_overlay",
+                            "label": "Overlay text",
+                            "name": "show_overlay",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "Heading, text and buttons on top of the image, on a dark gradient.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_overlay_position",
+                            "label": "Text position",
+                            "name": "overlay_position",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_show_overlay",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "bottom-left": "Bottom left",
+                                "top-left": "Top left",
+                                "center": "Centre"
+                            },
+                            "default_value": "bottom-left",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_overlay_strength",
+                            "label": "Darkening",
+                            "name": "overlay_strength",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Go stronger if the text is hard to read on a bright photo.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_show_overlay",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Light",
+                                "medium": "Medium",
+                                "strong": "Strong"
+                            },
+                            "default_value": "medium",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_show_overlay",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the eyebrow rule and \"Accent\" buttons.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_show_overlay",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "music",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_show_overlay",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_show_overlay",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_full_image"
+                        },
+                        {
+                            "key": "field_drift_full_image_buttons",
+                            "label": "Buttons",
+                            "name": "buttons",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Use \"Black\" or \"Outline\" — they turn white over the image — or \"Accent\".",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_full_image_show_overlay",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 2,
+                            "collapsed": "field_drift_full_image_buttons_link",
+                            "button_label": "Add button",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_full_image_buttons_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria_label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_drift_full_image_buttons"
+                                },
+                                {
+                                    "key": "field_drift_full_image_buttons_style",
+                                    "label": "Style",
+                                    "name": "style",
+                                    "aria_label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "dark": "Black",
+                                        "line": "Outline",
+                                        "accent": "Accent (suite colour)",
+                                        "line-light": "Outline, light (black backgrounds)"
+                                    },
+                                    "default_value": "dark",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_drift_full_image_buttons"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_full_image"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_drift_video": {
+                    "key": "layout_drift_video",
+                    "name": "video",
+                    "label": "Video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_video_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the play button and eyebrow rule.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "music",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_lead",
+                            "label": "Intro",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_source",
+                            "label": "Video from",
+                            "name": "source",
+                            "aria_label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "embed": "YouTube or Vimeo link",
+                                "file": "Upload a video file"
+                            },
+                            "default_value": "embed",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "layout": "horizontal",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_width",
+                            "label": "Width",
+                            "name": "width",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "narrow": "Narrow (reading width)",
+                                "wide": "Wide (page width)"
+                            },
+                            "default_value": "narrow",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_video_url",
+                            "label": "YouTube or Vimeo link",
+                            "name": "video_url",
+                            "aria_label": "",
+                            "type": "url",
+                            "instructions": "Paste the normal page link, e.g. https://www.youtube.com/watch?v=… or https://vimeo.com/…. The player only loads when someone clicks play.",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_video_source",
+                                        "operator": "==",
+                                        "value": "embed"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_video_file",
+                            "label": "Video file",
+                            "name": "video_file",
+                            "aria_label": "",
+                            "type": "file",
+                            "instructions": "MP4 (H.264) plays everywhere. Keep it small — under about 20 MB.",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_video_source",
+                                        "operator": "==",
+                                        "value": "file"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "mp4,webm",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_poster",
+                            "label": "Poster image",
+                            "name": "poster",
+                            "aria_label": "",
+                            "type": "image",
+                            "instructions": "Shown before the video plays. Recommended for YouTube/Vimeo — without one the player is a black tile with a play button. 16:9, at least 1600px wide.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_video_title",
+                            "label": "Video title",
+                            "name": "video_title",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "For screen readers (\"Play video: …\"). Blank = the heading.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_video"
+                        },
+                        {
+                            "key": "field_drift_video_caption",
+                            "label": "Caption",
+                            "name": "caption",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional line under the video.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_video"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_pricing": {
                     "key": "layout_drift_pricing",
                     "name": "pricing",
@@ -1939,6 +2704,211 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_testimonials": {
+                    "key": "layout_drift_testimonials",
+                    "name": "testimonials",
+                    "label": "Testimonials",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_testimonials_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_testimonials"
+                        },
+                        {
+                            "key": "field_drift_testimonials_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_testimonials"
+                        },
+                        {
+                            "key": "field_drift_testimonials_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the quote marks and eyebrow rule.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "music",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_testimonials"
+                        },
+                        {
+                            "key": "field_drift_testimonials_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_testimonials"
+                        },
+                        {
+                            "key": "field_drift_testimonials_lead",
+                            "label": "Intro",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_testimonials"
+                        },
+                        {
+                            "key": "field_drift_testimonials_testimonials",
+                            "label": "Testimonials",
+                            "name": "testimonials",
+                            "aria_label": "",
+                            "type": "relationship",
+                            "instructions": "Pick and drag to reorder. Leave empty to show all (wp-admin → Testimonials, in Order).",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "drift_testimonial"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search"
+                            ],
+                            "return_format": "id",
+                            "min": "",
+                            "max": "",
+                            "elements": "",
+                            "bidirectional": 0,
+                            "bidirectional_target": [],
+                            "parent_layout": "layout_drift_testimonials"
+                        },
+                        {
+                            "key": "field_drift_testimonials_limit",
+                            "label": "How many",
+                            "name": "limit",
+                            "aria_label": "",
+                            "type": "number",
+                            "instructions": "When showing all: the first N in order. Blank or 0 = all.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": 0,
+                            "max": "",
+                            "placeholder": "",
+                            "step": 1,
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_testimonials"
+                        },
+                        {
+                            "key": "field_drift_testimonials_columns",
+                            "label": "Columns",
+                            "name": "columns",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Fewer columns on smaller screens.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1": "1 (large quote)",
+                                "2": "2",
+                                "3": "3"
+                            },
+                            "default_value": "3",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_testimonials"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_faq": {
                     "key": "layout_drift_faq",
                     "name": "faq",
@@ -2418,5 +3388,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1791558000
+    "modified": 1791568800
 }

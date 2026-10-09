@@ -21,6 +21,8 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-03 | Hero CSS also loads on 404, app pages and the no-module front page | Those templates reuse `.hero` / `.hero__lead`. |
 | 2026-10-03 | Front page modules seeded once via `drift_create_modules_seeded` option | Upgrading sites keep the same look with no manual rebuild. |
 | 2026-10-03 | Theme meta/OG tags skipped when an SEO plugin is active | Avoid duplicate meta descriptions. |
+| 2026-10-09 | Video embeds are click-to-play (iframe injected by jQuery on click), youtube-nocookie / Vimeo dnt | No third-party requests or cookies before the visitor asks; better LCP. Iframe src is built server-side and whitelisted again in JS. |
+| 2026-10-09 | Testimonials are an admin-only CPT, grid only, no app link, no Review schema | Client choice (grid, no app link). Self-serving Review schema isn't eligible for Google stars. |
 | 2026-10-09 | Team is an admin-only CPT (`public: false`), shown only via the Team module | Small team; no thin profile pages in the sitemap. Bio sits in a `<details>` toggle. |
 | 2026-10-09 | Apps use Page modules; app hero stays automatic above them; editor hidden on apps | Same builder everywhere. `hide_on_screen` is set on both Page modules and App details because ACF takes it from the first group on screen and both are `menu_order` 0. |
 | 2026-10-09 | Cards module can show manual cards or apps; pricing price is free text | Covers features/services and app picks with one module. Free text allows "From £…", "POA", "Free". |
@@ -39,6 +41,7 @@ Running record of decisions, state and open issues. Newest first.
 - [ ] Set the contact recipient in Drift Settings (defaults to the admin email).
 - [ ] Create T&Cs / Privacy / Cookies pages and assign them to the "Footer legal links" menu.
 - [ ] Seeded apps keep their editor content until it's moved into a Content module (editor is now hidden on apps).
+- [ ] **Cookiebot:** check its auto-blocker doesn't block the click-to-play YouTube/Vimeo iframe. If it does, add consent markup or treat the click as the consent moment.
 - [ ] Pricing ticks / badge use the suite accent; SEO green (#57E35B) on white is low contrast. Fine as decoration, but don't rely on it for meaning.
 
 ## Gotchas

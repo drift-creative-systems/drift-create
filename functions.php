@@ -7,7 +7,7 @@
  * WP Agency Kit #1F7BFF, SEO #57E35B).
  *
  * Pages are built from ACF Flexible Content modules (modules/{layout}/).
- * Apps and Team are post types with ACF "details" field groups. Sitewide
+ * Apps, Team and Testimonials are post types with ACF "details" field groups. Sitewide
  * settings live under Drift Settings (ACF options page).
  *
  * On first activation the theme seeds the apps and a Home page built from
@@ -26,6 +26,7 @@ require_once get_theme_file_path( 'inc/setup.php' );
 require_once get_theme_file_path( 'inc/acf.php' );
 require_once get_theme_file_path( 'inc/apps.php' );
 require_once get_theme_file_path( 'inc/team.php' );
+require_once get_theme_file_path( 'inc/testimonials.php' );
 require_once get_theme_file_path( 'inc/brand.php' );
 require_once get_theme_file_path( 'inc/meta.php' );
 require_once get_theme_file_path( 'inc/contact.php' );

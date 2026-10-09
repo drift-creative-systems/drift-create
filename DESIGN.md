@@ -121,7 +121,10 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 | App spotlight | `spotlight` | **black** | "The only place the accent leads." Steps, flow illustration. |
 | Split text | `split_text` | white | Heading left, WYSIWYG right (the About section). |
 | Image + text | `image_text` | white / soft | Image left or right. |
+| Testimonials | `testimonials` | white | `.quote` cards on `--soft`, accent opening quote mark, round 3rem headshot. 1 column = large quote. |
 | Team | `team` | white | `.member` cards in 3/4 columns: square photo (initials tile if none) with a 4px suite-accent base line, `<details>` bio toggle (FAQ plus/minus), links underlined in the accent. No suite = black. |
+| Full-width image | `full_image` | image | `.full-image--{full|contained} --h-{natural|short|medium|tall} --focus-*`. Overlay = white text on a black gradient (`--shade` 0.55/0.7/0.85, `.full-image--shade-*`); buttons inverted as on the CTA band. Image alt is emptied when overlay text is on. |
+| Video | `video` | white | 16:9 black frame, radius. YouTube/Vimeo: poster + accent play button, iframe injected on click (`assets/site.js`). Files: native `<video controls>`. Narrow = 56rem. |
 | Pricing table | `pricing` | white | `.plan` cards; the highlighted plan is black with an accent button and badge. Ticks use `--app`. |
 | FAQ | `faq` | white | `<details>` accordion, optional FAQPage schema. |
 | CTA band | `cta` | **black** | Pick an accent suite; dark/line buttons are inverted on black. |

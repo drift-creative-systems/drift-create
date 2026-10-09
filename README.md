@@ -29,6 +29,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | Page layout and copy | **Pages → (page) → Page modules** |
 | Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box, **Page modules** = app page body, Page Attributes → Order = card order |
 | Team members | **Team** — title = name, featured image = photo, **Team details** box (role, suite, bio, links), Page Attributes → Order = display order. No public pages; they show through the Team module. |
+| Testimonials | **Testimonials** — title = name, featured image = headshot (optional), **Testimonial details** (quote, role, company), Page Attributes → Order. No public pages; shown through the Testimonials module. |
 | Brand line, footer, contact copy and recipient, default meta description | **Drift Settings** |
 | Main menu | **Appearance → Menus** (location "Main menu"; falls back to Apps / Encore / About) |
 | Legal links (T&Cs, Privacy, Cookies) | **Appearance → Menus** (location "Footer legal links"; falls back to the Privacy Policy page from Settings → Privacy) |
@@ -44,7 +45,10 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **App spotlight** | Black section for one app: steps, app page button, demo button, optional Encore flow animation |
 | **Split text** | Heading left, rich text right |
 | **Image + text** | Image left or right, optional grey background, buttons |
+| **Testimonials** | Quote cards in 1–3 columns: all, the first N, or picked |
 | **Team** | Team members as cards: photo, name, role, suite, "Read bio" toggle, links. Everyone, picked people, or one suite |
+| **Full-width image** | Edge to edge or page width; natural or short/medium/tall crop with focal point; caption; optional overlay heading, text and buttons |
+| **Video** | YouTube/Vimeo link (click to play, privacy-enhanced) or uploaded MP4/WebM; poster, caption, narrow or wide |
 | **Pricing table** | Plans with free-text price, period, feature list and button; highlight one with a badge |
 | **FAQ** | Accordion, optional FAQPage schema |
 | **CTA band** | Black band with heading, text, buttons and a suite accent |
@@ -68,6 +72,7 @@ drift-create/
 │   ├── acf.php            ACF JSON paths, Drift Settings options page, drift_option(), choice filters
 │   ├── apps.php           drift_app CPT, suites, statuses, drift_app_meta(), drift_apps()
 │   ├── team.php           drift_team CPT (admin-only), drift_team_meta(), drift_team_members()
+│   ├── testimonials.php   drift_testimonial CPT (admin-only), drift_testimonial_meta(), drift_testimonials()
 │   ├── brand.php          Brand name/line, logo mark SVG, favicons, document title
 │   ├── meta.php           Meta description + OG (skipped if an SEO plugin is active)
 │   ├── contact.php        admin-post form handler → wp_mail, drift_contact_form()

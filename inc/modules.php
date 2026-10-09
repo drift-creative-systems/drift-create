@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function drift_module_layouts(): array {
-	return [ 'hero', 'content', 'app_suites', 'cards', 'spotlight', 'split_text', 'image_text', 'pricing', 'team', 'faq', 'cta', 'contact' ];
+	return [ 'hero', 'content', 'app_suites', 'cards', 'spotlight', 'split_text', 'image_text', 'full_image', 'video', 'pricing', 'team', 'testimonials', 'faq', 'cta', 'contact' ];
 }
 
 /**
@@ -85,8 +85,11 @@ function drift_render_modules( int $post_id ): bool {
 			case 'spotlight':
 			case 'split_text':
 			case 'image_text':
+			case 'full_image':
+			case 'video':
 			case 'pricing':
 			case 'team':
+			case 'testimonials':
 			case 'faq':
 			case 'cta':
 			case 'contact':
@@ -183,4 +186,24 @@ function drift_buttons( $buttons, bool $big = false ): void {
 	if ( $out ) {
 		echo '<p class="btns">' . $out . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
 	}
+}
+
+/**
+ * Turns a YouTube or Vimeo page URL into a privacy-friendly embed URL that
+ * autoplays (it's only loaded after the visitor clicks play).
+ *
+ * @param string $url YouTube (watch, youtu.be, shorts, embed) or Vimeo URL.
+ * @return string Embed URL, or '' when the URL isn't recognised.
+ */
+function drift_video_embed_url( string $url ): string {
+	$url = trim( $url );
+	if ( preg_match( '~(?:youtube\.com/(?:watch\?(?:.*&)?v=|embed/|shorts/|live/)|youtu\.be/)([A-Za-z0-9_-]{11})~', $url, $m ) ) {
+		return 'https://www.youtube-nocookie.com/embed/' . $m[1] . '?autoplay=1&rel=0&modestbranding=1';
+	}
+	// vimeo.com/123, vimeo.com/123/abcdef (unlisted hash), player.vimeo.com/video/123?h=abcdef.
+	if ( preg_match( '~vimeo\.com/(?:video/)?(\d+)(?:/([A-Za-z0-9]+))?(?:.*[?&]h=([A-Za-z0-9]+))?~', $url, $m ) ) {
+		$hash = ( $m[2] ?? '' ) ?: ( $m[3] ?? '' );
+		return 'https://player.vimeo.com/video/' . $m[1] . '?autoplay=1&dnt=1' . ( $hash ? '&h=' . $hash : '' );
+	}
+	return '';
 }

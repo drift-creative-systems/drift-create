@@ -24,17 +24,18 @@ FILE MAP
 - inc/acf.php .......... JSON paths, options page "drift-settings", drift_option(), choice filters, no-ACF notice
 - inc/apps.php ......... drift_app CPT, drift_suites(), drift_app_statuses(), drift_app_meta(), drift_apps(), drift_app_is_available()
 - inc/team.php ......... drift_team CPT (public false, show_ui), drift_team_meta(), drift_team_members( $ids, $suite )
+- inc/testimonials.php . drift_testimonial CPT (public false, show_ui), drift_testimonial_meta(), drift_testimonials( $ids, $limit )
 - inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), favicons, title parts
 - inc/meta.php ......... meta description + OG (skipped if Yoast/Rank Math/AIOSEO/SEOPress)
 - inc/contact.php ...... drift_contact_handler() (admin-post, nonce, honeypot, wp_mail), drift_contact_form()
-- inc/modules.php ...... drift_module_layouts(), drift_page_layouts(), drift_layouts_for_request(), drift_enqueue_module_style(), drift_render_modules(), drift_layout_has_h1(), drift_h1_used(), drift_section_id(), drift_accent_style(), drift_buttons()
+- inc/modules.php ...... drift_video_embed_url(), drift_module_layouts(), drift_page_layouts(), drift_layouts_for_request(), drift_enqueue_module_style(), drift_render_modules(), drift_layout_has_h1(), drift_h1_used(), drift_section_id(), drift_accent_style(), drift_buttons()
 - inc/upgrade.php ...... first-run seed, 0.1→0.2 and 0.2→0.3 upgrades
 - inc/seed.php ......... seed content (apps, Home page, Home modules)
 - inc/updates.php ...... GitHub release updates (PucFactory, slug drift-create, release asset drift-create.zip)
 - vendor/ .............. Composer, committed. Don't edit; change composer.json and run composer install.
 - modules/{layout}/module.php (+ module.css)
 - parts/app-card.php, parts/app-suites.php, parts/contact.php, parts/encore-flow.php
-- acf-json/group_drift_page_modules.json, group_drift_app_details.json, group_drift_team_details.json, group_drift_settings.json
+- acf-json/group_drift_page_modules.json, group_drift_app_details.json, group_drift_team_details.json, group_drift_testimonial_details.json, group_drift_settings.json
 
 ACF FIELD GROUPS
 1. Page modules (pages + drift_app) — flexible content "page_modules". Hides the editor (hide_on_screen: the_content; also set on App details so it holds on app screens).
@@ -46,12 +47,16 @@ ACF FIELD GROUPS
    split_text .. section_id, heading, body (wysiwyg)
    image_text .. section_id, image (id), image_position (left|right), soft_background, eyebrow, heading, body, buttons
    team ........ section_id, eyebrow, accent_suite, heading, lead, members (relationship ids; empty = all), only_suite, columns (3|4)
+   full_image .. section_id, image* (id), width (full|contained), height (natural|short|medium|tall), focal_point, caption, show_overlay, overlay_position (bottom-left|top-left|center), overlay_strength (light|medium|strong), eyebrow, accent_suite, heading, text, buttons
+   video ....... section_id, eyebrow, accent_suite, heading, lead, source (embed|file), width (narrow|wide), video_url, video_file (id), poster (id), video_title, caption
+   testimonials  section_id, eyebrow, accent_suite, heading, lead, testimonials (relationship ids; empty = all), limit, columns (1|2|3)
    pricing ..... section_id, eyebrow, accent_suite, heading, lead, plans[name*, price, period, description, features (one per line), link, featured, badge], note
    faq ......... section_id, eyebrow, heading, items[question, answer], output_schema
    cta ......... section_id, accent_suite, eyebrow, heading*, text, buttons
    contact ..... eyebrow, heading, lead (blank → Drift Settings)
    Button styles: dark | line | accent | line-light
 2. App details (drift_app, side) — drift_suite, drift_tagline, drift_status, drift_emoji, drift_accent, drift_demo
+2c. Testimonial details (drift_testimonial) — drift_quote*, drift_role, drift_company. Read via drift_testimonial_meta().
 2b. Team details (drift_team) — drift_role, drift_suite (optional), drift_bio, drift_links[link]. Read via drift_team_meta() (reads repeater meta drift_links_{i}_link directly).
    Same keys as the pre-ACF meta box. Read via drift_app_meta() / get_post_meta(), not get_field().
 3. Drift Settings (options page drift-settings) — brand_line, footer_tagline, footer_links[link], contact_recipient, contact_eyebrow, contact_heading, contact_lead, contact_success, default_meta_description

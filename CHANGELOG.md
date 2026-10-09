@@ -8,6 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 ### Added
 - **Team** post type (`drift_team`, `inc/team.php`): admin-only (no public URLs). Title = name, featured image = photo, Page Attributes → Order = display order.
 - **Team details** ACF field group: role, optional suite (sets the accent), bio, and up to five links (LinkedIn, website, email). Field names are the meta keys, read with `drift_team_meta()` so they work without ACF.
+- **Testimonials** post type (`drift_testimonial`, `inc/testimonials.php`): admin-only. Title = name, featured image = headshot, plus quote, role and company (**Testimonial details** ACF group, read with `drift_testimonial_meta()`).
+- **Testimonials** page module (`modules/testimonials/`): quote cards in 1, 2 or 3 columns. Shows all, the first N in order, or picked testimonials.
+- **Video** page module (`modules/video/`): a YouTube/Vimeo link or an uploaded MP4/WebM, with heading, intro, poster, caption and narrow/wide width. YouTube/Vimeo are click-to-play: nothing loads from them until the play button is pressed, then `youtube-nocookie.com` / Vimeo `dnt=1` is used (`drift_video_embed_url()`, `assets/site.js`).
+- **Full-width image** page module (`modules/full_image/`): edge to edge or page width; natural ratio or short/medium/tall crop with a focal point; optional caption; optional overlay eyebrow, heading, text and buttons with position and darkening options.
 - **Team** page module (`modules/team/`): eyebrow, heading, intro and member cards (photo or initials, name, role, suite, "Read bio" toggle, links). Shows everyone in order, picked members, or one suite only; 3 or 4 columns.
 
 ## [1.2.0] - 2026-10-09

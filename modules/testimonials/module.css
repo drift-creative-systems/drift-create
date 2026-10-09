@@ -1,0 +1,17 @@
+/* Module: Testimonials — quote cards; the accent draws the opening mark. */
+.testimonials__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); align-items: start; }
+.testimonials__grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.testimonials__grid--1 { grid-template-columns: minmax(0, 46rem); }
+.quote { display: flex; flex-direction: column; height: 100%; margin: 0; padding: clamp(1.5rem, 2.5vw, 2.25rem); background: var(--soft); border-radius: var(--radius); }
+.quote__text { position: relative; margin: 0 0 1.75rem; padding-top: 2.25rem; font-family: var(--font-primary); font-weight: 500; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); line-height: 1.5; letter-spacing: -0.01em; }
+/* Big opening quote mark in the suite accent; decorative. */
+.quote__text::before { content: "\201C"; position: absolute; top: -0.35rem; left: -0.1rem; font-size: 4rem; line-height: 1; font-weight: 600; color: var(--app); }
+.quote__text p { margin: 0 0 0.75em; }
+.quote__text p:last-child { margin-bottom: 0; }
+.testimonials__grid--1 .quote__text { font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); line-height: 1.4; }
+.quote__by { display: flex; align-items: center; gap: 0.85rem; margin-top: auto; }
+.quote__photo { flex: none; width: 3rem; height: 3rem; border-radius: 50%; object-fit: cover; background: var(--white); }
+.quote__name { display: block; font-style: normal; font-family: var(--font-primary); font-weight: 600; }
+.quote__role { display: block; color: var(--grey); font-size: 0.92rem; }
+@media (max-width: 960px) { .testimonials__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .testimonials__grid--1 { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .testimonials__grid, .testimonials__grid--2 { grid-template-columns: 1fr; } }
