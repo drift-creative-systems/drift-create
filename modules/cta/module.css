@@ -1,15 +1,15 @@
-/* Module: CTA band — black, accent on the eyebrow rule and accent buttons. */
-.cta { background: var(--black); color: var(--white); }
-.cta .lead { color: #b6bac0; }
-.cta .eyebrow--accent { color: var(--white); }
-.cta :focus-visible { outline-color: var(--white); }
+/* Module: CTA band — black (dark grey in dark mode), accent on the eyebrow rule and accent buttons. */
+.cta { background: var(--band); color: var(--band-fg); }
+.cta .lead { color: var(--band-muted); }
+.cta .eyebrow--accent { color: var(--band-fg); }
+.cta :focus-visible { outline-color: var(--band-fg); }
 .cta__inner { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem clamp(2rem, 6vw, 5rem); }
 .cta__inner > div { max-width: 44rem; }
 .cta .h2 { margin-bottom: 0; }
 .cta .lead { margin: 1rem 0 0; }
 .cta .btns { margin: 0; }
-/* "Dark" buttons would vanish on black — show them as white. */
-.cta .btn--dark { background: var(--white); color: var(--black); }
+/* "Dark" buttons would vanish on the band — show them in the band's text colour. */
+.cta .btn--dark { background: var(--band-fg); color: var(--band); }
 .cta .btn--dark:hover { background: #d9dbde; }
-.cta .btn--line { border-color: var(--white); color: var(--white); }
-.cta .btn--line:hover { background: var(--white); color: var(--black); }
+.cta .btn--line { border-color: var(--band-fg); color: var(--band-fg); }
+.cta .btn--line:hover { background: var(--band-fg); color: var(--band); }

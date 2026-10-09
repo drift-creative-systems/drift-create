@@ -8,7 +8,7 @@
 .faq__q::before, .faq__q::after { content: ""; position: absolute; top: 50%; right: 0.5rem; width: 0.9rem; height: 2px; margin-top: -1px; border-radius: 2px; background: currentColor; transition: transform 0.25s var(--ease); }
 .faq__q::after { transform: rotate(90deg); }
 .faq__item[open] .faq__q::after { transform: rotate(0deg); }
-.faq__q:hover { color: var(--grey); }
-.faq__a { padding: 0 2.75rem 1.5rem 0; color: var(--grey); font-size: 1.05rem; }
-.faq__a strong { color: var(--black); }
+.faq__q:hover { color: var(--muted); }
+.faq__a { padding: 0 2.75rem 1.5rem 0; color: var(--muted); font-size: 1.05rem; }
+.faq__a strong { color: var(--fg); }
 @media (max-width: 860px) { .faq__grid { grid-template-columns: 1fr; } }

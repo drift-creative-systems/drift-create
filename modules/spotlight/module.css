@@ -1,11 +1,11 @@
 /* Module: App spotlight — black, the only place the accent leads. */
-.spotlight { background: var(--black); color: var(--white); }
-.spotlight .lead { color: #b6bac0; }
-.spotlight .eyebrow--accent { color: var(--white); }
-.spotlight :focus-visible { outline-color: var(--white); }
+.spotlight { background: var(--band); color: var(--band-fg); }
+.spotlight .lead { color: var(--band-muted); }
+.spotlight .eyebrow--accent { color: var(--band-fg); }
+.spotlight :focus-visible { outline-color: var(--band-fg); }
 .spotlight__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
 .steps { margin: 2rem 0 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: 1.1rem; }
-.steps li { counter-increment: step; display: grid; grid-template-columns: 2.5rem 1fr; gap: 0.25rem 0.9rem; color: #b6bac0; }
-.steps li b { color: var(--white); font-family: var(--font-primary); font-weight: 500; }
-.steps li::before { content: counter(step); grid-row: span 2; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1.5px solid var(--app); color: var(--white); font-family: var(--font-primary); font-weight: 500; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 2.5rem 1fr; gap: 0.25rem 0.9rem; color: var(--band-muted); }
+.steps li b { color: var(--band-fg); font-family: var(--font-primary); font-weight: 500; }
+.steps li::before { content: counter(step); grid-row: span 2; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1.5px solid var(--app); color: var(--band-fg); font-family: var(--font-primary); font-weight: 500; }
 @media (max-width: 900px) { .spotlight__grid { grid-template-columns: 1fr; } }

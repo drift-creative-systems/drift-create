@@ -3,6 +3,18 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.6.0] - 2026-10-09
+
+### Added
+- **Dark mode.** The site follows the visitor's OS light / dark setting. A sun / moon toggle in the header (right of "Book a demo"; left of the burger on mobile) overrides it, and the choice is remembered (`localStorage` key `drift-theme`). A small inline script in `<head>` (`inc/setup.php`) applies a saved choice before first paint, so there's no flash.
+- **Header logo (dark mode)** upload on Drift Settings → Brand (`header_logo_dark`). Used in dark mode when a Header logo is set; blank = the built-in SVG logo in dark mode.
+- `theme-color` meta for each colour scheme.
+
+### Changed
+- All CSS now reads theme tokens (`--bg`, `--fg`, `--muted`, `--surface`, `--band`, `--band-fg`…) instead of `--black` / `--white`. Light mode looks the same as before. Dark values are listed in DESIGN.md §2.
+- In dark mode the black bands (spotlight, CTA, footer, featured card / plan, hero tile, app icon) lift to `#17181A` so they still stand off the page.
+- The flow illustration, full-width image overlays and video frames keep fixed colours in both themes.
+
 ## [1.5.0] - 2026-10-09
 
 ### Added

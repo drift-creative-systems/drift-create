@@ -23,8 +23,38 @@ Implementation: CSS custom properties in `assets/site.css` `:root`. Use the toke
 | `--grey` | `#7A7F87` | Secondary text, eyebrows, labels (brand core grey) |
 | `--line` | `#E3E5E8` | Borders, dividers |
 | `--soft` | `#F5F6F7` | Contact background, avatar / initial tiles, pills, "grey background" option |
-| `#B6BAC0` | (inline) | Secondary text **on black** (spotlight, CTA, featured card) |
-| `#2A2B2E` | (inline) | Dark-button hover; dividers on black |
+
+### Theme tokens (light / dark)
+
+Components use these, **not** `--black` / `--white` directly. Light values are on `:root`; dark values are in `assets/site.css` twice (the `prefers-color-scheme` block and `[data-theme="dark"]`). **Keep both dark blocks identical.**
+
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--bg` | `#FFFFFF` | `#0B0C0D` | Page background |
+| `--fg` | `#000000` | `#F2F3F5` | Text, `.btn--dark` background, `.btn--line`, focus outline |
+| `--muted` | `#7A7F87` | `#9EA3AA` | Secondary text, eyebrows, labels |
+| `--surface` | `#FFFFFF` | `#111214` | Cards, plans, form fields, notices |
+| `--line` | `#E3E5E8` | `#26282B` | Borders, dividers |
+| `--soft` | `#F5F6F7` | `#141517` | Contact, quotes, tiles, pills |
+| `--header-bg` | white 90% | `#0B0C0D` 85% | Sticky header |
+| `--btn-hover` | `#2A2B2E` | `#D9DBDE` | `.btn--dark` hover |
+| `--band` | `#000000` | `#17181A` | Spotlight, CTA, footer, featured card / plan, hero tile, app icon |
+| `--band-fg` | `#FFFFFF` | `#F2F3F5` | Text on bands |
+| `--band-muted` | `#B6BAC0` | `#B6BAC0` | Secondary text on bands |
+| `--band-grey` | `#7A7F87` | `#9EA3AA` | Footer labels, tagline, copyright (keeps AA on the lighter dark band) |
+| `--band-line` | `#2A2B2E` | `#2E3034` | Dividers on bands |
+| `--band-edge` | `#000000` | `#2E3034` | Border of featured card / plan (so they stand off the dark page) |
+| `--err` / `--err-line` | `#B32D2E` / `#D63638` | `#FF8A8A` / `#FF6B6B` | Form error notice |
+
+`.light-only` / `.dark-only` show markup in one theme only (header logo pair, toggle icons).
+
+**Fixed in both themes (on purpose):** the Encore flow illustration, full-width image overlays (white on a black gradient over a photo), video frames, and accent buttons (black text on the accent).
+
+### Dark mode
+
+- No saved choice → follows the OS (`prefers-color-scheme`).
+- The header toggle (`.theme-toggle`, `assets/site.js`) sets `data-theme="light|dark"` on `<html>` and saves it in `localStorage` (`drift-theme`). A tiny inline script in `<head>` (`inc/setup.php`) applies it before first paint.
+- Header logo: an uploaded **Header logo** is shown in light mode. In dark mode the theme shows **Header logo (dark mode)** if set, otherwise the built-in SVG lockup.
 
 ### Suite accents (`--app`)
 
@@ -106,7 +136,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 - **App card** `.card` (`parts/app-card.php`) — white, 1px line, lifts 3px on hover, whole card clickable (title link `::after`). `--featured` is black and spans 2×2.
 - **Encore flow** `.flow` (`parts/encore-flow.php`) — decorative Airtable → Publish → site animation. `aria-hidden`; the steps beside it carry the meaning.
 - **Contact form** `.contact` / `.form` (`parts/contact.php`) — soft grey section, 10px-radius fields, honeypot `.hp`.
-- **Header** `.top` — sticky, 90% white with blur. **Footer** `.foot` — black, large spaced wordmark. Legal menu (`.foot__legal`) sits right of the copyright line in `.foot__base`.
+- **Header** `.top` — sticky, 90% `--bg` with blur. Light / dark toggle (`.theme-toggle`, round 2.75rem, moon / sun icon, `aria-pressed` = dark on) sits right of "Book a demo"; on mobile, left of the burger. **Footer** `.foot` — black, large spaced wordmark. Legal menu (`.foot__legal`) sits right of the copyright line in `.foot__base`.
 
 ---
 
@@ -144,7 +174,8 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 
 ## 8. Accessibility rules
 
-- Visible focus: 2px outline, black (white on black sections).
+- Visible focus: 2px outline in `--fg` (`--band-fg` on bands).
+- Grey text in dark mode (`--muted` `#9EA3AA` on `#0B0C0D`) is about 7.5:1, so it passes AA.
 - Skip link, `main` focus target, `aria-expanded` menu toggle, Esc closes the menu.
 - Decorative SVG and avatar / icon tiles are `aria-hidden` (the name is always next to them).
 - One H1 per page (first hero or content module, page title, or a visually hidden H1 on the front page).

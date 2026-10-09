@@ -33,6 +33,15 @@ function drift_asset_version( string $file ): string {
 	return file_exists( $path ) ? (string) filemtime( $path ) : DRIFT_CREATE_VERSION;
 }
 
+/*
+ * Apply the visitor's saved light / dark choice before first paint. Inline on
+ * purpose: the deferred site.js runs too late and the page would flash the
+ * other theme. The toggle itself lives in assets/site.js.
+ */
+add_action( 'wp_head', static function () {
+	wp_print_inline_script_tag( "(function(){try{var t=localStorage.getItem('drift-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();" );
+}, 0 );
+
 add_action( 'wp_enqueue_scripts', static function () {
 	wp_enqueue_style( 'drift-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap', [], null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 	wp_enqueue_style( 'drift-site', get_theme_file_uri( 'assets/site.css' ), [ 'drift-fonts' ], drift_asset_version( 'assets/site.css' ) );

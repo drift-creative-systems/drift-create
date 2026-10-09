@@ -24,5 +24,7 @@ add_action( 'wp_head', static function () {
 	printf( '<meta property="og:image" content="%s">' . "\n", esc_url( get_theme_file_uri( 'assets/brand/og-image.png' ) ) );
 	echo '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">' . "\n";
 	echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
-	echo '<meta name="theme-color" content="#000000">' . "\n";
+	// Browser chrome: black on the light theme, the page colour on the dark one.
+	echo '<meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">' . "\n";
+	echo '<meta name="theme-color" content="#0b0c0d" media="(prefers-color-scheme: dark)">' . "\n";
 }, 2 );

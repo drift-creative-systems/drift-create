@@ -38,7 +38,7 @@ function drift_mark( string $class = 'mark' ): string {
 }
 
 /**
- * An uploaded logo from Drift Settings → Brand (header_logo, footer_logo,
+ * An uploaded logo from Drift Settings → Brand (header_logo, header_logo_dark, footer_logo,
  * hero_logo). Empty alt: every spot it's used is already labelled (link
  * aria-label) or aria-hidden.
  *

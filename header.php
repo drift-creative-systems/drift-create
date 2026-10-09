@@ -14,10 +14,23 @@
 			<?php
 			$drift_header_logo = drift_logo( 'header_logo', 'brand__logo', true );
 			if ( $drift_header_logo ) :
-				echo $drift_header_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image().
-			else :
-				echo drift_mark( 'brand__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG.
+				// Uploaded logos are made for the light bar. In dark mode show the
+				// dark-mode upload, or the built-in lockup (it follows the text colour).
+				$drift_header_logo_dark = drift_logo( 'header_logo_dark', 'brand__logo', true );
 				?>
+				<span class="brand__set light-only"><?php echo $drift_header_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image(). ?></span>
+				<span class="brand__set dark-only">
+					<?php
+					if ( $drift_header_logo_dark ) :
+						echo $drift_header_logo_dark; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image().
+					else :
+						echo drift_mark( 'brand__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG.
+						?>
+						<span class="brand__word">DRIFT<span class="brand__line"><?php echo esc_html( drift_brand_line() ); ?></span></span>
+					<?php endif; ?>
+				</span>
+			<?php else : ?>
+				<?php echo drift_mark( 'brand__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?>
 				<span class="brand__word">DRIFT<span class="brand__line"><?php echo esc_html( drift_brand_line() ); ?></span></span>
 			<?php endif; ?>
 		</a>
@@ -36,6 +49,12 @@
 			?>
 			<a class="btn btn--dark" href="<?php echo esc_url( home_url( '/#contact' ) ); ?>">Book a demo</a>
 		</nav>
+		<?php // Hidden until assets/site.js wires it up; aria-pressed = dark mode on. ?>
+		<button class="theme-toggle" type="button" aria-pressed="false" title="Dark mode" hidden>
+			<svg class="light-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+			<svg class="dark-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+			<span class="sr">Dark mode</span>
+		</button>
 	</div>
 </header>
 <main id="main" tabindex="-1">

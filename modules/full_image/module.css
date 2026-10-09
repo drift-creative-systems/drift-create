@@ -1,4 +1,5 @@
-/* Module: Full-width image — width, height crop, focal point, optional overlay. */
+/* Module: Full-width image — width, height crop, focal point, optional overlay.
+   The overlay sits on a photo, so it keeps fixed white-on-black in both themes. */
 .full-image { padding-block: clamp(2rem, 5vw, 4rem); }
 .full-image--full { padding-block: 0; }
 .full-image__figure { margin-block: 0; }
@@ -42,4 +43,4 @@
 	.full-image--overlay.full-image--h-natural .full-image__img { min-height: 24rem; object-fit: cover; }
 }
 
-.full-image__caption { margin-top: 0.9rem; color: var(--grey); font-size: 0.92rem; }
+.full-image__caption { margin-top: 0.9rem; color: var(--muted); font-size: 0.92rem; }

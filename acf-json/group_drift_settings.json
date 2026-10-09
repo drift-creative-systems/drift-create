@@ -65,11 +65,36 @@
             "name": "header_logo",
             "aria_label": "",
             "type": "image",
-            "instructions": "Full logo for the white header bar (replaces the mark and \"DRIFT\" text). Shown about 40px tall. Blank = built-in logo.",
+            "instructions": "Full logo for the header bar in light mode (replaces the mark and \"DRIFT\" text). Shown about 40px tall. Blank = built-in logo.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png, jpg, jpeg, webp, svg",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_drift_settings_header_logo_dark",
+            "label": "Header logo (dark mode)",
+            "name": "header_logo_dark",
+            "aria_label": "",
+            "type": "image",
+            "instructions": "Light version of the header logo for dark mode. Only used when a Header logo is set. Blank = built-in logo in dark mode.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -94,7 +119,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -119,7 +144,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -364,5 +389,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791504000
+    "modified": 1791554749
 }

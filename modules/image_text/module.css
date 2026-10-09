@@ -3,8 +3,8 @@
 .image-text__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
 .image-text__media { margin: 0; }
 .image-text__img { width: 100%; border-radius: var(--radius); }
-.image-text__copy .prose { margin-top: 1.25rem; color: var(--grey); }
-.image-text__copy .prose strong { color: var(--black); }
+.image-text__copy .prose { margin-top: 1.25rem; color: var(--muted); }
+.image-text__copy .prose strong { color: var(--fg); }
 .image-text--flip .image-text__media { order: 2; }
 @media (max-width: 860px) {
 	.image-text__grid { grid-template-columns: 1fr; }

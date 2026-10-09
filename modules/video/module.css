@@ -1,4 +1,5 @@
-/* Module: Video — 16:9 frame; click-to-play poster for YouTube / Vimeo. */
+/* Module: Video — 16:9 frame; click-to-play poster for YouTube / Vimeo.
+   The frame stays black in both themes, like a player. */
 .video__wrap--narrow { width: min(100% - 2 * var(--gut), 56rem); }
 .video__figure { margin: 0; }
 .video__frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius); background: var(--black); }
@@ -12,4 +13,4 @@
 .video__icon::after { content: ""; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%); border-style: solid; border-width: 0.7rem 0 0.7rem 1.15rem; border-color: transparent transparent transparent var(--black); }
 .video__play:hover .video__icon, .video__play:focus-visible .video__icon { transform: scale(1.08); }
 .video__play:focus-visible { outline: 3px solid var(--app); outline-offset: -3px; }
-.video__caption { margin-top: 0.9rem; color: var(--grey); font-size: 0.92rem; }
+.video__caption { margin-top: 0.9rem; color: var(--muted); font-size: 0.92rem; }

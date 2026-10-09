@@ -7,7 +7,7 @@
 .cards-block .card__text p, .cards-block .card__text ul, .cards-block .card__text ol { margin: 0 0 0.75em; }
 .cards-block .card__text ul, .cards-block .card__text ol { padding-left: 1.2em; }
 .cards-block .card__text > :last-child { margin-bottom: 0; }
-.cards-block .card__text strong { color: var(--black); }
+.cards-block .card__text strong { color: var(--fg); }
 /* Links in the text sit above the card's stretched link so they still work. */
 .cards-block .card__text a { position: relative; z-index: 1; }
 /* Title-less linked card: stretch the "more" link over the whole card. */
