@@ -11,8 +11,15 @@
 <header class="top">
 	<div class="wrap top__inner">
 		<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php echo esc_attr( drift_brand_name() ); ?> — home">
-			<?php echo drift_mark( 'brand__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?>
-			<span class="brand__word">DRIFT<span class="brand__line"><?php echo esc_html( drift_brand_line() ); ?></span></span>
+			<?php
+			$drift_header_logo = drift_logo( 'header_logo', 'brand__logo', true );
+			if ( $drift_header_logo ) :
+				echo $drift_header_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image().
+			else :
+				echo drift_mark( 'brand__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG.
+				?>
+				<span class="brand__word">DRIFT<span class="brand__line"><?php echo esc_html( drift_brand_line() ); ?></span></span>
+			<?php endif; ?>
 		</a>
 		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span></span><span class="sr">Menu</span></button>
 		<nav id="menu" class="menu" aria-label="Main">

@@ -60,6 +60,81 @@
             "append": ""
         },
         {
+            "key": "field_drift_settings_header_logo",
+            "label": "Header logo",
+            "name": "header_logo",
+            "aria_label": "",
+            "type": "image",
+            "instructions": "Full logo for the white header bar (replaces the mark and \"DRIFT\" text). Shown about 40px tall. Blank = built-in logo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png, jpg, jpeg, webp, svg",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_drift_settings_footer_logo",
+            "label": "Footer logo",
+            "name": "footer_logo",
+            "aria_label": "",
+            "type": "image",
+            "instructions": "Full logo for the black footer, so use a light version. Shown up to about 88px tall. Blank = built-in logo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png, jpg, jpeg, webp, svg",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_drift_settings_hero_logo",
+            "label": "Hero logo",
+            "name": "hero_logo",
+            "aria_label": "",
+            "type": "image",
+            "instructions": "Sits in the black square tile on heroes with \"Show logo\" ticked, so use a light version. Square works best. Blank = built-in mark.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png, jpg, jpeg, webp, svg",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_drift_settings_tab_footer",
             "label": "Footer",
             "name": "",
@@ -289,5 +364,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1790985600
+    "modified": 1791504000
 }

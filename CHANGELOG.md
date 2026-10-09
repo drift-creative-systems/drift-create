@@ -3,6 +3,11 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.5.0] - 2026-10-09
+
+### Added
+- **Header logo**, **Footer logo** and **Hero logo** uploads on Drift Settings → Brand (`header_logo`, `footer_logo`, `hero_logo`). Header and footer logos replace the whole lockup (mark and "DRIFT" text); the hero logo replaces the mark inside the black tile. Blank = the built-in SVG logo, as before. `drift_logo()` (`inc/brand.php`) renders them.
+
 ## [1.4.0] - 2026-10-10
 
 ### Added

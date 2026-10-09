@@ -15,8 +15,15 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 <footer class="foot">
 	<div class="wrap foot__inner">
 		<div class="foot__brand">
-			<?php echo drift_mark( 'foot__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?>
-			<p class="foot__word" aria-hidden="true">DRIFT<span><?php echo esc_html( drift_brand_line() ); ?></span></p>
+			<?php
+			$drift_footer_logo = drift_logo( 'footer_logo', 'foot__logo' );
+			if ( $drift_footer_logo ) :
+				echo $drift_footer_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image().
+			else :
+				echo drift_mark( 'foot__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG.
+				?>
+				<p class="foot__word" aria-hidden="true">DRIFT<span><?php echo esc_html( drift_brand_line() ); ?></span></p>
+			<?php endif; ?>
 			<p class="foot__tag"><?php echo esc_html( (string) drift_option( 'footer_tagline', 'Modern. Minimal. Purposeful.' ) ); ?></p>
 		</div>
 		<div class="foot__cols">

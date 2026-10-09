@@ -30,7 +30,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box (incl. **App avatar** upload), **Page modules** = app page body, Page Attributes → Order = card order |
 | Team members | **Team** — title = name, featured image = photo, **Team details** box (role, suite, bio, links), Page Attributes → Order = display order. No public pages; they show through the Team module. |
 | Testimonials | **Testimonials** — title = name, featured image = headshot (optional), **Testimonial details** (quote, role, company), Page Attributes → Order. No public pages; shown through the Testimonials module. |
-| Brand line, footer, contact copy and recipient, default meta description | **Drift Settings** |
+| Brand line, header / footer / hero logos, footer, contact copy and recipient, default meta description | **Drift Settings** |
 | Main menu | **Appearance → Menus** (location "Main menu"; falls back to Apps / Encore / About) |
 | Legal links (T&Cs, Privacy, Cookies) | **Appearance → Menus** (location "Footer legal links"; falls back to the Privacy Policy page from Settings → Privacy) |
 

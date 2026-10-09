@@ -28,7 +28,7 @@ $tag       = drift_h1_used( true ) ? 'h2' : 'h1';
 			<?php drift_buttons( get_sub_field( 'buttons' ), true ); ?>
 		</div>
 		<?php if ( $show_mark ) : ?>
-			<div class="hero__art" aria-hidden="true"><?php echo drift_mark( 'hero__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?></div>
+			<div class="hero__art" aria-hidden="true"><?php echo drift_logo( 'hero_logo', 'hero__logo', true ) ?: drift_mark( 'hero__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() or static SVG. ?></div>
 		<?php endif; ?>
 	</div>
 </section>

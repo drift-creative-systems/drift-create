@@ -25,7 +25,7 @@ FILE MAP
 - inc/apps.php ......... drift_app CPT, drift_suites(), drift_app_statuses(), drift_app_meta(), drift_apps(), drift_app_is_available(), drift_app_icon()
 - inc/team.php ......... drift_team CPT (public false, show_ui), drift_team_meta(), drift_team_members( $ids, $suite )
 - inc/testimonials.php . drift_testimonial CPT (public false, show_ui), drift_testimonial_meta(), drift_testimonials( $ids, $limit )
-- inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), favicons, title parts
+- inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), drift_logo(), favicons, title parts
 - inc/meta.php ......... meta description + OG (skipped if Yoast/Rank Math/AIOSEO/SEOPress)
 - inc/contact.php ...... drift_contact_handler() (admin-post, nonce, honeypot, wp_mail), drift_contact_form()
 - inc/modules.php ...... drift_video_embed_url(), drift_module_layouts(), drift_page_layouts(), drift_layouts_for_request(), drift_enqueue_module_style(), drift_render_modules(), drift_layout_has_h1(), drift_h1_used(), drift_section_id(), drift_accent_style(), drift_buttons()
@@ -59,7 +59,7 @@ ACF FIELD GROUPS
 2c. Testimonial details (drift_testimonial) — drift_quote*, drift_role, drift_company. Read via drift_testimonial_meta().
 2b. Team details (drift_team) — drift_role, drift_suite (optional), drift_bio, drift_links[link]. Read via drift_team_meta() (reads repeater meta drift_links_{i}_link directly).
    Same keys as the pre-ACF meta box. Read via drift_app_meta() / get_post_meta(), not get_field().
-3. Drift Settings (options page drift-settings) — brand_line, footer_tagline, footer_links[link], contact_recipient, contact_eyebrow, contact_heading, contact_lead, contact_success, default_meta_description
+3. Drift Settings (options page drift-settings) — brand_line, header_logo, footer_logo, hero_logo (image IDs, read with drift_logo()), footer_tagline, footer_links[link], contact_recipient, contact_eyebrow, contact_heading, contact_lead, contact_success, default_meta_description
 
 ADDING A MODULE
 1. Add the layout in ACF (Page modules), with a section_id field.
