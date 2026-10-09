@@ -3,6 +3,13 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.3.0] - 2026-10-09
+
+### Added
+- **Team** post type (`drift_team`, `inc/team.php`): admin-only (no public URLs). Title = name, featured image = photo, Page Attributes → Order = display order.
+- **Team details** ACF field group: role, optional suite (sets the accent), bio, and up to five links (LinkedIn, website, email). Field names are the meta keys, read with `drift_team_meta()` so they work without ACF.
+- **Team** page module (`modules/team/`): eyebrow, heading, intro and member cards (photo or initials, name, role, suite, "Read bio" toggle, links). Shows everyone in order, picked members, or one suite only; 3 or 4 columns.
+
 ## [1.2.0] - 2026-10-09
 
 ### Added

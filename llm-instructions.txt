@@ -23,6 +23,7 @@ FILE MAP
 - inc/setup.php ........ supports, menus (primary, legal), enqueue, drift_asset_version()
 - inc/acf.php .......... JSON paths, options page "drift-settings", drift_option(), choice filters, no-ACF notice
 - inc/apps.php ......... drift_app CPT, drift_suites(), drift_app_statuses(), drift_app_meta(), drift_apps(), drift_app_is_available()
+- inc/team.php ......... drift_team CPT (public false, show_ui), drift_team_meta(), drift_team_members( $ids, $suite )
 - inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), favicons, title parts
 - inc/meta.php ......... meta description + OG (skipped if Yoast/Rank Math/AIOSEO/SEOPress)
 - inc/contact.php ...... drift_contact_handler() (admin-post, nonce, honeypot, wp_mail), drift_contact_form()
@@ -33,7 +34,7 @@ FILE MAP
 - vendor/ .............. Composer, committed. Don't edit; change composer.json and run composer install.
 - modules/{layout}/module.php (+ module.css)
 - parts/app-card.php, parts/app-suites.php, parts/contact.php, parts/encore-flow.php
-- acf-json/group_drift_page_modules.json, group_drift_app_details.json, group_drift_settings.json
+- acf-json/group_drift_page_modules.json, group_drift_app_details.json, group_drift_team_details.json, group_drift_settings.json
 
 ACF FIELD GROUPS
 1. Page modules (pages + drift_app) — flexible content "page_modules". Hides the editor (hide_on_screen: the_content; also set on App details so it holds on app screens).
@@ -44,12 +45,14 @@ ACF FIELD GROUPS
    spotlight ... section_id, app* (post_object id), eyebrow, heading, lead, steps[title, text], link_label, show_demo, show_flow
    split_text .. section_id, heading, body (wysiwyg)
    image_text .. section_id, image (id), image_position (left|right), soft_background, eyebrow, heading, body, buttons
+   team ........ section_id, eyebrow, accent_suite, heading, lead, members (relationship ids; empty = all), only_suite, columns (3|4)
    pricing ..... section_id, eyebrow, accent_suite, heading, lead, plans[name*, price, period, description, features (one per line), link, featured, badge], note
    faq ......... section_id, eyebrow, heading, items[question, answer], output_schema
    cta ......... section_id, accent_suite, eyebrow, heading*, text, buttons
    contact ..... eyebrow, heading, lead (blank → Drift Settings)
    Button styles: dark | line | accent | line-light
 2. App details (drift_app, side) — drift_suite, drift_tagline, drift_status, drift_emoji, drift_accent, drift_demo
+2b. Team details (drift_team) — drift_role, drift_suite (optional), drift_bio, drift_links[link]. Read via drift_team_meta() (reads repeater meta drift_links_{i}_link directly).
    Same keys as the pre-ACF meta box. Read via drift_app_meta() / get_post_meta(), not get_field().
 3. Drift Settings (options page drift-settings) — brand_line, footer_tagline, footer_links[link], contact_recipient, contact_eyebrow, contact_heading, contact_lead, contact_success, default_meta_description
 

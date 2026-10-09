@@ -1,0 +1,27 @@
+/* Module: Team — member cards; the member's suite colour underlines the photo. */
+.team__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.5rem); }
+.team__grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.member { display: flex; flex-direction: column; }
+.member__photo { position: relative; aspect-ratio: 1; margin-bottom: 1.25rem; overflow: hidden; border-radius: var(--radius); background: var(--soft); }
+.member__img { width: 100%; height: 100%; object-fit: cover; }
+/* Keep the accent line visible over the photo. */
+.member__photo::after { content: ""; position: absolute; inset: auto 0 0; height: 4px; background: var(--app); }
+.member__initials { display: grid; place-items: center; height: 100%; font-family: var(--font-primary); font-weight: 600; font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem); letter-spacing: -0.03em; color: var(--grey); }
+.member__suite { margin: 0 0 0.4rem; font-family: var(--font-primary); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); }
+.member__name { margin: 0 0 0.25rem; font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.45rem); }
+.member__role { margin: 0; color: var(--grey); }
+.member__bio { margin-top: 1rem; border-top: 1px solid var(--line); }
+.member__bio summary { position: relative; display: block; padding: 0.75rem 1.75rem 0.75rem 0; font-family: var(--font-primary); font-weight: 500; font-size: 0.9rem; cursor: pointer; list-style: none; }
+.member__bio summary::-webkit-details-marker { display: none; }
+/* Plus / minus, as on the FAQ. */
+.member__bio summary::before, .member__bio summary::after { content: ""; position: absolute; top: 50%; right: 0.25rem; width: 0.75rem; height: 2px; margin-top: -1px; border-radius: 2px; background: currentColor; transition: transform 0.25s var(--ease); }
+.member__bio summary::after { transform: rotate(90deg); }
+.member__bio[open] summary::after { transform: rotate(0deg); }
+.member__bio-text { padding-bottom: 0.5rem; color: var(--grey); font-size: 0.98rem; }
+.member__bio-text p { margin: 0 0 0.75em; }
+.member__links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; margin: 1rem 0 0; padding: 0; list-style: none; font-family: var(--font-primary); font-weight: 500; font-size: 0.9rem; }
+.member__links a { text-decoration: none; border-bottom: 2px solid var(--app); }
+.member__links a:hover { border-bottom-color: var(--black); }
+@media (max-width: 1100px) { .team__grid--4 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 960px) { .team__grid, .team__grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .team__grid, .team__grid--4 { grid-template-columns: 1fr; } }

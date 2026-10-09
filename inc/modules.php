@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function drift_module_layouts(): array {
-	return [ 'hero', 'content', 'app_suites', 'cards', 'spotlight', 'split_text', 'image_text', 'pricing', 'faq', 'cta', 'contact' ];
+	return [ 'hero', 'content', 'app_suites', 'cards', 'spotlight', 'split_text', 'image_text', 'pricing', 'team', 'faq', 'cta', 'contact' ];
 }
 
 /**
@@ -86,6 +86,7 @@ function drift_render_modules( int $post_id ): bool {
 			case 'split_text':
 			case 'image_text':
 			case 'pricing':
+			case 'team':
 			case 'faq':
 			case 'cta':
 			case 'contact':

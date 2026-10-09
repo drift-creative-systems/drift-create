@@ -2,8 +2,8 @@
 
 Running record of decisions, state and open issues. Newest first.
 
-## Current state (2026-10-09, v1.2.0 unreleased)
-- v1.0.0 released: https://github.com/drift-creative-systems/drift-create/releases/tag/v1.0.0
+## Current state (2026-10-09, v1.3.0 unreleased)
+- Latest release v1.2.0: https://github.com/drift-creative-systems/drift-create/releases/tag/v1.2.0
 - Theme converted to ACF Flexible Content page modules. Not yet tested on a WordPress install.
 - Updates via GitHub releases (Plugin Update Checker 5.7). No GitHub Actions deploy yet. Releases are built by hand (README).
 - No staging / live URLs recorded yet.
@@ -21,6 +21,7 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-03 | Hero CSS also loads on 404, app pages and the no-module front page | Those templates reuse `.hero` / `.hero__lead`. |
 | 2026-10-03 | Front page modules seeded once via `drift_create_modules_seeded` option | Upgrading sites keep the same look with no manual rebuild. |
 | 2026-10-03 | Theme meta/OG tags skipped when an SEO plugin is active | Avoid duplicate meta descriptions. |
+| 2026-10-09 | Team is an admin-only CPT (`public: false`), shown only via the Team module | Small team; no thin profile pages in the sitemap. Bio sits in a `<details>` toggle. |
 | 2026-10-09 | Apps use Page modules; app hero stays automatic above them; editor hidden on apps | Same builder everywhere. `hide_on_screen` is set on both Page modules and App details because ACF takes it from the first group on screen and both are `menu_order` 0. |
 | 2026-10-09 | Cards module can show manual cards or apps; pricing price is free text | Covers features/services and app picks with one module. Free text allows "From £…", "POA", "Free". |
 | 2026-10-09 | Legal links via a WP menu location (`legal`), not Drift Settings | Editors already manage menus; the privacy policy page is the fallback. |

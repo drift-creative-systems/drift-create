@@ -60,7 +60,7 @@ function drift_option( string $name, $fallback = '' ) {
  * so the PHP lists stay the single source of truth. The JSON copies are only
  * a fallback.
  */
-foreach ( [ 'drift_suite', 'suite', 'accent_suite' ] as $drift_suite_field ) {
+foreach ( [ 'drift_suite', 'suite', 'accent_suite', 'only_suite' ] as $drift_suite_field ) {
 	add_filter( 'acf/load_field/name=' . $drift_suite_field, static function ( array $field ): array {
 		$field['choices'] = wp_list_pluck( drift_suites(), 'label' );
 		return $field;

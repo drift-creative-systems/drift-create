@@ -1728,6 +1728,217 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_team": {
+                    "key": "layout_drift_team",
+                    "name": "team",
+                    "label": "Team",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_team_m_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_team"
+                        },
+                        {
+                            "key": "field_drift_team_m_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_team"
+                        },
+                        {
+                            "key": "field_drift_team_m_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the eyebrow rule. Each member card uses its own suite colour.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "music",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_team"
+                        },
+                        {
+                            "key": "field_drift_team_m_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_team"
+                        },
+                        {
+                            "key": "field_drift_team_m_lead",
+                            "label": "Intro",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_team"
+                        },
+                        {
+                            "key": "field_drift_team_m_members",
+                            "label": "Members",
+                            "name": "members",
+                            "aria_label": "",
+                            "type": "relationship",
+                            "instructions": "Pick people and drag to reorder. Leave empty to show everyone (wp-admin → Team, in Order).",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "drift_team"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search"
+                            ],
+                            "return_format": "id",
+                            "min": "",
+                            "max": "",
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "bidirectional": 0,
+                            "bidirectional_target": [],
+                            "parent_layout": "layout_drift_team"
+                        },
+                        {
+                            "key": "field_drift_team_m_only_suite",
+                            "label": "Only this suite",
+                            "name": "only_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Optional. Shows only members tagged with this suite.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "WP Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_team"
+                        },
+                        {
+                            "key": "field_drift_team_m_columns",
+                            "label": "Columns",
+                            "name": "columns",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Fewer columns on smaller screens.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "3": "3",
+                                "4": "4"
+                            },
+                            "default_value": "3",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_team"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_faq": {
                     "key": "layout_drift_faq",
                     "name": "faq",
@@ -2207,5 +2418,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1791547200
+    "modified": 1791558000
 }
