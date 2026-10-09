@@ -2,7 +2,7 @@
 
 Running record of decisions, state and open issues. Newest first.
 
-## Current state (2026-10-09, v1.3.0 unreleased)
+## Current state (2026-10-09, v1.3.0)
 - Latest release v1.2.0: https://github.com/drift-creative-systems/drift-create/releases/tag/v1.2.0
 - Theme converted to ACF Flexible Content page modules. Not yet tested on a WordPress install.
 - Updates via GitHub releases (Plugin Update Checker 5.7). No GitHub Actions deploy yet. Releases are built by hand (README).

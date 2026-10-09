@@ -41,7 +41,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Hero** | Eyebrow, big title (H1 if first), lead, buttons, optional logo tile |
 | **Content** | Heading (H1 if first, page title if left empty) and a rich text block, for standard pages |
 | **App suites (cards)** | Apps grouped by suite with optional headings; pick a featured app |
-| **Cards** | Grid of 2–4 columns: your own cards (icon, title, text, link) or chosen Apps |
+| **Cards** | Grid of 2–4 columns: your own cards (icon, optional title, rich text, link) or chosen Apps |
 | **App spotlight** | Black section for one app: steps, app page button, demo button, optional Encore flow animation |
 | **Split text** | Heading left, rich text right |
 | **Image + text** | Image left or right, optional grey background, buttons |

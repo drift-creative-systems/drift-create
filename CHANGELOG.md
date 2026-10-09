@@ -14,6 +14,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 - **Full-width image** page module (`modules/full_image/`): edge to edge or page width; natural ratio or short/medium/tall crop with a focal point; optional caption; optional overlay eyebrow, heading, text and buttons with position and darkening options.
 - **Team** page module (`modules/team/`): eyebrow, heading, intro and member cards (photo or initials, name, role, suite, "Read bio" toggle, links). Shows everyone in order, picked members, or one suite only; 3 or 4 columns.
 
+### Changed
+- **Cards** module: card text is now a rich text (WYSIWYG) field and the title is optional. A linked card with no title uses its link text as the clickable line. Links inside card text stay clickable. Existing plain-text card text carries over.
+
 ## [1.2.0] - 2026-10-09
 
 ### Added

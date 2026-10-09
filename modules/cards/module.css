@@ -3,6 +3,16 @@
 .cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .cards-block .card__title { font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem); }
 .cards-block .card__text:last-child { margin-bottom: 0; }
+/* Rich text in cards. */
+.cards-block .card__text p, .cards-block .card__text ul, .cards-block .card__text ol { margin: 0 0 0.75em; }
+.cards-block .card__text ul, .cards-block .card__text ol { padding-left: 1.2em; }
+.cards-block .card__text > :last-child { margin-bottom: 0; }
+.cards-block .card__text strong { color: var(--black); }
+/* Links in the text sit above the card's stretched link so they still work. */
+.cards-block .card__text a { position: relative; z-index: 1; }
+/* Title-less linked card: stretch the "more" link over the whole card. */
+.card__link { text-decoration: none; }
+.card__link::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
 /* Cards without a link aren't clickable, so they don't lift on hover. */
 .card--static:hover { border-color: var(--line); box-shadow: none; transform: none; }
 .cards-block .btns { margin-top: clamp(2rem, 4vw, 3rem); }

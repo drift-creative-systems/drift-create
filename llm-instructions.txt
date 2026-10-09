@@ -42,7 +42,7 @@ ACF FIELD GROUPS
    hero ........ section_id, eyebrow, title*, lead, buttons[link, style], show_mark
    content ..... section_id, heading (h1 if first; blank → page title), body (wysiwyg, full toolbar)
    app_suites .. section_id, featured_app (post_object id), suites[suite, heading, lead]
-   cards ....... section_id, eyebrow, accent_suite, heading, lead, source (manual|apps), columns (2|3|4), cards[icon, title*, text, link], apps (relationship ids; empty = all), buttons
+   cards ....... section_id, eyebrow, accent_suite, heading, lead, source (manual|apps), columns (2|3|4), cards[icon, title, text (wysiwyg, basic), link], apps (relationship ids; empty = all), buttons
    spotlight ... section_id, app* (post_object id), eyebrow, heading, lead, steps[title, text], link_label, show_demo, show_flow
    split_text .. section_id, heading, body (wysiwyg)
    image_text .. section_id, image (id), image_position (left|right), soft_background, eyebrow, heading, body, buttons

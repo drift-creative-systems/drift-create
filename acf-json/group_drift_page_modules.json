@@ -660,8 +660,8 @@
                                     "name": "title",
                                     "aria_label": "",
                                     "type": "text",
-                                    "instructions": "",
-                                    "required": 1,
+                                    "instructions": "Optional.",
+                                    "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "80",
@@ -680,7 +680,7 @@
                                     "label": "Text",
                                     "name": "text",
                                     "aria_label": "",
-                                    "type": "textarea",
+                                    "type": "wysiwyg",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -690,10 +690,10 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "maxlength": "",
-                                    "rows": 3,
-                                    "placeholder": "",
-                                    "new_lines": "",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 0,
+                                    "delay": 1,
                                     "parent_repeater": "field_drift_cards_cards"
                                 },
                                 {
@@ -3388,5 +3388,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1791568800
+    "modified": 1791576000
 }

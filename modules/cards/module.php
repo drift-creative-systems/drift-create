@@ -1,8 +1,12 @@
 <?php
 /**
  * Module: Cards — a grid of cards under an optional heading. Either manual
- * cards (icon, title, text, optional link) or chosen Apps, which use the same
- * app card as the App suites module (parts/app-card.php).
+ * cards (icon, optional title, rich text, optional link) or chosen Apps,
+ * which use the same app card as the App suites module (parts/app-card.php).
+ *
+ * A linked card is clickable all over: the stretched link sits on the title,
+ * or on the "more" line when the card has no title. Links inside the text
+ * stay clickable above it.
  *
  * @package Drift_Create
  */
@@ -21,7 +25,8 @@ if ( 'apps' === $source ) {
 		$items = array_values( array_filter( $items, static fn( $p ) => $p->ID !== get_queried_object_id() ) );
 	}
 } else {
-	$items = array_values( array_filter( (array) get_sub_field( 'cards' ), static fn( $card ) => is_array( $card ) && '' !== (string) ( $card['title'] ?? '' ) ) );
+	// A card needs a title or some text; empty rows are skipped.
+	$items = array_values( array_filter( (array) get_sub_field( 'cards' ), static fn( $card ) => is_array( $card ) && ( '' !== trim( (string) ( $card['title'] ?? '' ) ) || '' !== trim( wp_strip_all_tags( (string) ( $card['text'] ?? '' ) ) ) ) ) );
 }
 if ( ! $items ) {
 	return;
@@ -47,24 +52,32 @@ $lead    = (string) get_sub_field( 'lead' );
 					get_template_part( 'parts/app-card', null, [ 'post' => $item ] );
 					continue;
 				}
-				$link = is_array( $item['link'] ?? null ) && ! empty( $item['link']['url'] ) ? $item['link'] : null;
-				$icon = (string) ( $item['icon'] ?? '' );
-				$text = (string) ( $item['text'] ?? '' );
+				$link   = is_array( $item['link'] ?? null ) && ! empty( $item['link']['url'] ) ? $item['link'] : null;
+				$icon   = (string) ( $item['icon'] ?? '' );
+				$title  = trim( (string) ( $item['title'] ?? '' ) );
+				$text   = (string) ( $item['text'] ?? '' );
+				$more   = $link ? (string) ( $link['title'] ?: 'Find out more' ) : '';
+				$target = $link && ! empty( $link['target'] ) ? ' target="_blank" rel="noopener"' : '';
 				?>
 				<article class="card<?php echo $link ? '' : ' card--static'; ?>">
 					<?php if ( $icon ) : ?>
 						<div class="card__top"><span class="card__emoji" aria-hidden="true"><?php echo esc_html( $icon ); ?></span></div>
 					<?php endif; ?>
-					<h3 class="card__title">
-						<?php if ( $link ) : ?>
-							<a href="<?php echo esc_url( $link['url'] ); ?>"<?php echo empty( $link['target'] ) ? '' : ' target="_blank" rel="noopener"'; ?>><?php echo esc_html( $item['title'] ); ?></a>
-						<?php else : ?>
-							<?php echo esc_html( $item['title'] ); ?>
-						<?php endif; ?>
-					</h3>
-					<?php if ( $text ) : ?><p class="card__text"><?php echo esc_html( $text ); ?></p><?php endif; ?>
-					<?php if ( $link ) : ?>
-						<p class="card__more" aria-hidden="true"><?php echo esc_html( $link['title'] ?: 'Find out more' ); ?> &rarr;</p>
+					<?php if ( $title ) : ?>
+						<h3 class="card__title">
+							<?php if ( $link ) : ?>
+								<a href="<?php echo esc_url( $link['url'] ); ?>"<?php echo $target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static string. ?>><?php echo esc_html( $title ); ?></a>
+							<?php else : ?>
+								<?php echo esc_html( $title ); ?>
+							<?php endif; ?>
+						</h3>
+					<?php endif; ?>
+					<?php if ( $text ) : ?><div class="card__text prose--flush"><?php echo wp_kses_post( $text ); ?></div><?php endif; ?>
+					<?php if ( $link && $title ) : ?>
+						<p class="card__more" aria-hidden="true"><?php echo esc_html( $more ); ?> &rarr;</p>
+					<?php elseif ( $link ) : ?>
+						<?php // No title: the "more" line is the real (stretched) link. ?>
+						<p class="card__more"><a class="card__link" href="<?php echo esc_url( $link['url'] ); ?>"<?php echo $target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static string. ?>><?php echo esc_html( $more ); ?> &rarr;</a></p>
 					<?php endif; ?>
 				</article>
 			<?php endforeach; ?>
