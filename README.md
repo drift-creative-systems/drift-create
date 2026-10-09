@@ -27,7 +27,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | What | Where |
 |---|---|
 | Page layout and copy | **Pages → (page) → Page modules** |
-| Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box, **Page modules** = app page body, Page Attributes → Order = card order |
+| Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box (incl. **App avatar** upload), **Page modules** = app page body, Page Attributes → Order = card order |
 | Team members | **Team** — title = name, featured image = photo, **Team details** box (role, suite, bio, links), Page Attributes → Order = display order. No public pages; they show through the Team module. |
 | Testimonials | **Testimonials** — title = name, featured image = headshot (optional), **Testimonial details** (quote, role, company), Page Attributes → Order. No public pages; shown through the Testimonials module. |
 | Brand line, footer, contact copy and recipient, default meta description | **Drift Settings** |
@@ -41,7 +41,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Hero** | Eyebrow, big title (H1 if first), lead, buttons, optional logo tile |
 | **Content** | Heading (H1 if first, page title if left empty) and a rich text block, for standard pages |
 | **App suites (cards)** | Apps grouped by suite with optional headings; pick a featured app |
-| **Cards** | Grid of 2–4 columns: your own cards (icon, optional title, rich text, link) or chosen Apps |
+| **Cards** | Grid of 2–4 columns: your own cards (icon image, optional title, rich text, link) or chosen Apps |
 | **App spotlight** | Black section for one app: steps, app page button, demo button, optional Encore flow animation |
 | **Split text** | Heading left, rich text right |
 | **Image + text** | Image left or right, optional grey background, buttons |
@@ -102,7 +102,7 @@ drift-create/
 
 - **No build step.** Plain CSS and jQuery. Assets are versioned by `filemtime`. The only Composer dependency is the update checker.
 - ACF JSON saves into `acf-json/`. Edit field groups on a dev site, then commit the JSON.
-- App detail fields use the original meta keys (`drift_suite`, `drift_tagline`, `drift_status`, `drift_emoji`, `drift_accent`, `drift_demo`). Templates read them with `get_post_meta()`, so they work even if ACF is off.
+- App detail fields use the original meta keys (`drift_suite`, `drift_tagline`, `drift_status`, `drift_icon` (avatar image ID), `drift_accent`, `drift_demo`). Templates read them with `get_post_meta()`, so they work even if ACF is off.
 - Without ACF Pro: an admin notice shows, the front page falls back to hero + apps + contact, and other pages show their editor content.
 
 ## Updates

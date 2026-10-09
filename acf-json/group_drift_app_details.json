@@ -78,12 +78,12 @@
             "placeholder": ""
         },
         {
-            "key": "field_drift_app_emoji",
-            "label": "Emoji / icon",
-            "name": "drift_emoji",
+            "key": "field_drift_app_icon",
+            "label": "App avatar",
+            "name": "drift_icon",
             "aria_label": "",
-            "type": "text",
-            "instructions": "",
+            "type": "image",
+            "instructions": "Square PNG, WebP or JPG, at least 256×256. Fills the rounded tile on cards and the app page. No image = the app's initial.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -91,11 +91,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": 8,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "id",
+            "library": "all",
+            "min_width": 128,
+            "min_height": 128,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png,jpg,jpeg,webp",
+            "preview_size": "thumbnail"
         },
         {
             "key": "field_drift_app_accent",
@@ -171,5 +176,5 @@
     "active": true,
     "description": "Field names match the pre-0.3 meta keys (drift_*), so templates read them with get_post_meta().",
     "show_in_rest": 0,
-    "modified": 1791547200
+    "modified": 1791626400
 }

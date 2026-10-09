@@ -634,12 +634,12 @@
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
-                                    "key": "field_drift_cards_cards_icon",
+                                    "key": "field_drift_cards_cards_image",
                                     "label": "Icon",
-                                    "name": "icon",
+                                    "name": "image",
                                     "aria_label": "",
-                                    "type": "text",
-                                    "instructions": "An emoji, e.g. ✦ 🎵 ⚡. Optional.",
+                                    "type": "image",
+                                    "instructions": "Optional. Square PNG, WebP or JPG, at least 256×256. Fills the small rounded tile.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -647,11 +647,16 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": 128,
+                                    "min_height": 128,
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "png,jpg,jpeg,webp",
+                                    "preview_size": "thumbnail",
                                     "parent_repeater": "field_drift_cards_cards"
                                 },
                                 {
@@ -3388,5 +3393,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1791576000
+    "modified": 1791626400
 }

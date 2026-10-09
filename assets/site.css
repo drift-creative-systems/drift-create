@@ -109,7 +109,10 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .card { position: relative; display: flex; flex-direction: column; padding: clamp(1.4rem, 2.5vw, 2rem); background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease); }
 .card:hover { border-color: var(--black); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08); transform: translateY(-3px); }
 .card__top { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
-.card__emoji { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 12px; background: var(--soft); font-size: 1.35rem; line-height: 1; }
+/* Avatar tile: uploaded image fills it; otherwise the app's initial. */
+.card__icon { display: grid; place-items: center; flex: none; width: 2.75rem; height: 2.75rem; overflow: hidden; border-radius: 12px; background: var(--soft); font-family: var(--font-primary); font-weight: 600; font-size: 1.2rem; line-height: 1; }
+.card__icon--image, .app__icon--image { background: none; }
+.card__icon--image img, .app__icon--image img { width: 100%; height: 100%; object-fit: cover; }
 .card__suite { margin-right: auto; font-family: var(--font-primary); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); }
 .card__title { margin: 0 0 0.4rem; font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.85rem); }
 .card__title a { text-decoration: none; }
@@ -121,7 +124,7 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .card:hover .card__more::after { width: 3.5rem; }
 .card--featured { grid-column: span 2; grid-row: span 2; background: var(--black); color: var(--white); border-color: var(--black); }
 .card--featured:hover { border-color: var(--black); }
-.card--featured .card__emoji { background: rgba(255, 255, 255, 0.1); }
+.card--featured .card__icon:not(.card__icon--image) { background: rgba(255, 255, 255, 0.1); }
 .card--featured .card__suite, .card--featured .card__text { color: #b6bac0; }
 .card--featured .card__title { font-size: clamp(2.25rem, 1.5rem + 3vw, 4rem); letter-spacing: -0.035em; }
 .card--featured .card__text { font-size: 1.15rem; max-width: 40ch; }
@@ -160,7 +163,8 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .app__crumb { margin: 0 0 2.5rem; }
 .app__crumb a { text-decoration: none; color: var(--grey); font-family: var(--font-primary); font-weight: 500; font-size: 0.9rem; }
 .app__crumb a:hover { color: var(--black); }
-.app__emoji { display: grid; place-items: center; width: 4.5rem; height: 4.5rem; margin-bottom: 1.5rem; border-radius: 20px; background: var(--black); font-size: 2.1rem; box-shadow: inset 0 -4px 0 var(--app); }
+.app__icon { display: grid; place-items: center; width: 4.5rem; height: 4.5rem; margin-bottom: 1.5rem; overflow: hidden; border-radius: 20px; background: var(--black); color: var(--white); font-family: var(--font-primary); font-weight: 600; font-size: 2rem; line-height: 1; box-shadow: inset 0 -4px 0 var(--app); }
+.app__icon--image { box-shadow: none; }
 .app__title { margin: 0; font-size: clamp(2.75rem, 1.5rem + 5.5vw, 6rem); letter-spacing: -0.04em; line-height: 0.98; }
 .app__flow { margin-top: clamp(2.5rem, 5vw, 4rem); max-width: 40rem; padding: clamp(1rem, 3vw, 2rem); border-radius: 20px; background: var(--black); }
 .prose { padding-block: clamp(2.5rem, 5vw, 4rem); font-size: 1.125rem; }

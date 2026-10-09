@@ -22,7 +22,7 @@ Implementation: CSS custom properties in `assets/site.css` `:root`. Use the toke
 | `--white` | `#FFFFFF` | Page background, text on black |
 | `--grey` | `#7A7F87` | Secondary text, eyebrows, labels (brand core grey) |
 | `--line` | `#E3E5E8` | Borders, dividers |
-| `--soft` | `#F5F6F7` | Contact background, emoji tiles, pills, "grey background" option |
+| `--soft` | `#F5F6F7` | Contact background, avatar / initial tiles, pills, "grey background" option |
 | `#B6BAC0` | (inline) | Secondary text **on black** (spotlight, CTA, featured card) |
 | `#2A2B2E` | (inline) | Dark-button hover; dividers on black |
 
@@ -117,7 +117,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 | Hero | `hero` | white | First hero = page H1. Optional logo-art tile. |
 | Content | `content` | white | Heading + WYSIWYG in the 46rem text column. First on the page = H1 (page title if empty). |
 | App suites | `app_suites` | white | Cards from the Apps CPT, grouped by suite; one featured. |
-| Cards | `cards` | white | Shared `.card` component in 2/3/4 columns (`.cards--2/--4`). Manual cards or chosen apps. Cards without a link get `.card--static` (no hover lift). |
+| Cards | `cards` | white | Optional square icon image in the `.card__icon` tile. Shared `.card` component in 2/3/4 columns (`.cards--2/--4`). Manual cards or chosen apps. Cards without a link get `.card--static` (no hover lift). |
 | App spotlight | `spotlight` | **black** | "The only place the accent leads." Steps, flow illustration. |
 | Split text | `split_text` | white | Heading left, WYSIWYG right (the About section). |
 | Image + text | `image_text` | white / soft | Image left or right. |
@@ -146,7 +146,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 
 - Visible focus: 2px outline, black (white on black sections).
 - Skip link, `main` focus target, `aria-expanded` menu toggle, Esc closes the menu.
-- Decorative SVG and emoji are `aria-hidden`.
+- Decorative SVG and avatar / icon tiles are `aria-hidden` (the name is always next to them).
 - One H1 per page (first hero or content module, page title, or a visually hidden H1 on the front page).
 - Images: alt text is set in the Media Library. Flag missing alt before launch.
 - Known issue: grey text contrast (see §2).

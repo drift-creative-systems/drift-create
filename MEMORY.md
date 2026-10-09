@@ -2,7 +2,7 @@
 
 Running record of decisions, state and open issues. Newest first.
 
-## Current state (2026-10-09, v1.3.0)
+## Current state (2026-10-10, v1.4.0 unreleased)
 - Latest release v1.2.0: https://github.com/drift-creative-systems/drift-create/releases/tag/v1.2.0
 - Theme converted to ACF Flexible Content page modules. Not yet tested on a WordPress install.
 - Updates via GitHub releases (Plugin Update Checker 5.7). No GitHub Actions deploy yet. Releases are built by hand (README).
@@ -21,6 +21,7 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-03 | Hero CSS also loads on 404, app pages and the no-module front page | Those templates reuse `.hero` / `.hero__lead`. |
 | 2026-10-03 | Front page modules seeded once via `drift_create_modules_seeded` option | Upgrading sites keep the same look with no manual rebuild. |
 | 2026-10-03 | Theme meta/OG tags skipped when an SEO plugin is active | Avoid duplicate meta descriptions. |
+| 2026-10-10 | Emoji replaced by uploaded avatars (apps `drift_icon`, cards `image`); image fills the tile; no SVG | Real app avatars. Fallback is the initial after "Drift: ". Old `drift_emoji` meta left in the DB (harmless, recoverable). SVG needs sanitising — use Safe SVG plugin if ever needed. |
 | 2026-10-09 | Video embeds are click-to-play (iframe injected by jQuery on click), youtube-nocookie / Vimeo dnt | No third-party requests or cookies before the visitor asks; better LCP. Iframe src is built server-side and whitelisted again in JS. |
 | 2026-10-09 | Testimonials are an admin-only CPT, grid only, no app link, no Review schema | Client choice (grid, no app link). Self-serving Review schema isn't eligible for Google stars. |
 | 2026-10-09 | Team is an admin-only CPT (`public: false`), shown only via the Team module | Small team; no thin profile pages in the sitemap. Bio sits in a `<details>` toggle. |

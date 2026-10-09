@@ -20,7 +20,7 @@ while ( have_posts() ) :
 			<div class="wrap">
 				<p class="app__crumb"><a href="<?php echo esc_url( home_url( '/#apps' ) ); ?>">&larr; All apps</a></p>
 				<p class="eyebrow"><?php echo esc_html( $m['suite_label'] ); ?></p>
-				<span class="app__emoji" aria-hidden="true"><?php echo esc_html( $m['emoji'] ?: '✦' ); ?></span>
+				<?php echo drift_app_icon( get_the_ID(), 'app__icon', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 				<h1 class="app__title"><?php the_title(); ?></h1>
 				<?php drift_h1_used( true ); ?>
 				<?php if ( $m['tagline'] ) : ?><p class="hero__lead"><?php echo esc_html( $m['tagline'] ); ?></p><?php endif; ?>

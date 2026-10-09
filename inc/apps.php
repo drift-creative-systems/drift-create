@@ -2,7 +2,7 @@
 /**
  * Apps post type and helpers.
  *
- * App details (suite, tagline, status, emoji, accent override, demo link) are
+ * App details (suite, tagline, status, avatar, accent override, demo link) are
  * an ACF field group (acf-json/group_drift_app_details.json). The field names
  * match the original meta keys, so values are read with get_post_meta() and
  * work with or without ACF active.
@@ -70,7 +70,7 @@ function drift_app_meta( int $id ): array {
 		'tagline'     => (string) get_post_meta( $id, 'drift_tagline', true ),
 		'status'      => $status,
 		'label'       => drift_app_statuses()[ $status ],
-		'emoji'       => (string) get_post_meta( $id, 'drift_emoji', true ),
+		'icon'        => (int) get_post_meta( $id, 'drift_icon', true ),
 		'accent'      => $custom ?: drift_suites()[ $suite ]['accent'],
 		'demo'        => (string) get_post_meta( $id, 'drift_demo', true ),
 	];
@@ -98,4 +98,29 @@ function drift_apps(): array {
  */
 function drift_app_is_available( string $status ): bool {
 	return in_array( $status, [ 'live', 'demo' ], true );
+}
+
+/**
+ * The app's avatar tile: the uploaded avatar filling the tile, or the app's
+ * initial when there's no image. Decorative (the app name is always next to
+ * it), so it's hidden from screen readers.
+ *
+ * @param int    $id    App post ID.
+ * @param string $class Tile class, e.g. "card__icon" or "app__icon".
+ * @param bool   $eager Load the image straight away (above the fold).
+ * @return string Tile HTML.
+ */
+function drift_app_icon( int $id, string $class, bool $eager = false ): string {
+	$image = (int) get_post_meta( $id, 'drift_icon', true );
+	if ( $image && wp_attachment_is_image( $image ) ) {
+		return sprintf(
+			'<span class="%1$s %1$s--image" aria-hidden="true">%2$s</span>',
+			esc_attr( $class ),
+			wp_get_attachment_image( $image, 'thumbnail', false, [ 'alt' => '', 'loading' => $eager ? false : 'lazy' ] )
+		);
+	}
+	// "Drift: Encore" → "E": use the name after the brand prefix.
+	$name    = trim( (string) preg_replace( '/^.*:\s*/', '', get_the_title( $id ) ) );
+	$initial = $name ? mb_strtoupper( mb_substr( $name, 0, 1 ) ) : '';
+	return '<span class="' . esc_attr( $class ) . '" aria-hidden="true">' . esc_html( $initial ) . '</span>';
 }

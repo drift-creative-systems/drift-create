@@ -1,7 +1,7 @@
 <?php
 /**
  * Module: Cards — a grid of cards under an optional heading. Either manual
- * cards (icon, optional title, rich text, optional link) or chosen Apps,
+ * cards (icon image, optional title, rich text, optional link) or chosen Apps,
  * which use the same app card as the App suites module (parts/app-card.php).
  *
  * A linked card is clickable all over: the stretched link sits on the title,
@@ -53,7 +53,7 @@ $lead    = (string) get_sub_field( 'lead' );
 					continue;
 				}
 				$link   = is_array( $item['link'] ?? null ) && ! empty( $item['link']['url'] ) ? $item['link'] : null;
-				$icon   = (string) ( $item['icon'] ?? '' );
+				$icon   = (int) ( $item['image'] ?? 0 );
 				$title  = trim( (string) ( $item['title'] ?? '' ) );
 				$text   = (string) ( $item['text'] ?? '' );
 				$more   = $link ? (string) ( $link['title'] ?: 'Find out more' ) : '';
@@ -61,7 +61,7 @@ $lead    = (string) get_sub_field( 'lead' );
 				?>
 				<article class="card<?php echo $link ? '' : ' card--static'; ?>">
 					<?php if ( $icon ) : ?>
-						<div class="card__top"><span class="card__emoji" aria-hidden="true"><?php echo esc_html( $icon ); ?></span></div>
+						<div class="card__top"><span class="card__icon card__icon--image" aria-hidden="true"><?php echo wp_get_attachment_image( $icon, 'thumbnail', false, [ 'alt' => '', 'loading' => 'lazy' ] ); ?></span></div>
 					<?php endif; ?>
 					<?php if ( $title ) : ?>
 						<h3 class="card__title">

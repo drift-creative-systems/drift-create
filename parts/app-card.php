@@ -15,7 +15,7 @@ $m = drift_app_meta( $app->ID );
 ?>
 <article class="card card--<?php echo esc_attr( $m['status'] ); ?><?php echo ! empty( $args['featured'] ) ? ' card--featured' : ''; ?>" style="--app: <?php echo esc_attr( $m['accent'] ); ?>">
 	<div class="card__top">
-		<span class="card__emoji" aria-hidden="true"><?php echo esc_html( $m['emoji'] ?: '✦' ); ?></span>
+		<?php echo drift_app_icon( $app->ID, 'card__icon' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 		<span class="card__suite"><?php echo esc_html( $m['suite_label'] ); ?></span>
 		<span class="pill pill--<?php echo esc_attr( $m['status'] ); ?>"><?php echo esc_html( $m['label'] ); ?></span>
 	</div>

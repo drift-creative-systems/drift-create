@@ -22,7 +22,7 @@ FILE MAP
 - functions.php ........ constants + require inc/*
 - inc/setup.php ........ supports, menus (primary, legal), enqueue, drift_asset_version()
 - inc/acf.php .......... JSON paths, options page "drift-settings", drift_option(), choice filters, no-ACF notice
-- inc/apps.php ......... drift_app CPT, drift_suites(), drift_app_statuses(), drift_app_meta(), drift_apps(), drift_app_is_available()
+- inc/apps.php ......... drift_app CPT, drift_suites(), drift_app_statuses(), drift_app_meta(), drift_apps(), drift_app_is_available(), drift_app_icon()
 - inc/team.php ......... drift_team CPT (public false, show_ui), drift_team_meta(), drift_team_members( $ids, $suite )
 - inc/testimonials.php . drift_testimonial CPT (public false, show_ui), drift_testimonial_meta(), drift_testimonials( $ids, $limit )
 - inc/brand.php ........ drift_brand_line(), drift_brand_name(), drift_mark(), favicons, title parts
@@ -42,7 +42,7 @@ ACF FIELD GROUPS
    hero ........ section_id, eyebrow, title*, lead, buttons[link, style], show_mark
    content ..... section_id, heading (h1 if first; blank → page title), body (wysiwyg, full toolbar)
    app_suites .. section_id, featured_app (post_object id), suites[suite, heading, lead]
-   cards ....... section_id, eyebrow, accent_suite, heading, lead, source (manual|apps), columns (2|3|4), cards[icon, title, text (wysiwyg, basic), link], apps (relationship ids; empty = all), buttons
+   cards ....... section_id, eyebrow, accent_suite, heading, lead, source (manual|apps), columns (2|3|4), cards[image (id), title, text (wysiwyg, basic), link], apps (relationship ids; empty = all), buttons
    spotlight ... section_id, app* (post_object id), eyebrow, heading, lead, steps[title, text], link_label, show_demo, show_flow
    split_text .. section_id, heading, body (wysiwyg)
    image_text .. section_id, image (id), image_position (left|right), soft_background, eyebrow, heading, body, buttons
@@ -55,7 +55,7 @@ ACF FIELD GROUPS
    cta ......... section_id, accent_suite, eyebrow, heading*, text, buttons
    contact ..... eyebrow, heading, lead (blank → Drift Settings)
    Button styles: dark | line | accent | line-light
-2. App details (drift_app, side) — drift_suite, drift_tagline, drift_status, drift_emoji, drift_accent, drift_demo
+2. App details (drift_app, side) — drift_suite, drift_tagline, drift_status, drift_icon (image id; avatar), drift_accent, drift_demo
 2c. Testimonial details (drift_testimonial) — drift_quote*, drift_role, drift_company. Read via drift_testimonial_meta().
 2b. Team details (drift_team) — drift_role, drift_suite (optional), drift_bio, drift_links[link]. Read via drift_team_meta() (reads repeater meta drift_links_{i}_link directly).
    Same keys as the pre-ACF meta box. Read via drift_app_meta() / get_post_meta(), not get_field().

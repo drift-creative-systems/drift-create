@@ -3,6 +3,20 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.4.0] - 2026-10-10
+
+### Added
+- **App avatar** upload (`drift_icon`, App details): a square PNG, WebP or JPG that fills the rounded tile on app cards and the app page hero. `drift_app_icon()` renders the tile.
+- **Cards** module: icon image upload per card, filling the small tile.
+
+### Changed
+- Apps without an avatar show the app's initial (the name after "Drift: ") in the tile instead of an emoji.
+- Fresh installs no longer seed app emoji.
+
+### Removed
+- Emoji fields: **Emoji** on App details (`drift_emoji`) and **Icon** (emoji text) on Cards module cards. Existing emoji values stay in the database but are no longer shown.
+- `.card__emoji` / `.app__emoji` classes, renamed `.card__icon` / `.app__icon`.
+
 ## [1.3.0] - 2026-10-09
 
 ### Added

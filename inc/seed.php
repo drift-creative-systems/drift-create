@@ -22,7 +22,6 @@ function drift_create_seed(): void {
 		[
 			'title'   => 'Drift: Encore',
 			'slug'    => 'encore',
-			'emoji'   => '🎸',
 			'suite'   => 'music',
 			'status'  => 'demo',
 			'tagline' => 'Websites for bands, artists and labels — run from one Airtable base.',
@@ -32,7 +31,6 @@ function drift_create_seed(): void {
 		[
 			'title'   => 'Greenroom',
 			'slug'    => 'greenroom',
-			'emoji'   => '🎸',
 			'suite'   => 'music',
 			'status'  => 'development',
 			'tagline' => 'The artist\'s gig manager.',
@@ -42,7 +40,6 @@ function drift_create_seed(): void {
 		[
 			'title'   => 'Stageside',
 			'slug'    => 'stageside',
-			'emoji'   => '🎭',
 			'suite'   => 'music',
 			'status'  => 'development',
 			'tagline' => 'For venues and promoters.',
@@ -52,7 +49,6 @@ function drift_create_seed(): void {
 		[
 			'title'   => 'Wristband',
 			'slug'    => 'wristband',
-			'emoji'   => '🎪',
 			'suite'   => 'music',
 			'status'  => 'development',
 			'tagline' => 'The festival app.',
@@ -62,7 +58,6 @@ function drift_create_seed(): void {
 		[
 			'title'   => 'Wristband Fan',
 			'slug'    => 'wristband-fan',
-			'emoji'   => '🎟️',
 			'suite'   => 'music',
 			'status'  => 'soon',
 			'tagline' => 'Your gigs, tracked.',
@@ -87,7 +82,6 @@ function drift_create_seed(): void {
 		if ( $id && ! is_wp_error( $id ) ) {
 			update_post_meta( $id, 'drift_tagline', $app['tagline'] );
 			update_post_meta( $id, 'drift_status', $app['status'] );
-			update_post_meta( $id, 'drift_emoji', $app['emoji'] );
 			update_post_meta( $id, 'drift_suite', $app['suite'] );
 		}
 	}
