@@ -218,6 +218,87 @@
             ]
         },
         {
+            "key": "field_drift_settings_social_links",
+            "label": "Social links",
+            "name": "social_links",
+            "aria_label": "",
+            "type": "repeater",
+            "instructions": "Icons under the footer tagline, in this order. Empty = no icons.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_drift_settings_social_links_network",
+            "button_label": "Add social link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_drift_settings_social_links_network",
+                    "label": "Network",
+                    "name": "network",
+                    "aria_label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "instagram": "Instagram",
+                        "facebook": "Facebook",
+                        "x": "X",
+                        "linkedin": "LinkedIn",
+                        "youtube": "YouTube",
+                        "tiktok": "TikTok",
+                        "bluesky": "Bluesky",
+                        "spotify": "Spotify",
+                        "soundcloud": "SoundCloud",
+                        "github": "GitHub",
+                        "email": "Email"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_drift_settings_social_links"
+                },
+                {
+                    "key": "field_drift_settings_social_links_url",
+                    "label": "URL",
+                    "name": "url",
+                    "aria_label": "",
+                    "type": "text",
+                    "instructions": "Profile URL (https://…). For Email, an email address.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "https://",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_drift_settings_social_links"
+                }
+            ]
+        },
+        {
             "key": "field_drift_settings_tab_contact",
             "label": "Contact",
             "name": "",
@@ -389,5 +470,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791554749
+    "modified": 1791561405
 }

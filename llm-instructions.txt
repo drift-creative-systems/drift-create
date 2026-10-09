@@ -59,7 +59,7 @@ ACF FIELD GROUPS
 2c. Testimonial details (drift_testimonial) — drift_quote*, drift_role, drift_company. Read via drift_testimonial_meta().
 2b. Team details (drift_team) — drift_role, drift_suite (optional), drift_bio, drift_links[link]. Read via drift_team_meta() (reads repeater meta drift_links_{i}_link directly).
    Same keys as the pre-ACF meta box. Read via drift_app_meta() / get_post_meta(), not get_field().
-3. Drift Settings (options page drift-settings) — brand_line, header_logo, header_logo_dark, footer_logo, hero_logo (image IDs, read with drift_logo()), footer_tagline, footer_links[link], contact_recipient, contact_eyebrow, contact_heading, contact_lead, contact_success, default_meta_description
+3. Drift Settings (options page drift-settings) — brand_line, header_logo, header_logo_dark, footer_logo, hero_logo (image IDs, read with drift_logo()), footer_tagline, footer_links[link], social_links[network, url] (network slugs from drift_social_networks(), rendered by drift_social_links() in inc/social.php), contact_recipient, contact_eyebrow, contact_heading, contact_lead, contact_success, default_meta_description
 
 ADDING A MODULE
 1. Add the layout in ACF (Page modules), with a section_id field.

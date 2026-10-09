@@ -296,6 +296,11 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .foot__word { margin: 0; font-family: var(--font-primary); font-weight: 500; font-size: clamp(2rem, 1.4rem + 2.5vw, 3.25rem); letter-spacing: 0.16em; line-height: 1; }
 .foot__word span { display: block; margin-top: 0.5rem; font-family: var(--font-secondary); font-weight: 400; font-size: 0.32em; letter-spacing: 0.32em; text-transform: uppercase; color: var(--band-grey); }
 .foot__tag { grid-column: 2; margin: 0; color: var(--band-grey); font-size: 0.95rem; }
+/* Social icons under the tagline (Drift Settings → Footer → Social links). */
+.foot .foot__social { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.foot__social a { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--band-line); border-radius: 50%; color: var(--band-fg); transition: border-color 0.2s, background-color 0.2s; }
+.foot__social a:hover { border-color: var(--band-fg); background: var(--band-line); }
+.foot__social svg { display: block; }
 .foot__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 2rem; }
 .foot h2 { margin-bottom: 0.9rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--band-grey); }
 .foot ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.4rem; }

@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DRIFT_CREATE_VERSION', '1.6.0' );
+define( 'DRIFT_CREATE_VERSION', '1.7.0' );
 
 require_once get_theme_file_path( 'inc/setup.php' );
 require_once get_theme_file_path( 'inc/acf.php' );
@@ -28,6 +28,7 @@ require_once get_theme_file_path( 'inc/apps.php' );
 require_once get_theme_file_path( 'inc/team.php' );
 require_once get_theme_file_path( 'inc/testimonials.php' );
 require_once get_theme_file_path( 'inc/brand.php' );
+require_once get_theme_file_path( 'inc/social.php' );
 require_once get_theme_file_path( 'inc/meta.php' );
 require_once get_theme_file_path( 'inc/contact.php' );
 require_once get_theme_file_path( 'inc/modules.php' );

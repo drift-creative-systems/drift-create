@@ -3,6 +3,11 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.7.0] - 2026-10-09
+
+### Added
+- **Social links** in the footer. Drift Settings → Footer → Social links: pick a network (Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Bluesky, Spotify, SoundCloud, GitHub, Email) and add the profile URL (or an email address). They show as round line icons under the footer tagline, in the order set. Empty = no icons. `drift_social_networks()` / `drift_social_links()` in `inc/social.php`.
+
 ## [1.6.0] - 2026-10-09
 
 ### Added

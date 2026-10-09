@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer. Tagline and links: Drift Settings → Footer. Legal links:
+ * Site footer. Tagline, links and social icons: Drift Settings → Footer. Legal links:
  * Appearance → Menus → "Footer legal links" (falls back to the privacy
  * policy page set in Settings → Privacy).
  *
@@ -25,6 +25,7 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 				<p class="foot__word" aria-hidden="true">DRIFT<span><?php echo esc_html( drift_brand_line() ); ?></span></p>
 			<?php endif; ?>
 			<p class="foot__tag"><?php echo esc_html( (string) drift_option( 'footer_tagline', 'Modern. Minimal. Purposeful.' ) ); ?></p>
+			<?php echo drift_social_links( 'foot__social' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in drift_social_links(). ?>
 		</div>
 		<div class="foot__cols">
 			<div>
