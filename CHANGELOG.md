@@ -3,6 +3,17 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.8.0] - 2026-10-26
+
+### Added
+- **Mailing list sign-up (Brevo double opt-in).** New **Drift Settings → Newsletter** tab: Brevo API key, list ID (defaults to 2), double opt-in template ID, the page people land on after confirming, footer on/off, footer heading and text, button text and the thank-you message. Brevo emails a confirmation link, and people only join the list once they click it. `inc/newsletter.php` (admin-post handler → Brevo `contacts/doubleOptinConfirmation`, nonce, honeypot, errors logged), form in `parts/newsletter.php`.
+- **Footer sign-up column** (`#newsletter`), after "Get in touch". On by default once Brevo is set up.
+- **Newsletter sign-up** page module (`newsletter`): eyebrow, heading, lead, Anchor ID (default `#signup`).
+- `DRIFT_BREVO_API_KEY` in `wp-config.php`, if defined, overrides the API key field.
+
+### Changed
+- Brand black is now `#08090B` (was `#000`).
+
 ## [1.7.0] - 2026-10-09
 
 ### Added

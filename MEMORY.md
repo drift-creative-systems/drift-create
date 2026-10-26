@@ -29,6 +29,7 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-09 | Cards module can show manual cards or apps; pricing price is free text | Covers features/services and app picks with one module. Free text allows "From £…", "POA", "Free". |
 | 2026-10-09 | Legal links via a WP menu location (`legal`), not Drift Settings | Editors already manage menus; the privacy policy page is the fallback. |
 | 2026-10-08 | Page editor hidden via ACF `hide_on_screen`; Content module replaces it | Pages are built only from modules. Old editor content still renders on pages with no modules, but can't be edited — move it into a Content module. |
+| 2026-10-26 | Mailing list = Brevo double opt-in via direct API call (no plugin); one sitewide list (#2); footer column + page module; email only | Client choice. API key is a Drift Settings field (client choice) with a `DRIFT_BREVO_API_KEY` wp-config override. It's in the DB, not the public repo. |
 | 0.2.0 | Suites set the accent colour; per-app colours dropped | Brand system: one accent per product suite. |
 
 ## Open issues / to check
@@ -40,6 +41,8 @@ Running record of decisions, state and open issues. Newest first.
 - [ ] CSS is desktop-first (`max-width`), against the Bonsai mobile-first standard. Refactor only as a separate task.
 - [ ] Test on WP: activation seed, 0.2→0.3 upgrade, ACF Sync, contact form delivery (wp_mail / SMTP), each module empty and full.
 - [ ] Set the contact recipient in Drift Settings (defaults to the admin email).
+- [ ] Brevo: fill in Drift Settings → Newsletter (API key, DOI template ID, redirect page), then test sign-up → confirm email → contact lands in list #2. Also test a bad key (friendly error + `Drift newsletter:` log line).
+- [ ] Privacy policy should mention Brevo as a processor for newsletter sign-ups.
 - [ ] Create T&Cs / Privacy / Cookies pages and assign them to the "Footer legal links" menu.
 - [ ] Seeded apps keep their editor content until it's moved into a Content module (editor is now hidden on apps).
 - [ ] **Cookiebot:** check its auto-blocker doesn't block the click-to-play YouTube/Vimeo iframe. If it does, add consent markup or treat the click as the consent moment.
@@ -48,4 +51,6 @@ Running record of decisions, state and open issues. Newest first.
 ## Gotchas
 - `drift_page_layouts()` reads the raw `page_modules` post meta (ACF stores the layout names there). Used before the loop to enqueue CSS.
 - `parts/contact.php` is always `id="contact"`. The form handler redirects to `#contact`.
+- Newsletter forms redirect to their own anchor (`#newsletter` footer, `#signup` module default) with `?nl=…&nl_form=…`; only the matching form shows the result. Nonce is printed by hand, not `wp_nonce_field()`, to avoid duplicate ids with two forms on a page.
+- `newsletter_footer` is a true_false: `drift_option()` would turn "off" (false) into the fallback, so it's read with `get_field()`.
 - Encore flow illustration shows automatically on the `encore` app page (slug check in `single-drift_app.php`). In modules it's a toggle.

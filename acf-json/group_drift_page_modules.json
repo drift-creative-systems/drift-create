@@ -3359,6 +3359,119 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_drift_newsletter": {
+                    "key": "layout_drift_newsletter",
+                    "name": "newsletter",
+                    "label": "Newsletter sign-up",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_newsletter_message",
+                            "label": "Newsletter sign-up",
+                            "name": "",
+                            "aria_label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Mailing list sign-up (Brevo double opt-in). Brevo settings, button text and the thank-you message are in Drift Settings → Newsletter. Hidden until Brevo is set up there.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0,
+                            "parent_layout": "layout_drift_newsletter"
+                        },
+                        {
+                            "key": "field_drift_newsletter_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Blank = \"signup\" (/#signup). Don't use \"newsletter\", the footer form has that one.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "signup",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_newsletter"
+                        },
+                        {
+                            "key": "field_drift_newsletter_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_newsletter"
+                        },
+                        {
+                            "key": "field_drift_newsletter_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_newsletter"
+                        },
+                        {
+                            "key": "field_drift_newsletter_lead",
+                            "label": "Lead",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_newsletter"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -3393,5 +3506,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1791626400
+    "modified": 1792972800
 }

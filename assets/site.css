@@ -286,6 +286,15 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .notice--err { margin: 0; background: var(--surface); border: 1px solid var(--err-line); color: var(--err); }
 @media (max-width: 860px) { .contact__grid, .form__row { grid-template-columns: 1fr; } }
 
+/* Mailing list sign-up (parts/newsletter.php) — footer and Newsletter module. */
+.signup { display: grid; gap: 0.6rem; }
+.signup__label { font-family: var(--font-primary); font-weight: 500; font-size: 0.85rem; }
+.signup__row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.signup__row input { flex: 1 1 14rem; min-width: 0; padding: 0.85em 1em; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--fg); font: inherit; font-family: var(--font-secondary); font-size: 1rem; }
+.signup__row input:focus { outline: 2px solid var(--fg); outline-offset: 0; border-color: transparent; }
+.signup__note { margin: 0; color: var(--muted); font-size: 0.85rem; }
+.signup__note a { color: inherit; text-decoration: underline; }
+
 /* Footer */
 .foot { padding-block: clamp(3.5rem, 7vw, 5.5rem) 2rem; background: var(--band); color: var(--band-fg); }
 .foot__brand { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0.5rem 1.25rem; margin-bottom: 3rem; }
@@ -307,6 +316,14 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .foot a { text-decoration: none; }
 .foot a:hover { text-decoration: underline; }
 .foot :focus-visible { outline-color: var(--band-fg); }
+.foot__signup { max-width: 26rem; }
+.foot__lead { margin: 0 0 1rem; color: var(--band-grey); font-size: 0.95rem; }
+.foot .signup__row input { border-color: var(--band-line); background: transparent; color: var(--band-fg); }
+.foot .signup__row input:focus { outline-color: var(--band-fg); }
+.foot .signup__note { color: var(--band-grey); }
+.foot .signup__note a { text-decoration: underline; }
+.foot .notice { background: transparent; border-color: var(--band-line); color: var(--band-fg); font-size: 0.95rem; }
+.foot .notice--err { border-color: var(--err-line); }
 .foot__base { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 2rem; margin: 3rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--band-line); color: var(--band-grey); font-size: 0.85rem; }
 .foot__base p { margin: 0; }
 .foot .foot__legal { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }

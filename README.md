@@ -30,7 +30,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box (incl. **App avatar** upload), **Page modules** = app page body, Page Attributes → Order = card order |
 | Team members | **Team** — title = name, featured image = photo, **Team details** box (role, suite, bio, links), Page Attributes → Order = display order. No public pages; they show through the Team module. |
 | Testimonials | **Testimonials** — title = name, featured image = headshot (optional), **Testimonial details** (quote, role, company), Page Attributes → Order. No public pages; shown through the Testimonials module. |
-| Brand line, header / footer / hero logos, footer links, social links, contact copy and recipient, default meta description | **Drift Settings** |
+| Brand line, header / footer / hero logos, footer links, social links, contact copy and recipient, newsletter (Brevo) settings and copy, default meta description | **Drift Settings** |
 | Main menu | **Appearance → Menus** (location "Main menu"; falls back to Apps / Encore / About) |
 | Legal links (T&Cs, Privacy, Cookies) | **Appearance → Menus** (location "Footer legal links"; falls back to the Privacy Policy page from Settings → Privacy) |
 
@@ -53,6 +53,18 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **FAQ** | Accordion, optional FAQPage schema |
 | **CTA band** | Black band with heading, text, buttons and a suite accent |
 | **Contact form** | Demo / enquiry form (always `#contact`) |
+| **Newsletter sign-up** | Heading and text beside the mailing list form (Brevo). Hidden until Brevo is set up |
+
+### Mailing list (Brevo)
+
+Sign-ups use Brevo **double opt-in**: Brevo emails a confirmation link, and people only join the list once they click it. Set it up under **Drift Settings → Newsletter**:
+
+1. **API key**: Brevo → SMTP & API → API Keys. To keep it out of the database instead, add `define( 'DRIFT_BREVO_API_KEY', 'xkeysib-…' );` to `wp-config.php`, which overrides the field.
+2. **List ID**: Brevo → Contacts → Lists (defaults to 2).
+3. **Double opt-in template ID**: Brevo → Templates. The template needs the "optin" tag and a `{{ doubleoptin }}` confirm link.
+4. **After confirming, go to**: a thank-you page (blank = home page).
+
+The footer form (`#newsletter`) and Newsletter modules stay hidden until 1–3 are filled in. Failed Brevo requests go to the PHP error log as `Drift newsletter: …`.
 
 Every module except Contact has an **Anchor ID** field, so menus and buttons can link to `/#apps`, `/#about` and so on.
 
@@ -76,12 +88,13 @@ drift-create/
 │   ├── brand.php          Brand name/line, logo mark SVG, favicons, document title
 │   ├── meta.php           Meta description + OG (skipped if an SEO plugin is active)
 │   ├── contact.php        admin-post form handler → wp_mail, drift_contact_form()
+│   ├── newsletter.php     admin-post sign-up handler → Brevo double opt-in, drift_newsletter_form()
 │   ├── modules.php        Flexible content renderer + module helpers
 │   ├── upgrade.php        First-run seed + version upgrades
 │   ├── updates.php        GitHub release updates (Plugin Update Checker)
 │   └── seed.php           Seed content (loaded only when seeding)
 ├── modules/{layout}/      module.php (+ optional module.css, loaded only where used)
-├── parts/                 app-card, app-suites, contact, encore-flow
+├── parts/                 app-card, app-suites, contact, newsletter, encore-flow
 ├── vendor/                Composer (plugin-update-checker) — committed
 ├── acf-json/              Field groups — commit every change
 ├── assets/                site.css (base + components), site.js (jQuery), brand/

@@ -136,6 +136,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 - **App card** `.card` (`parts/app-card.php`) — white, 1px line, lifts 3px on hover, whole card clickable (title link `::after`). `--featured` is black and spans 2×2.
 - **Encore flow** `.flow` (`parts/encore-flow.php`) — decorative Airtable → Publish → site animation. `aria-hidden`; the steps beside it carry the meaning.
 - **Contact form** `.contact` / `.form` (`parts/contact.php`) — soft grey section, 10px-radius fields, honeypot `.hp`.
+- **Newsletter sign-up** `.signup` (`parts/newsletter.php`) — visible "Email address" label, then the email field and button on one row (wraps when narrow), small muted note with the privacy link. In the footer the field is transparent with a `--band-line` border and the button is `btn--line-light`.
 - **Header** `.top` — sticky, 90% `--bg` with blur. Light / dark toggle (`.theme-toggle`, round 2.75rem, moon / sun icon, `aria-pressed` = dark on) sits right of "Book a demo"; on mobile, left of the burger. **Footer** `.foot` — black, large spaced wordmark. Social icons (`.foot__social`, round 2.75rem outlined buttons, 20px line icons) sit under the tagline. Legal menu (`.foot__legal`) sits right of the copyright line in `.foot__base`.
 
 ---
@@ -159,6 +160,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 | FAQ | `faq` | white | `<details>` accordion, optional FAQPage schema. |
 | CTA band | `cta` | **black** | Pick an accent suite; dark/line buttons are inverted on black. |
 | Contact form | `contact` | soft | Always `#contact`, once per page. |
+| Newsletter sign-up | `newsletter` | white | Copy left, `.signup` form right (stacks at 860). Default anchor `#signup`. |
 
 **Rhythm:** avoid two black modules back to back. Spotlight → CTA reads as one block, so put a white module between them.
 

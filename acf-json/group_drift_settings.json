@@ -415,6 +415,220 @@
             "append": ""
         },
         {
+            "key": "field_drift_settings_tab_newsletter",
+            "label": "Newsletter",
+            "name": "",
+            "aria_label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_drift_settings_newsletter_message",
+            "label": "Brevo mailing list",
+            "name": "",
+            "aria_label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Sign-ups use Brevo double opt-in: Brevo emails a confirmation link, and people only join the list once they click it. The footer form and Newsletter modules stay hidden until the API key, list ID and template ID are all filled in.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_drift_settings_brevo_api_key",
+            "label": "Brevo API key",
+            "name": "brevo_api_key",
+            "aria_label": "",
+            "type": "password",
+            "instructions": "Brevo → SMTP & API → API Keys (a v3 key, starts \"xkeysib-\").",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_brevo_list_id",
+            "label": "List ID",
+            "name": "brevo_list_id",
+            "aria_label": "",
+            "type": "number",
+            "instructions": "Brevo → Contacts → Lists, the number next to the list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 2,
+            "min": 1,
+            "max": "",
+            "placeholder": "2",
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_brevo_doi_template_id",
+            "label": "Double opt-in template ID",
+            "name": "brevo_doi_template_id",
+            "aria_label": "",
+            "type": "number",
+            "instructions": "Brevo → Templates. Use a template tagged \"optin\" with a {{ doubleoptin }} confirm link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": "",
+            "placeholder": "",
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_brevo_doi_redirect",
+            "label": "After confirming, go to",
+            "name": "brevo_doi_redirect",
+            "aria_label": "",
+            "type": "url",
+            "instructions": "Where people land after clicking the confirm link. Blank = home page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://"
+        },
+        {
+            "key": "field_drift_settings_newsletter_footer",
+            "label": "Show in footer",
+            "name": "newsletter_footer",
+            "aria_label": "",
+            "type": "true_false",
+            "instructions": "Sign-up column in the footer, anchored at #newsletter.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_drift_settings_newsletter_heading",
+            "label": "Footer heading",
+            "name": "newsletter_heading",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Newsletter",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_newsletter_button",
+            "label": "Button text",
+            "name": "newsletter_button",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "Footer and Newsletter modules.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Subscribe",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_drift_settings_newsletter_lead",
+            "label": "Footer text",
+            "name": "newsletter_lead",
+            "aria_label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "New apps, releases and the odd look behind the scenes. No spam.",
+            "new_lines": ""
+        },
+        {
+            "key": "field_drift_settings_newsletter_success",
+            "label": "Message after signing up",
+            "name": "newsletter_success",
+            "aria_label": "",
+            "type": "text",
+            "instructions": "Shown after \"Nearly there.\" Footer and Newsletter modules.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Check your inbox and click the link to confirm your email.",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_drift_settings_tab_seo",
             "label": "SEO",
             "name": "",
@@ -470,5 +684,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1791561405
+    "modified": 1792972800
 }

@@ -1,6 +1,7 @@
 <?php
 /**
- * Site footer. Tagline, links and social icons: Drift Settings → Footer. Legal links:
+ * Site footer. Tagline, links and social icons: Drift Settings → Footer. Mailing
+ * list sign-up (#newsletter): Drift Settings → Newsletter. Legal links:
  * Appearance → Menus → "Footer legal links" (falls back to the privacy
  * policy page set in Settings → Privacy).
  *
@@ -51,6 +52,13 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 					<?php endforeach; ?>
 				</ul>
 			</div>
+			<?php if ( drift_newsletter_in_footer() ) : ?>
+				<div id="newsletter" class="foot__signup">
+					<h2><?php echo esc_html( (string) drift_option( 'newsletter_heading', 'Newsletter' ) ); ?></h2>
+					<p class="foot__lead"><?php echo esc_html( (string) drift_option( 'newsletter_lead', 'New apps, releases and the odd look behind the scenes. No spam.' ) ); ?></p>
+					<?php drift_newsletter_form( 'newsletter', [ 'button_class' => 'btn--line-light' ] ); ?>
+				</div>
+			<?php endif; ?>
 		</div>
 		<div class="foot__base">
 			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) . ' ' . drift_brand_name() ); ?> · Built in Devon by The Bonsai Digital Collective</p>

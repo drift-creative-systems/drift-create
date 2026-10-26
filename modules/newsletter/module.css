@@ -1,0 +1,5 @@
+/* Module: Newsletter — copy beside the sign-up form (form styles: .signup in site.css). */
+.newsletter__grid { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 2rem clamp(2rem, 6vw, 5rem); }
+.newsletter .h2 { margin-bottom: 0; }
+.newsletter .lead { margin: 1rem 0 0; }
+@media (max-width: 860px) { .newsletter__grid { grid-template-columns: 1fr; } }
