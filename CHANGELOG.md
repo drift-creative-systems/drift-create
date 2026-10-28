@@ -3,6 +3,15 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.11.0] - 2026-10-28
+
+### Added
+- **Table → Width** (`width`): Wide (default, unchanged) or **Prose width**, which puts the table in the Content module's reading column with a text-sized heading and the lead as a normal paragraph. Next to Content modules or other prose tables the section padding goes, so the gap matches the spacing inside Content text and a policy page reads as one document.
+- **Table → Wrap long values** (`wrap`): value cells wrap instead of staying on one line. Off by default; always on for Prose width. Tables still scroll sideways on phones.
+
+### Upgrade
+- Run ACF Sync for the Page modules field group. Existing tables stay Wide with no wrapping.
+
 ## [1.10.0] - 2026-10-28
 
 ### Added

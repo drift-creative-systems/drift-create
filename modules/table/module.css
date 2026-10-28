@@ -22,3 +22,30 @@
 @media (max-width: 620px) {
 	.data-table td { white-space: normal; }
 }
+
+/* Wrap long values (always on for prose width). Still scrolls sideways on phones. */
+.data-block--wrap .data-table td { white-space: normal; }
+
+/* Prose width: the Content module's reading column (.wrap--text), heading at the
+   size of an H2 inside Content text, lead as a normal paragraph. */
+.data-block--prose .suite__head { max-width: none; margin-bottom: 1.5rem; }
+.data-block--prose .suite__head .h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem); }
+.data-block--prose .suite__head .lead { margin: 0; max-width: none; font-size: 1.125rem; color: var(--fg); }
+
+/* Prose tables flow with neighbouring Content and prose Table modules: no section
+   padding between them, so the gap is the one Content text uses (2.25em above an
+   H2, 1.5rem between a paragraph and a table). Margins collapse, so the larger wins. */
+.section.content:has(+ .data-block--prose),
+.data-block--prose:has(+ .section.content),
+.data-block--prose:has(+ .data-block--prose) { padding-bottom: 0; }
+.section.content + .data-block--prose,
+.data-block--prose + .section.content,
+.data-block--prose + .data-block--prose { padding-top: 0; }
+.section.content + .data-block--prose > .wrap > :first-child,
+.data-block--prose + .section.content > .wrap > :first-child,
+.data-block--prose + .data-block--prose > .wrap > :first-child { margin-top: 1.5rem; }
+.data-block--prose + .data-block--prose .suite__head { padding-top: 0; }
+.section.content + .data-block--prose .suite__head > .h2:first-child,
+.data-block--prose + .data-block--prose .suite__head > .h2:first-child,
+.data-block--prose + .section.content > .wrap > .content__title:first-child,
+.data-block--prose + .section.content > .wrap > .prose:first-child > h2:first-child { margin-top: 2.25em; }

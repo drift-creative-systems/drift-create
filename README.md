@@ -55,7 +55,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Full-width image** | Edge to edge or page width; natural or short/medium/tall crop with focal point; caption; optional overlay heading, text and buttons |
 | **Video** | YouTube/Vimeo link (click to play, privacy-enhanced) or uploaded MP4/WebM; poster, caption, narrow or wide |
 | **Pricing table** | Plans with free-text price, period, feature list and button; highlight one with a badge |
-| **Table** | Data table (price lists, comparisons, worked examples): label + optional detail line, up to 3 value columns, highlighted total rows, small print. Two in a row sit together under one heading |
+| **Table** | Data table (price lists, comparisons, worked examples): label + optional detail line, up to 3 value columns, highlighted total rows, small print. Two in a row sit together under one heading. Prose width lines it up with Content text (policies); "Wrap long values" for long-text cells |
 | **Roadmap** | Every app's roadmap items as Now / Next / Later columns plus Recently shipped; optional suite filter and button. Suites = picked, else the page suite, else all |
 | **FAQ** | Accordion, optional FAQPage schema |
 | **CTA band** | Black band with heading, text, buttons and a suite accent |

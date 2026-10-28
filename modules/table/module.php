@@ -10,6 +10,11 @@
  * Two Table modules in a row sit closer together, so one heading can cover
  * a pair of tables.
  *
+ * Prose width puts the table in the Content module's reading column, with
+ * a text-sized heading, and closes the gap to neighbouring Content and prose
+ * Table modules so a policy page reads as one document. Prose width always
+ * wraps long values; Wide tables can opt in with "Wrap long values".
+ *
  * @package Drift_Create
  */
 
@@ -44,9 +49,19 @@ $note       = (string) get_sub_field( 'note' );
 $heading_id = $heading ? wp_unique_id( 'table-heading-' ) : '';
 // Scroll region name for keyboard and screen reader users on narrow screens.
 $region = $heading ?: ( $label_head ?: __( 'Table', 'drift-create' ) );
+
+// Width and wrapping. Empty (tables saved before 1.11.0) = wide, no wrap.
+$is_prose = 'prose' === get_sub_field( 'width' );
+$classes  = [ 'section', 'data-block' ];
+if ( $is_prose ) {
+	$classes[] = 'data-block--prose';
+}
+if ( $is_prose || get_sub_field( 'wrap' ) ) {
+	$classes[] = 'data-block--wrap';
+}
 ?>
-<section<?php drift_section_id(); ?> class="section data-block" style="<?php echo drift_accent_style( (string) get_sub_field( 'accent_suite' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>">
-	<div class="wrap">
+<section<?php drift_section_id(); ?> class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo drift_accent_style( (string) get_sub_field( 'accent_suite' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>">
+	<div class="wrap<?php echo $is_prose ? ' wrap--text' : ''; ?>">
 		<?php if ( $eyebrow || $heading || $lead ) : ?>
 			<header class="suite__head">
 				<?php if ( $eyebrow ) : ?><p class="eyebrow eyebrow--accent"><?php echo esc_html( $eyebrow ); ?></p><?php endif; ?>

@@ -2923,6 +2923,62 @@
                             "parent_layout": "layout_drift_table"
                         },
                         {
+                            "key": "field_drift_table_width",
+                            "label": "Width",
+                            "name": "width",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Use Prose width on text pages such as policies, so the table lines up with the text around it. Prose width always wraps long values.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "wide": "Wide",
+                                "prose": "Prose width (matches text modules)"
+                            },
+                            "default_value": "wide",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_wrap",
+                            "label": "Wrap long values",
+                            "name": "wrap",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "Lets value cells wrap onto more than one line. Leave off for prices and short figures.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_drift_table_width",
+                                        "operator": "!=",
+                                        "value": "prose"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
                             "key": "field_drift_table_heading",
                             "label": "Heading",
                             "name": "heading",
@@ -4447,5 +4503,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793200520
+    "modified": 1793206624
 }
