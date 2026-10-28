@@ -599,6 +599,186 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_stats": {
+                    "key": "layout_drift_stats",
+                    "name": "stats",
+                    "label": "Stats",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_stats_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_stats"
+                        },
+                        {
+                            "key": "field_drift_stats_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "45",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_stats"
+                        },
+                        {
+                            "key": "field_drift_stats_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the rule above each number. Blank = the page suite.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_stats"
+                        },
+                        {
+                            "key": "field_drift_stats_counted",
+                            "label": "Counted from Apps",
+                            "name": "counted",
+                            "aria_label": "",
+                            "type": "checkbox",
+                            "instructions": "Always up to date. Shown first, in this order.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "apps": "Number of apps",
+                                "available": "Apps available now",
+                                "suites": "Number of suites",
+                                "platforms": "Number of platforms"
+                            },
+                            "default_value": [
+                                "apps",
+                                "available",
+                                "suites"
+                            ],
+                            "return_format": "value",
+                            "allow_custom": 0,
+                            "save_custom": 0,
+                            "layout": "vertical",
+                            "toggle": 0,
+                            "custom_choice_button_text": "Add new choice",
+                            "parent_layout": "layout_drift_stats"
+                        },
+                        {
+                            "key": "field_drift_stats_stats",
+                            "label": "More stats",
+                            "name": "stats",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Typed in. Shown after the counted ones.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "60",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "field_drift_stats_stats_value",
+                            "button_label": "Add stat",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_stats_stats_value",
+                                    "label": "Value",
+                                    "name": "value",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "35",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "50+",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_stats_stats"
+                                },
+                                {
+                                    "key": "field_drift_stats_stats_label",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "65",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "agencies using Drift",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_stats_stats"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_stats"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_cards": {
                     "key": "layout_drift_cards",
                     "name": "cards",
@@ -3889,5 +4069,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793174219
+    "modified": 1793174329
 }

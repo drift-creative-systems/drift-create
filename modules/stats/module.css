@@ -1,0 +1,8 @@
+/* Module: Stats — big Poppins numbers on a hairline, the accent as a short rule above each. */
+.stats-block { padding-block: clamp(3rem, 6vw, 5rem); }
+.stats-block__heading { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin: 0; padding: 0; list-style: none; }
+.stat { display: flex; flex-direction: column; gap: 0.35rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.stat::before { content: ""; width: 1.75rem; height: 3px; margin: -1.25rem 0 1.1rem; border-radius: 2px; background: var(--app); }
+.stat__value { font-family: var(--font-primary); font-weight: 600; font-size: clamp(2.5rem, 1.8rem + 3vw, 4.25rem); letter-spacing: -0.04em; line-height: 1; }
+.stat__label { color: var(--muted); font-size: 1rem; }
