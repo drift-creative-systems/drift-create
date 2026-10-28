@@ -1,0 +1,30 @@
+/* Module: Roadmap — also used on app pages (#roadmap and /roadmap/). Columns per stage; each item carries its app's suite colour on the left edge. */
+.roadmap__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: clamp(1rem, 2vw, 1.5rem); align-items: start; }
+.roadmap__stage { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; }
+/* Stage marker: solid = now, ring = next, dashed ring = later. Shape, not colour, carries the meaning. */
+.roadmap__stage::before { content: ""; width: 0.7rem; height: 0.7rem; border: 2px solid var(--fg); border-radius: 50%; }
+.roadmap__col--now .roadmap__stage::before { background: var(--fg); }
+.roadmap__col--later .roadmap__stage::before { border-style: dashed; }
+.roadmap__shipped .roadmap__stage::before { border: 0; border-radius: 0; width: 0.75rem; height: 0.4rem; border-left: 2px solid var(--fg); border-bottom: 2px solid var(--fg); transform: rotate(-45deg) translateY(-2px); }
+.roadmap__list, .roadmap__log { display: grid; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.roadmap__item { padding: 1.1rem 1.25rem; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--app); border-radius: 10px; }
+.roadmap__app { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.6rem; font-family: var(--font-primary); font-size: 0.8rem; font-weight: 500; }
+.roadmap__app a { color: var(--muted); text-decoration: none; }
+.roadmap__app a:hover { color: var(--fg); text-decoration: underline; }
+.roadmap__icon { display: grid; place-items: center; flex: none; width: 1.5rem; height: 1.5rem; overflow: hidden; border-radius: 6px; background: var(--soft); font-size: 0.75rem; font-weight: 600; line-height: 1; }
+.roadmap__icon--image { background: none; }
+.roadmap__icon--image img { width: 100%; height: 100%; object-fit: cover; }
+.roadmap__title { margin: 0; font-family: var(--font-primary); font-weight: 500; line-height: 1.35; }
+.roadmap__note { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.roadmap__target { margin: 0.6rem 0 0; font-family: var(--font-primary); font-size: 0.75rem; font-weight: 500; color: var(--muted); }
+.roadmap__shipped { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.roadmap__log { gap: 0; border-top: 1px solid var(--line); }
+.roadmap__log-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line); }
+.roadmap__date { flex: none; min-width: 7rem; font-family: var(--font-primary); font-size: 0.85rem; color: var(--muted); }
+.roadmap__log-app { flex: none; font-family: var(--font-primary); font-size: 0.85rem; font-weight: 500; text-decoration: none; border-bottom: 2px solid var(--app); }
+.roadmap__log-app:hover { border-bottom-color: var(--fg); }
+.roadmap__log-text { flex: 1 1 16rem; }
+.roadmap-block .btns { margin-top: clamp(2rem, 4vw, 3rem); }
+/* App page: the #roadmap section under the modules. */
+.app-roadmap { border-top: 1px solid var(--line); }
+.app-roadmap__more { margin: 2rem 0 0; font-family: var(--font-primary); font-weight: 500; }

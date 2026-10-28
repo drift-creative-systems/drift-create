@@ -50,3 +50,12 @@ add_action( 'init', static function () {
 	update_option( 'drift_create_modules_seeded', DRIFT_CREATE_VERSION );
 	update_option( 'drift_create_version', DRIFT_CREATE_VERSION );
 }, 100 );
+
+/* 1.9: app roadmap pages (/apps/{app}/roadmap/) need the rewrite rules rebuilt once. */
+add_action( 'init', static function () {
+	if ( '1.9.0' === get_option( 'drift_create_rewrites' ) ) {
+		return;
+	}
+	flush_rewrite_rules( false );
+	update_option( 'drift_create_rewrites', '1.9.0' );
+}, 99 );

@@ -3082,6 +3082,221 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_roadmap": {
+                    "key": "layout_drift_roadmap",
+                    "name": "roadmap",
+                    "label": "Roadmap",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_roadmap_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Default \"roadmap\" for /#roadmap. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "roadmap",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_lead",
+                            "label": "Lead",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_suites",
+                            "label": "Suites",
+                            "name": "roadmap_suites",
+                            "aria_label": "",
+                            "type": "checkbox",
+                            "instructions": "None = the page suite, or every suite on pages without one.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": [],
+                            "return_format": "value",
+                            "allow_custom": 0,
+                            "save_custom": 0,
+                            "layout": "vertical",
+                            "toggle": 0,
+                            "custom_choice_button_text": "Add new choice",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_stages",
+                            "label": "Columns",
+                            "name": "stages",
+                            "aria_label": "",
+                            "type": "checkbox",
+                            "instructions": "None = all three.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "now": "Now",
+                                "next": "Next",
+                                "later": "Later"
+                            },
+                            "default_value": [
+                                "now",
+                                "next",
+                                "later"
+                            ],
+                            "return_format": "value",
+                            "allow_custom": 0,
+                            "save_custom": 0,
+                            "layout": "vertical",
+                            "toggle": 0,
+                            "custom_choice_button_text": "Add new choice",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_shipped_count",
+                            "label": "Recently shipped",
+                            "name": "shipped_count",
+                            "aria_label": "",
+                            "type": "number",
+                            "instructions": "How many to list. 0 hides the list.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
+                            "min": 0,
+                            "max": "",
+                            "placeholder": "",
+                            "step": 1,
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_suite_filter",
+                            "label": "Suite filter",
+                            "name": "suite_filter",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "Needs items from two or more suites.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Show suite buttons",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_roadmap"
+                        },
+                        {
+                            "key": "field_drift_roadmap_button",
+                            "label": "Button",
+                            "name": "button",
+                            "aria_label": "",
+                            "type": "link",
+                            "instructions": "Optional, e.g. \"Suggest a feature\" → #contact.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "parent_layout": "layout_drift_roadmap"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_faq": {
                     "key": "layout_drift_faq",
                     "name": "faq",
@@ -3674,5 +3889,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793174023
+    "modified": 1793174219
 }

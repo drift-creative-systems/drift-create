@@ -25,6 +25,7 @@ define( 'DRIFT_CREATE_VERSION', '1.8.0' );
 require_once get_theme_file_path( 'inc/setup.php' );
 require_once get_theme_file_path( 'inc/acf.php' );
 require_once get_theme_file_path( 'inc/apps.php' );
+require_once get_theme_file_path( 'inc/roadmap.php' );
 require_once get_theme_file_path( 'inc/team.php' );
 require_once get_theme_file_path( 'inc/testimonials.php' );
 require_once get_theme_file_path( 'inc/brand.php' );

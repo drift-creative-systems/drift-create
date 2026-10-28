@@ -1,0 +1,168 @@
+{
+    "key": "group_drift_app_roadmap",
+    "title": "Roadmap",
+    "fields": [
+        {
+            "key": "field_drift_app_roadmap",
+            "label": "Roadmap",
+            "name": "drift_roadmap",
+            "aria_label": "",
+            "type": "repeater",
+            "instructions": "Shown on this app page (#roadmap), its own page at /apps/{app}/roadmap/ and in Roadmap modules. Rows appear in this order; shipped items newest first. The roadmap page stays out of search results until it has 5 items.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_drift_app_roadmap_item",
+            "button_label": "Add item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_drift_app_roadmap_item",
+                    "label": "Item",
+                    "name": "item",
+                    "aria_label": "",
+                    "type": "text",
+                    "instructions": "Short, e.g. \"Mac version\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_drift_app_roadmap"
+                },
+                {
+                    "key": "field_drift_app_roadmap_stage",
+                    "label": "Stage",
+                    "name": "stage",
+                    "aria_label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "now": "Now",
+                        "next": "Next",
+                        "later": "Later",
+                        "shipped": "Shipped"
+                    },
+                    "default_value": "next",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_drift_app_roadmap"
+                },
+                {
+                    "key": "field_drift_app_roadmap_target",
+                    "label": "Target",
+                    "name": "target",
+                    "aria_label": "",
+                    "type": "text",
+                    "instructions": "Optional. A quarter, not a date.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Q1 2027",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_drift_app_roadmap"
+                },
+                {
+                    "key": "field_drift_app_roadmap_shipped",
+                    "label": "Shipped on",
+                    "name": "shipped",
+                    "aria_label": "",
+                    "type": "date_picker",
+                    "instructions": "Newest shows first.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_drift_app_roadmap_stage",
+                                "operator": "==",
+                                "value": "shipped"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "j F Y",
+                    "return_format": "Ymd",
+                    "first_day": 1,
+                    "parent_repeater": "field_drift_app_roadmap"
+                },
+                {
+                    "key": "field_drift_app_roadmap_note",
+                    "label": "Note",
+                    "name": "note",
+                    "aria_label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_drift_app_roadmap"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "drift_app"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Field names follow the drift_* meta keys; read with drift_app_roadmap(), not get_field().",
+    "show_in_rest": 0,
+    "modified": 1793174219
+}

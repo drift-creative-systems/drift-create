@@ -8,7 +8,7 @@
             "name": "page_suite",
             "aria_label": "",
             "type": "select",
-            "instructions": "Tints the page in the suite colour. App suites modules with no rows show only this suite. Blank = Drift-wide page.",
+            "instructions": "Tints the page in the suite colour. App suites and Roadmap modules show only this suite unless you pick suites in them. Blank = Drift-wide page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -48,5 +48,5 @@
     "active": true,
     "description": "Per-page suite. Read with drift_page_suite().",
     "show_in_rest": 0,
-    "modified": 1793173938
+    "modified": 1793174219
 }

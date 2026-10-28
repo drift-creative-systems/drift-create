@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function drift_module_layouts(): array {
-	return [ 'hero', 'content', 'suite_tiles', 'app_suites', 'cards', 'spotlight', 'split_text', 'image_text', 'full_image', 'video', 'pricing', 'team', 'testimonials', 'faq', 'cta', 'contact', 'newsletter' ];
+	return [ 'hero', 'content', 'suite_tiles', 'app_suites', 'cards', 'spotlight', 'split_text', 'image_text', 'full_image', 'video', 'pricing', 'team', 'testimonials', 'roadmap', 'faq', 'cta', 'contact', 'newsletter' ];
 }
 
 /**
@@ -45,6 +45,10 @@ function drift_layouts_for_request(): array {
 	// 404, app pages (.hero__lead) and the module-less front page fallback use hero styles.
 	if ( is_404() || is_singular( 'drift_app' ) || ( is_front_page() && ! $layouts ) ) {
 		$layouts[] = 'hero';
+	}
+	// App pages show their roadmap (parts/roadmap.php) without the module.
+	if ( is_singular( 'drift_app' ) && drift_app_roadmap( (int) get_queried_object_id() ) ) {
+		$layouts[] = 'roadmap';
 	}
 	return array_unique( $layouts );
 }
@@ -91,6 +95,7 @@ function drift_render_modules( int $post_id ): bool {
 			case 'pricing':
 			case 'team':
 			case 'testimonials':
+			case 'roadmap':
 			case 'faq':
 			case 'cta':
 			case 'contact':
