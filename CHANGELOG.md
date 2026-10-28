@@ -3,6 +3,14 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.9.1] - 2026-10-28
+
+### Added
+- **Company details** in the footer bottom bar: Drift Creative Systems Ltd registration number and registered office. Edit under **Drift Settings → Company details** (`footer_company`); left blank, it shows the Drift Creative Systems Ltd details.
+
+### Upgrade
+- Run ACF Sync for the Drift Settings field group.
+
 ## [1.9.0] - 2026-10-28
 
 ### Added
