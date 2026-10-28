@@ -51,7 +51,7 @@ foreach ( array_merge( $shipped, ...array_values( $columns ) ) as $item ) {
 								<?php if ( $show_app ) : ?>
 									<p class="roadmap__app">
 										<?php echo drift_app_icon( $item['app'], 'roadmap__icon' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
-										<a href="<?php echo esc_url( drift_app_roadmap_url( $item['app'] ) ); ?>"><?php echo esc_html( get_the_title( $item['app'] ) ); ?></a>
+										<a href="<?php echo esc_url( drift_app_roadmap_url( $item['app'] ) ); ?>"><?php echo esc_html( drift_app_short_name( $item['app'] ) ); ?></a>
 									</p>
 								<?php endif; ?>
 								<p class="roadmap__title"><?php echo esc_html( $item['item'] ); ?></p>
@@ -75,7 +75,7 @@ foreach ( array_merge( $shipped, ...array_values( $columns ) ) as $item ) {
 							<time class="roadmap__date" datetime="<?php echo esc_attr( mysql2date( 'Y-m-d', $item['shipped'] ) ); ?>"><?php echo esc_html( mysql2date( 'j M Y', $item['shipped'] ) ); ?></time>
 						<?php endif; ?>
 						<?php if ( $show_app ) : ?>
-							<a class="roadmap__log-app" href="<?php echo esc_url( drift_app_roadmap_url( $item['app'] ) ); ?>"><?php echo esc_html( get_the_title( $item['app'] ) ); ?></a>
+							<a class="roadmap__log-app" href="<?php echo esc_url( drift_app_roadmap_url( $item['app'] ) ); ?>"><?php echo esc_html( drift_app_short_name( $item['app'] ) ); ?></a>
 						<?php endif; ?>
 						<span class="roadmap__log-text"><?php echo esc_html( $item['item'] ); ?></span>
 					</li>

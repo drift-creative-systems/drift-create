@@ -73,7 +73,7 @@ $lead    = (string) get_sub_field( 'lead' );
 						}
 						?>
 					</div>
-					<p class="suite-tile__apps"><?php echo esc_html( implode( ' · ', wp_list_pluck( $apps, 'post_title' ) ) ); ?></p>
+					<p class="suite-tile__apps"><?php echo esc_html( implode( ' · ', array_map( static fn( $app ) => drift_app_short_name( $app->ID ), $apps ) ) ); ?></p>
 					<p class="suite-tile__foot">
 						<span class="suite-tile__count"><?php echo esc_html( implode( ' · ', $counts ) ); ?></span>
 						<?php if ( $suite['url'] ) : ?><span class="suite-tile__more" aria-hidden="true">Explore &rarr;</span><?php endif; ?>

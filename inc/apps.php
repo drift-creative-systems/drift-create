@@ -211,8 +211,19 @@ function drift_app_icon( int $id, string $class, bool $eager = false ): string {
 			wp_get_attachment_image( $image, 'thumbnail', false, [ 'alt' => '', 'loading' => $eager ? false : 'lazy' ] )
 		);
 	}
-	// "Drift: Encore" → "E": use the name after the brand prefix.
-	$name    = trim( (string) preg_replace( '/^.*:\s*/', '', get_the_title( $id ) ) );
+	// "Drift: Encore" → "E".
+	$name    = drift_app_short_name( $id );
 	$initial = $name ? mb_strtoupper( mb_substr( $name, 0, 1 ) ) : '';
 	return '<span class="' . esc_attr( $class ) . '" aria-hidden="true">' . esc_html( $initial ) . '</span>';
+}
+
+/**
+ * The app's name without the brand prefix: "Drift: Encore" → "Encore". For
+ * places that already say Drift (suite tiles, roadmap labels, icon initials).
+ *
+ * @param int $id App post ID.
+ * @return string
+ */
+function drift_app_short_name( int $id ): string {
+	return trim( (string) preg_replace( '/^.*:\s*/', '', get_the_title( $id ) ) );
 }
