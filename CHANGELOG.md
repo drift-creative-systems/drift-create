@@ -3,6 +3,26 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.9.0] - 2026-10-28
+
+### Added
+- **Suite tiles** module (`suite_tiles`): one tile per suite in its colour, with tagline, app icons and names, an "available / coming" count and a link to the suite's landing page. Content is automatic; the editor picks the suites and their order.
+- **Drift Settings → Suites**: tagline and landing page per suite (`drift_suite_details()`).
+- **Page suite** (Page settings sidebar): tints the page in a suite's colour (`body.page-suite-{key}`). Module accents left blank follow it, and App suites / Roadmap modules default to that suite. Suite landing pages use this.
+- **Platforms** on apps (WordPress plugin, Self-hosted, Desktop app, Web app), shown as tags on cards and app pages. App suites gets an optional **platform filter** (jQuery, `aria-pressed` buttons, announces the result).
+- **Roadmaps.** Each app has a **Roadmap** box (item, stage Now / Next / Later / Shipped, target quarter, shipped date, note). Shown on the app page (`#roadmap`), on the app's own page at `/apps/{app}/roadmap/`, and in the new **Roadmap** module, which shows every app's items with an optional suite filter. The `/roadmap/` page has its own canonical and title, is `noindex` below 5 items and returns 404 when the app has none.
+- **Stats** module (`stats`): numbers counted from Apps (apps, available, suites, platforms) plus your own.
+- `drift_app_short_name()`: app name without the "Drift:" prefix, used on suite tiles and roadmap labels.
+
+### Changed
+- "WP Agency Kit" is now **Agency Kit**. Same key (`agency`) and colour, so no app data changes.
+- Module accent selects can be left blank to use the page suite (`drift_accent_style( '' )` now returns no style instead of Music). Saved values are unchanged.
+- App suites with no suite rows shows the page suite, or every suite on pages without one. The suites repeater is no longer required.
+- The app page "←" link goes to the suite's landing page when one is set.
+
+### Upgrade
+- Rewrite rules are flushed once (option `drift_create_rewrites`) so `/roadmap/` URLs work. Run ACF Sync for the changed field groups.
+
 ## [1.8.0] - 2026-10-26
 
 ### Added

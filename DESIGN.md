@@ -66,6 +66,7 @@ Components use these, **not** `--black` / `--white` directly. Light values are o
 
 - Defined in PHP in `drift_suites()` (`inc/apps.php`). The CSS tokens `--music`, `--agency` and `--seo` mirror them. **Change both together.**
 - `--app` is set inline per element (`style="--app: #…"`) by suites, cards, the spotlight, the CTA and app pages. Components read `var(--app)`.
+- **Page suite:** a page with Page settings → Page suite gets `body.page-suite-{key}`, which sets `--app` for the whole page (app pages use their own suite). Module accent fields left blank print no inline `--app`, so they inherit it. The three `.page-suite-*` rules in `site.css` are a third place to update when suites change.
 - An app can override its suite accent (App details → Accent override). Use this rarely.
 - Accent buttons have **black text** on the accent (all three accents pass contrast with black).
 
@@ -134,6 +135,8 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
   Rows sit in `.btns`. In modules the editor chooses the style per button.
 - **Pills** `.pill--{status}` — `live` / `demo` are black with an accent dot; `development` / `soon` are soft grey.
 - **App card** `.card` (`parts/app-card.php`) — white, 1px line, lifts 3px on hover, whole card clickable (title link `::after`). `--featured` is black and spans 2×2.
+- **Tags** `.tags` / `.tag` — platform labels on cards (`.card__platforms`) and the app hero (`.app__platforms`). Outline only, muted text, no accent: information, not a call to action.
+- **Filter** `.filter` / `.filter__btn` (`parts/filter.php`, `assets/site.js`) — pill buttons, `aria-pressed`; pressed = solid `--fg`. Hidden until JS runs. A polite live region announces how many items are shown. Used for App suites platforms and Roadmap suites.
 - **Encore flow** `.flow` (`parts/encore-flow.php`) — decorative Airtable → Publish → site animation. `aria-hidden`; the steps beside it carry the meaning.
 - **Contact form** `.contact` / `.form` (`parts/contact.php`) — soft grey section, 10px-radius fields, honeypot `.hp`.
 - **Newsletter sign-up** `.signup` (`parts/newsletter.php`) — visible "Email address" label, then the email field and button on one row (wraps when narrow), small muted note with the privacy link. In the footer the field is transparent with a `--band-line` border and the button is `btn--line-light`.
@@ -147,7 +150,9 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 |---|---|---|---|
 | Hero | `hero` | white | First hero = page H1. Optional logo-art tile. |
 | Content | `content` | white | Heading + WYSIWYG in the 46rem text column. First on the page = H1 (page title if empty). |
-| App suites | `app_suites` | white | Cards from the Apps CPT, grouped by suite; one featured. |
+| Suite tiles | `suite_tiles` | white | One `.suite-tile` per suite: 6px suite-colour top bar, tagline, app icons (`.card__icon`), app names, available / coming count. Whole tile links to the landing page. 1–3 columns, stacks at 960. |
+| App suites | `app_suites` | white | Cards from the Apps CPT, grouped by suite; one featured. Optional platform filter. |
+| Stats | `stats` | white | `.stat` numbers in Poppins 600 (up to 4.25rem) on a hairline with a short `--app` rule; auto-fit columns. |
 | Cards | `cards` | white | Optional square icon image in the `.card__icon` tile. Shared `.card` component in 2/3/4 columns (`.cards--2/--4`). Manual cards or chosen apps. Cards without a link get `.card--static` (no hover lift). |
 | App spotlight | `spotlight` | **black** | "The only place the accent leads." Steps, flow illustration. |
 | Split text | `split_text` | white | Heading left, WYSIWYG right (the About section). |
@@ -157,6 +162,7 @@ Two-column modules use `minmax(0, Xfr)` grids with a `clamp(2rem, 6vw, 5rem)` ga
 | Full-width image | `full_image` | image | `.full-image--{full|contained} --h-{natural|short|medium|tall} --focus-*`. Overlay = white text on a black gradient (`--shade` 0.55/0.7/0.85, `.full-image--shade-*`); buttons inverted as on the CTA band. Image alt is emptied when overlay text is on. |
 | Video | `video` | white | 16:9 black frame, radius. YouTube/Vimeo: poster + accent play button, iframe injected on click (`assets/site.js`). Files: native `<video controls>`. Narrow = 56rem. |
 | Pricing table | `pricing` | white | `.plan` cards; the highlighted plan is black with an accent button and badge. Ticks use `--app`. |
+| Roadmap | `roadmap` | white | `.roadmap__col` per stage (auto-fit, min 17rem). Stage marker is a shape, not a colour: solid dot = Now, ring = Next, dashed ring = Later, tick = Shipped. Items are `--surface` cards with a 4px left edge in the app's suite colour. Recently shipped is a dated list with hairlines. Same CSS on app pages (`#roadmap`, `/roadmap/`). |
 | FAQ | `faq` | white | `<details>` accordion, optional FAQPage schema. |
 | CTA band | `cta` | **black** | Pick an accent suite; dark/line buttons are inverted on black. |
 | Contact form | `contact` | soft | Always `#contact`, once per page. |

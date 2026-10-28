@@ -27,10 +27,11 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | What | Where |
 |---|---|
 | Page layout and copy | **Pages → (page) → Page modules** |
-| Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box (incl. **App avatar** upload), **Page modules** = app page body, Page Attributes → Order = card order |
+| Apps (cards, app pages) | **Apps** — title, excerpt = card text, **App details** box (incl. **App avatar** upload and **Platforms**), **Page modules** = app page body, **Roadmap** box = the app's roadmap items, Page Attributes → Order = card order |
 | Team members | **Team** — title = name, featured image = photo, **Team details** box (role, suite, bio, links), Page Attributes → Order = display order. No public pages; they show through the Team module. |
 | Testimonials | **Testimonials** — title = name, featured image = headshot (optional), **Testimonial details** (quote, role, company), Page Attributes → Order. No public pages; shown through the Testimonials module. |
-| Brand line, header / footer / hero logos, footer links, social links, contact copy and recipient, newsletter (Brevo) settings and copy, default meta description | **Drift Settings** |
+| Brand line, header / footer / hero logos, footer links, social links, contact copy and recipient, newsletter (Brevo) settings and copy, suite taglines and landing pages, default meta description | **Drift Settings** |
+| A page's suite colour and default suite | **Pages → (page) → Page settings → Page suite** (sidebar) |
 | Main menu | **Appearance → Menus** (location "Main menu"; falls back to Apps / Encore / About) |
 | Legal links (T&Cs, Privacy, Cookies) | **Appearance → Menus** (location "Footer legal links"; falls back to the Privacy Policy page from Settings → Privacy) |
 
@@ -40,7 +41,9 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 |---|---|
 | **Hero** | Eyebrow, big title (H1 if first), lead, buttons, optional logo tile |
 | **Content** | Heading (H1 if first, page title if left empty) and a rich text block, for standard pages |
-| **App suites (cards)** | Apps grouped by suite with optional headings; pick a featured app |
+| **Suite tiles** | One tile per suite in its colour: tagline, app icons and names, available / coming count, link to the suite landing page. All automatic |
+| **App suites (cards)** | Apps grouped by suite with optional headings; pick a featured app; optional platform filter. No rows = the page suite (or all) |
+| **Stats** | Big numbers: counted from Apps (apps, available, suites, platforms) plus your own |
 | **Cards** | Grid of 2–4 columns: your own cards (icon image, optional title, rich text, link) or chosen Apps |
 | **App spotlight** | Black section for one app: steps, app page button, demo button, optional Encore flow animation |
 | **Split text** | Heading left, rich text right |
@@ -50,6 +53,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Full-width image** | Edge to edge or page width; natural or short/medium/tall crop with focal point; caption; optional overlay heading, text and buttons |
 | **Video** | YouTube/Vimeo link (click to play, privacy-enhanced) or uploaded MP4/WebM; poster, caption, narrow or wide |
 | **Pricing table** | Plans with free-text price, period, feature list and button; highlight one with a badge |
+| **Roadmap** | Every app's roadmap items as Now / Next / Later columns plus Recently shipped; optional suite filter and button. Suites = picked, else the page suite, else all |
 | **FAQ** | Accordion, optional FAQPage schema |
 | **CTA band** | Black band with heading, text, buttons and a suite accent |
 | **Contact form** | Demo / enquiry form (always `#contact`) |
@@ -72,6 +76,12 @@ The editor is hidden on Pages and Apps, so both are built only from modules. A p
 
 On **app pages** the app hero (from App details) always shows first and holds the H1; modules follow it. The contact form is added at the bottom automatically unless the app has a Contact module.
 
+### Suites, landing pages and roadmaps
+
+- **Suites** are Music Suite, Agency Kit and SEO (`drift_suites()` in `inc/apps.php`). Set each suite's tagline and landing page under **Drift Settings → Suites**. Suite tiles and the app page "←" link go to the landing page.
+- **Suite landing page:** build it from modules like any page and set **Page suite** in the sidebar. The page takes the suite colour, accent fields left blank follow it, and App suites / Roadmap modules show only that suite unless you pick suites in them.
+- **Roadmaps:** add items in the app's **Roadmap** box (item, stage Now / Next / Later / Shipped, optional target quarter, shipped date, note). They appear on the app page (`#roadmap`), on the app's own page at `/apps/{app}/roadmap/`, and in Roadmap modules. The `/roadmap/` page is `noindex` until it has 5 items, and returns 404 for an app with no items.
+
 ---
 
 ## Structure
@@ -82,7 +92,8 @@ drift-create/
 ├── inc/
 │   ├── setup.php          Theme supports, menus, asset enqueue (+ per-module CSS)
 │   ├── acf.php            ACF JSON paths, Drift Settings options page, drift_option(), choice filters
-│   ├── apps.php           drift_app CPT, suites, statuses, drift_app_meta(), drift_apps()
+│   ├── apps.php           drift_app CPT, suites, page suite, statuses, platforms, drift_app_meta(), drift_apps()
+│   ├── roadmap.php        App roadmaps: drift_app_roadmap(), /roadmap/ endpoint, canonical / title / robots
 │   ├── team.php           drift_team CPT (admin-only), drift_team_meta(), drift_team_members()
 │   ├── testimonials.php   drift_testimonial CPT (admin-only), drift_testimonial_meta(), drift_testimonials()
 │   ├── brand.php          Brand name/line, logo mark SVG, favicons, document title
@@ -94,7 +105,7 @@ drift-create/
 │   ├── updates.php        GitHub release updates (Plugin Update Checker)
 │   └── seed.php           Seed content (loaded only when seeding)
 ├── modules/{layout}/      module.php (+ optional module.css, loaded only where used)
-├── parts/                 app-card, app-suites, contact, newsletter, encore-flow
+├── parts/                 app-card, app-suites, filter, roadmap, contact, newsletter, encore-flow
 ├── vendor/                Composer (plugin-update-checker) — committed
 ├── acf-json/              Field groups — commit every change
 ├── assets/                site.css (base + components), site.js (jQuery), brand/
@@ -115,7 +126,8 @@ drift-create/
 
 - **No build step.** Plain CSS and jQuery. Assets are versioned by `filemtime`. The only Composer dependency is the update checker.
 - ACF JSON saves into `acf-json/`. Edit field groups on a dev site, then commit the JSON.
-- App detail fields use the original meta keys (`drift_suite`, `drift_tagline`, `drift_status`, `drift_icon` (avatar image ID), `drift_accent`, `drift_demo`). Templates read them with `get_post_meta()`, so they work even if ACF is off.
+- App detail fields use the original meta keys (`drift_suite`, `drift_tagline`, `drift_status`, `drift_platform`, `drift_icon` (avatar image ID), `drift_accent`, `drift_demo`, and the `drift_roadmap` repeater). Templates read them with `get_post_meta()`, so they work even if ACF is off.
+- Filters (`parts/filter.php` + `assets/site.js`): put `data-filter-scope` on the section, `data-filter-tags="a b"` on items and `data-filter-group` on wrappers that should hide when empty.
 - Without ACF Pro: an admin notice shows, the front page falls back to hero + apps + contact, and other pages show their editor content.
 
 ## Updates

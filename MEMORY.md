@@ -2,8 +2,9 @@
 
 Running record of decisions, state and open issues. Newest first.
 
-## Current state (2026-10-10, v1.4.0 unreleased)
-- Latest release v1.2.0: https://github.com/drift-creative-systems/drift-create/releases/tag/v1.2.0
+## Current state (2026-10-28, v1.9.0)
+- Latest release v1.9.0: https://github.com/drift-creative-systems/drift-create/releases/tag/v1.9.0
+- Site is moving from "Music Suite home" to a Drift-wide Home (Suite tiles → App suites → Stats → Roadmap) with a landing page per suite. Content work is in wp-admin, see README "Suites, landing pages and roadmaps".
 - Theme converted to ACF Flexible Content page modules. Not yet tested on a WordPress install.
 - Updates via GitHub releases (Plugin Update Checker 5.7). No GitHub Actions deploy yet. Releases are built by hand (README).
 - No staging / live URLs recorded yet.
@@ -30,13 +31,22 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-09 | Legal links via a WP menu location (`legal`), not Drift Settings | Editors already manage menus; the privacy policy page is the fallback. |
 | 2026-10-08 | Page editor hidden via ACF `hide_on_screen`; Content module replaces it | Pages are built only from modules. Old editor content still renders on pages with no modules, but can't be edited — move it into a Content module. |
 | 2026-10-26 | Mailing list = Brevo double opt-in via direct API call (no plugin); one sitewide list (#2); footer column + page module; email only | Client choice. API key is a Drift Settings field (client choice) with a `DRIFT_BREVO_API_KEY` wp-config override. It's in the DB, not the public repo. |
+| 2026-10-28 | "WP Agency Kit" renamed **Agency Kit** (key `agency` and colour unchanged); Beacon (self-hosted PHP) and Redline (WP plugin) go in it; SEO stays separate and hidden until it has apps | Suites are grouped by audience, not platform. Beacon isn't WordPress. Label-only change = no data migration. |
+| 2026-10-28 | Platform is an app attribute (WordPress plugin / Self-hosted / Desktop app / Web app) with a filter, not a suite | Visitors pick by who it's for; platform narrows it down. Suites survive an app gaining a second platform. |
+| 2026-10-28 | Page suite field tints a page via a body class; blank module accents inherit it | Suite landing pages are duplicates of one layout; one dropdown re-themes the page. |
+| 2026-10-28 | Roadmap = repeater on each app (not a CPT), shown on the app page, `/apps/{app}/roadmap/` (endpoint) and a hub module; Now / Next / Later, optional quarter, no dates on plans | One place per app; quarters, not dates, so the public roadmap doesn't make promises. Endpoint = no extra pages to create. |
+| 2026-10-28 | `/roadmap/` page is noindex below 5 items, 404 with none | Avoid thin pages in search. |
 | 0.2.0 | Suites set the accent colour; per-app colours dropped | Brand system: one accent per product suite. |
 
 ## Open issues / to check
 - [ ] **Contrast:** `#7A7F87` on white ≈ 4.0:1, which fails AA for body text. Proposed `--grey-text: #6B7078`. Needs brand sign-off (DESIGN.md §2).
 - [ ] **jQuery** is now loaded on the front end (about 30 KB) for a 20-line menu script. That's the Bonsai standard, but it costs a little INP/LCP. Revisit if PageSpeed suffers.
 - [ ] Seeded blurbs for Greenroom, Stageside, Wristband and Wristband Fan are first drafts. Review the copy before launch.
-- [ ] No apps yet in the WP Agency Kit or SEO suites. Those suites stay hidden until apps are added.
+- [ ] Add Beacon and Redline as Apps (Agency Kit; platforms Self-hosted / WordPress plugin), with avatars and excerpts. SEO suite still empty, so it stays hidden.
+- [ ] **Test 1.9 on WP:** ACF Sync (4 changed / 2 new field groups), Drift Settings → Suites, Page suite tint, blank accent inherits, suite tiles, App suites platform filter (keyboard + screen reader announcement), stats, roadmap module + suite filter, app `#roadmap`, `/apps/{app}/roadmap/` (flush ran: option `drift_create_rewrites` = 1.9.0; 404 for an app with no items; noindex < 5 items; canonical points at /roadmap/). Check the page editor is still hidden on pages and apps.
+- [ ] With Yoast / Rank Math active, the `/roadmap/` canonical and noindex come from the plugin, not the theme. Check it doesn't canonicalise to the app page; add a `wpseo_canonical` / `rank_math/frontend/canonical` filter if it does.
+- [ ] Existing module accent fields saved as "Music" stay Music. On the Agency Kit landing page (duplicated from Home) clear them or switch to Agency Kit.
+- [ ] Old front page → /music-suite/: duplicate, set Page suite = Music, set it as the Music landing page in Drift Settings → Suites. Watch Search Console for music queries moving from / to /music-suite/.
 - [ ] Google Fonts load from Google's CDN. Consider self-hosting for GDPR and performance.
 - [ ] CSS is desktop-first (`max-width`), against the Bonsai mobile-first standard. Refactor only as a separate task.
 - [ ] Test on WP: activation seed, 0.2→0.3 upgrade, ACF Sync, contact form delivery (wp_mail / SMTP), each module empty and full.
@@ -49,6 +59,9 @@ Running record of decisions, state and open issues. Newest first.
 - [ ] Pricing ticks / badge use the suite accent; SEO green (#57E35B) on white is low contrast. Fine as decoration, but don't rely on it for meaning.
 
 ## Gotchas
+- New field groups must keep `hide_on_screen: the_content` and a `menu_order` above 0, or they can bring the editor back on pages / apps (ACF uses the first group's setting).
+- `drift_accent_style( '' )` returns '' on purpose (inherit the page suite). Don't reintroduce a Music fallback there.
+- The platform and roadmap filters share `parts/filter.php` + `bonsai_applyFilter()`. Items need `data-filter-tags`; wrappers that should hide when empty need `data-filter-group`.
 - `drift_page_layouts()` reads the raw `page_modules` post meta (ACF stores the layout names there). Used before the loop to enqueue CSS.
 - `parts/contact.php` is always `id="contact"`. The form handler redirects to `#contact`.
 - Newsletter forms redirect to their own anchor (`#newsletter` footer, `#signup` module default) with `?nl=…&nl_form=…`; only the matching form shows the result. Nonce is printed by hand, not `wp_nonce_field()`, to avoid duplicate ids with two forms on a page.

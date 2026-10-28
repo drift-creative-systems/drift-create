@@ -60,6 +60,8 @@ while ( have_posts() ) :
 		<?php if ( $roadmap_view ) : ?>
 			<section class="section">
 				<div class="wrap">
+					<?php // Stage headings are h3s; keep the outline h1 → h2 → h3. ?>
+					<h2 class="sr">Roadmap</h2>
 					<?php get_template_part( 'parts/roadmap', null, [ 'items' => $roadmap, 'shipped' => count( $roadmap ) ] ); ?>
 				</div>
 			</section>
