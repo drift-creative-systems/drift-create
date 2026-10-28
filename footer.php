@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer. Tagline, links and social icons: Drift Settings → Footer. Mailing
+ * Site footer. Tagline, company details, links and social icons: Drift Settings. Mailing
  * list sign-up (#newsletter): Drift Settings → Newsletter. Legal links:
  * Appearance → Menus → "Footer legal links" (falls back to the privacy
  * policy page set in Settings → Privacy).
@@ -62,6 +62,7 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 		</div>
 		<div class="foot__base">
 			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) . ' ' . drift_brand_name() ); ?> · Built in Devon by The Bonsai Digital Collective</p>
+			<p class="foot__company"><?php echo esc_html( (string) drift_option( 'footer_company', 'Drift Creative Systems Ltd. Registered in England and Wales, company number 17548220. Registered office: 167-169 Great Portland Street, 5th Floor, London W1W 5PF' ) ); ?></p>
 			<?php
 			if ( has_nav_menu( 'legal' ) ) {
 				wp_nav_menu( [

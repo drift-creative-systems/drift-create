@@ -60,6 +60,26 @@
             "append": ""
         },
         {
+            "key": "field_drift_settings_footer_company",
+            "label": "Company details",
+            "name": "footer_company",
+            "aria_label": "",
+            "type": "textarea",
+            "instructions": "Registered company line in the footer bottom bar. Blank = Drift Creative Systems Ltd details.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "Drift Creative Systems Ltd. Registered in England and Wales, company number 17548220. Registered office: 167-169 Great Portland Street, 5th Floor, London W1W 5PF",
+            "new_lines": ""
+        },
+        {
             "key": "field_drift_settings_header_logo",
             "label": "Header logo",
             "name": "header_logo",
@@ -803,5 +823,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1793173824
+    "modified": 1793174400
 }
