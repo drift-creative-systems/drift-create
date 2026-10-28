@@ -3,6 +3,11 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.9.2] - 2026-10-28
+
+### Changed
+- Footer credit now reads "Theme by The Bonsai Digital Collective", linked to bonsaidigitalcollective.co.uk (was "Built in Devon by The Bonsai Digital Collective").
+
 ## [1.9.1] - 2026-10-28
 
 ### Added
