@@ -3,6 +3,11 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.9.3] - 2026-10-28
+
+### Added
+- Copyright and company details in the README, and a copyright line in the theme header. Theme Author is now Drift Creative Systems (was The Bonsai Digital Collective). No visible change: the footer already shows the company details.
+
 ## [1.9.2] - 2026-10-28
 
 ### Changed

@@ -158,3 +158,9 @@ Sites pick it up on their next update check (or Dashboard → Updates → Check 
 ## Upgrading from 0.2.x
 
 Activate ACF Pro first. On the next page load the theme gives the front page the modules that recreate the old hardcoded layout (only if it has none). The Customiser "Brand" setting is still read as a fallback until **Drift Settings → Brand** is saved.
+
+## Copyright
+
+Copyright © 2026 Drift Creative Systems Ltd
+
+Drift Creative Systems Ltd. Registered in England and Wales, company number 17548220. Registered office: 167-169 Great Portland Street, 5th Floor, London W1W 5PF
