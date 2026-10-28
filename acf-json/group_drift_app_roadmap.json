@@ -160,9 +160,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "Field names follow the drift_* meta keys; read with drift_app_roadmap(), not get_field().",
     "show_in_rest": 0,
-    "modified": 1793174219
+    "modified": 1793174375
 }
