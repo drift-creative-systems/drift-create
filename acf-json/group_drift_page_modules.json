@@ -276,6 +276,153 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_suite_tiles": {
+                    "key": "layout_drift_suite_tiles",
+                    "name": "suite_tiles",
+                    "label": "Suite tiles",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_suite_tiles_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Default \"suites\" for /#suites. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "suites",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_suite_tiles"
+                        },
+                        {
+                            "key": "field_drift_suite_tiles_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_suite_tiles"
+                        },
+                        {
+                            "key": "field_drift_suite_tiles_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_suite_tiles"
+                        },
+                        {
+                            "key": "field_drift_suite_tiles_lead",
+                            "label": "Lead",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_suite_tiles"
+                        },
+                        {
+                            "key": "field_drift_suite_tiles_suites",
+                            "label": "Suites",
+                            "name": "suites",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Order of the tiles. No rows = every suite. Taglines and links: Drift Settings → Suites. Apps, icons and counts come from Apps. A suite with no apps is hidden.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "field_drift_suite_tiles_suites_suite",
+                            "button_label": "Add suite",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_suite_tiles_suites_suite",
+                                    "label": "Suite",
+                                    "name": "suite",
+                                    "aria_label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "music": "Music Suite",
+                                        "agency": "Agency Kit",
+                                        "seo": "SEO"
+                                    },
+                                    "default_value": "music",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_drift_suite_tiles_suites"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_suite_tiles"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_app_suites": {
                     "key": "layout_drift_app_suites",
                     "name": "app_suites",
@@ -3506,5 +3653,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793173888
+    "modified": 1793173938
 }
