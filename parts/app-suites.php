@@ -8,6 +8,8 @@
  *                             Empty = the page suite, or every suite when the
  *                             page has none.
  * $args['featured']   int     App ID shown as the large black card.
+ * $args['filter']     bool    Show the platform filter (needs apps on two
+ *                             or more platforms).
  *
  * @package Drift_Create
  */
@@ -27,9 +29,21 @@ $by_suite = [];
 foreach ( drift_apps() as $app ) {
 	$by_suite[ drift_app_meta( $app->ID )['suite'] ][] = $app;
 }
+
+// Only offer platforms that the apps shown here actually have.
+$platforms = [];
+if ( ! empty( $args['filter'] ) ) {
+	foreach ( $rows as $row ) {
+		foreach ( $by_suite[ (string) ( $row['suite'] ?? '' ) ] ?? [] as $app ) {
+			$platforms = array_merge( $platforms, drift_app_meta( $app->ID )['platforms'] );
+		}
+	}
+	$platforms = array_intersect_key( drift_platforms(), array_flip( $platforms ) );
+}
 ?>
-<section<?php echo $anchor ? ' id="' . esc_attr( $anchor ) . '"' : ''; ?> class="section">
+<section<?php echo $anchor ? ' id="' . esc_attr( $anchor ) . '"' : ''; ?> class="section"<?php echo count( $platforms ) > 1 ? ' data-filter-scope' : ''; ?>>
 	<div class="wrap">
+		<?php get_template_part( 'parts/filter', null, [ 'options' => $platforms, 'label' => 'Filter apps by platform' ] ); ?>
 		<?php
 		foreach ( $rows as $row ) :
 			$key = (string) ( $row['suite'] ?? '' );
@@ -37,7 +51,7 @@ foreach ( drift_apps() as $app ) {
 				continue;
 			}
 			?>
-			<div class="suite" style="<?php echo drift_accent_style( $key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>">
+			<div class="suite" data-filter-group style="<?php echo drift_accent_style( $key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>">
 				<header class="suite__head">
 					<p class="eyebrow eyebrow--accent"><?php echo esc_html( $suites[ $key ]['label'] ); ?></p>
 					<?php if ( ! empty( $row['heading'] ) ) : ?>

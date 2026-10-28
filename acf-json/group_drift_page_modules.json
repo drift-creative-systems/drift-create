@@ -460,7 +460,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "70",
+                                "width": "45",
                                 "class": "",
                                 "id": ""
                             },
@@ -477,6 +477,27 @@
                             "bidirectional": 0,
                             "ui": 1,
                             "bidirectional_target": [],
+                            "parent_layout": "layout_drift_app_suites"
+                        },
+                        {
+                            "key": "field_drift_app_suites_platform_filter",
+                            "label": "Platform filter",
+                            "name": "platform_filter",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "Needs apps on two or more platforms.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Show platform buttons",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
                             "parent_layout": "layout_drift_app_suites"
                         },
                         {
@@ -3653,5 +3674,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793173938
+    "modified": 1793174023
 }

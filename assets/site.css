@@ -228,6 +228,21 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .card--featured .card__text { font-size: 1.15rem; max-width: 40ch; }
 .card--featured .pill--live, .card--featured .pill--demo { background: var(--band-fg); color: var(--band); }
 .cards--small { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+.card__platforms { margin: -0.75rem 0 1.5rem; }
+.card--featured .tag { border-color: var(--band-line); color: var(--band-muted); }
+
+/* Tags — platforms on cards and app pages. Quiet on purpose: outline, no accent. */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.tag { padding: 0.2em 0.7em; border: 1px solid var(--line); border-radius: 999px; font-family: var(--font-primary); font-size: 0.75rem; font-weight: 500; color: var(--muted); white-space: nowrap; }
+
+/* Filter — App suites platforms, Roadmap suites (parts/filter.php + site.js). */
+.filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.filter[hidden] { display: none; }
+.filter__btn { min-height: 2.5rem; padding: 0.45em 1.1em; border: 1.5px solid var(--line); border-radius: 999px; background: none; color: var(--fg); font: 500 0.9rem var(--font-primary); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.filter__btn:hover { border-color: var(--fg); }
+.filter__btn[aria-pressed="true"] { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+/* Beat the components' own display values. */
+[data-filter-tags][hidden], [data-filter-group][hidden] { display: none; }
 @media (max-width: 960px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } .card--featured { grid-column: auto; grid-row: auto; } }
 
@@ -265,6 +280,7 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .app__icon { display: grid; place-items: center; width: 4.5rem; height: 4.5rem; margin-bottom: 1.5rem; overflow: hidden; border-radius: 20px; background: var(--band); color: var(--band-fg); font-family: var(--font-primary); font-weight: 600; font-size: 2rem; line-height: 1; box-shadow: inset 0 -4px 0 var(--app); }
 .app__icon--image { box-shadow: none; }
 .app__title { margin: 0; font-size: clamp(2.75rem, 1.5rem + 5.5vw, 6rem); letter-spacing: -0.04em; line-height: 0.98; }
+.app__platforms { margin-top: 1.25rem; }
 .app__flow { margin-top: clamp(2.5rem, 5vw, 4rem); max-width: 40rem; padding: clamp(1rem, 3vw, 2rem); border-radius: 20px; background: var(--band); }
 .prose { padding-block: clamp(2.5rem, 5vw, 4rem); font-size: 1.125rem; }
 .prose h2 { margin-top: 2.25em; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem); }

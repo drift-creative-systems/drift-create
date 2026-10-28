@@ -13,4 +13,5 @@ get_template_part( 'parts/app-suites', null, [
 	'section_id' => (string) get_sub_field( 'section_id' ),
 	'suites'     => get_sub_field( 'suites' ) ?: [],
 	'featured'   => (int) get_sub_field( 'featured_app' ),
+	'filter'     => (bool) get_sub_field( 'platform_filter' ),
 ] );

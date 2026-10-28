@@ -78,6 +78,34 @@
             "placeholder": ""
         },
         {
+            "key": "field_drift_app_platform",
+            "label": "Platforms",
+            "name": "drift_platform",
+            "aria_label": "",
+            "type": "checkbox",
+            "instructions": "Shown as tags on the card and app page, and used by the App suites platform filter.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "wordpress": "WordPress plugin",
+                "self-hosted": "Self-hosted",
+                "desktop": "Desktop app",
+                "web": "Web app"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "save_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
             "key": "field_drift_app_icon",
             "label": "App avatar",
             "name": "drift_icon",
@@ -176,5 +204,5 @@
     "active": true,
     "description": "Field names match the pre-0.3 meta keys (drift_*), so templates read them with get_post_meta().",
     "show_in_rest": 0,
-    "modified": 1793173824
+    "modified": 1793174023
 }

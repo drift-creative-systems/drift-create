@@ -32,6 +32,7 @@ while ( have_posts() ) :
 				<h1 class="app__title"><?php the_title(); ?></h1>
 				<?php drift_h1_used( true ); ?>
 				<?php if ( $m['tagline'] ) : ?><p class="hero__lead"><?php echo esc_html( $m['tagline'] ); ?></p><?php endif; ?>
+				<?php echo drift_platform_tags( $m['platforms'], 'app__platforms' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 				<p class="btns">
 					<span class="pill pill--<?php echo esc_attr( $m['status'] ); ?>"><?php echo esc_html( $m['label'] ); ?></span>
 					<?php if ( $m['demo'] ) : ?><a class="btn btn--accent" href="<?php echo esc_url( $m['demo'] ); ?>" target="_blank" rel="noopener">View demo</a><?php endif; ?>

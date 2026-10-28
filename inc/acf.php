@@ -70,3 +70,7 @@ add_filter( 'acf/load_field/name=drift_status', static function ( array $field )
 	$field['choices'] = drift_app_statuses();
 	return $field;
 } );
+add_filter( 'acf/load_field/name=drift_platform', static function ( array $field ): array {
+	$field['choices'] = drift_platforms();
+	return $field;
+} );

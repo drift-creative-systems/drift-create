@@ -1,4 +1,4 @@
-/* Drift Create: mobile menu, light / dark toggle, focus the contact form's "sent" notice, click-to-play videos. */
+/* Drift Create: mobile menu, light / dark toggle, focus the contact form's "sent" notice, click-to-play videos, filters. */
 (function ($) {
 	'use strict';
 
@@ -88,5 +88,29 @@
 		});
 		$play.replaceWith($frame);
 		$frame.trigger('focus');
+	});
+
+	// Filters (parts/filter.php): inside a [data-filter-scope], hide items whose
+	// data-filter-tags don't include the chosen key, then hide any
+	// [data-filter-group] left with nothing visible. "All" has an empty key.
+	function bonsai_applyFilter($scope, key) {
+		var $items = $scope.find('[data-filter-tags]');
+		$items.each(function () {
+			var tags = String($(this).attr('data-filter-tags') || '').split(' ');
+			$(this).prop('hidden', key !== '' && $.inArray(key, tags) === -1);
+		});
+		$scope.find('[data-filter-group]').each(function () {
+			$(this).prop('hidden', !$(this).find('[data-filter-tags]:not([hidden])').length);
+		});
+		var shown = $items.filter(':not([hidden])').length;
+		$scope.find('.filter__status').text(shown + (shown === 1 ? ' item' : ' items') + ' shown');
+	}
+
+	$('[data-filter-scope] .filter').prop('hidden', false);
+	$(document).on('click.bonsai_filter', '[data-filter-scope] .filter__btn', function () {
+		var $btn = $(this);
+		$btn.closest('.filter').find('.filter__btn').attr('aria-pressed', 'false');
+		$btn.attr('aria-pressed', 'true');
+		bonsai_applyFilter($btn.closest('[data-filter-scope]'), String($btn.data('filter') || ''));
 	});
 })(jQuery);

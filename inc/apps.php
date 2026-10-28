@@ -112,6 +112,21 @@ function drift_app_statuses(): array {
 }
 
 /**
+ * Platform → label. Shown as tags on cards and the app page, and as the App
+ * suites platform filter. Keys are also the data-filter-tags values.
+ *
+ * @return array<string, string>
+ */
+function drift_platforms(): array {
+	return [
+		'wordpress'   => 'WordPress plugin',
+		'self-hosted' => 'Self-hosted',
+		'desktop'     => 'Desktop app',
+		'web'         => 'Web app',
+	];
+}
+
+/**
  * Returns an app's details with validated suite, status and accent.
  *
  * @param int $id App post ID.
@@ -132,7 +147,25 @@ function drift_app_meta( int $id ): array {
 		'icon'        => (int) get_post_meta( $id, 'drift_icon', true ),
 		'accent'      => $custom ?: drift_suites()[ $suite ]['accent'],
 		'demo'        => (string) get_post_meta( $id, 'drift_demo', true ),
+		// ACF stores the checkbox as an array; keep known platforms in drift_platforms() order.
+		'platforms'   => array_values( array_intersect( array_keys( drift_platforms() ), (array) get_post_meta( $id, 'drift_platform', true ) ) ),
 	];
+}
+
+/**
+ * The app's platforms as a row of tags, or '' when none are set.
+ *
+ * @param string[] $platforms Platform keys from drift_app_meta().
+ * @param string   $class     Wrapper class, e.g. "card__platforms".
+ * @return string Tags HTML.
+ */
+function drift_platform_tags( array $platforms, string $class ): string {
+	$labels = array_intersect_key( drift_platforms(), array_flip( $platforms ) );
+	if ( ! $labels ) {
+		return '';
+	}
+	$tags = array_map( static fn( $label ) => '<li class="tag">' . esc_html( $label ) . '</li>', $labels );
+	return '<ul class="tags ' . esc_attr( $class ) . '" aria-label="Platforms">' . implode( '', $tags ) . '</ul>';
 }
 
 /**
