@@ -32,6 +32,8 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | Testimonials | **Testimonials** — title = name, featured image = headshot (optional), **Testimonial details** (quote, role, company), Page Attributes → Order. No public pages; shown through the Testimonials module. |
 | Brand line, header / footer / hero logos, footer company details, footer links, social links, contact copy and recipient, newsletter (Brevo) settings and copy, suite taglines and landing pages, default meta description | **Drift Settings** |
 | A page's suite colour and default suite | **Pages → (page) → Page settings → Page suite** (sidebar) |
+| Keep a page out of Google (proposals sent by link) | **Pages → (page) → Page settings → Hide from search engines** (noindex + left out of the core and Yoast sitemaps) |
+| A "Download PDF" button | Upload the PDF to **Media**, copy its URL into a button link. Buttons linking to a `.pdf` download it |
 | Main menu | **Appearance → Menus** (location "Main menu"; falls back to Apps / Encore / About) |
 | Legal links (T&Cs, Privacy, Cookies) | **Appearance → Menus** (location "Footer legal links"; falls back to the Privacy Policy page from Settings → Privacy) |
 
@@ -53,6 +55,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Full-width image** | Edge to edge or page width; natural or short/medium/tall crop with focal point; caption; optional overlay heading, text and buttons |
 | **Video** | YouTube/Vimeo link (click to play, privacy-enhanced) or uploaded MP4/WebM; poster, caption, narrow or wide |
 | **Pricing table** | Plans with free-text price, period, feature list and button; highlight one with a badge |
+| **Table** | Data table (price lists, comparisons, worked examples): label + optional detail line, up to 3 value columns, highlighted total rows, small print. Two in a row sit together under one heading |
 | **Roadmap** | Every app's roadmap items as Now / Next / Later columns plus Recently shipped; optional suite filter and button. Suites = picked, else the page suite, else all |
 | **FAQ** | Accordion, optional FAQPage schema |
 | **CTA band** | Black band with heading, text, buttons and a suite accent |

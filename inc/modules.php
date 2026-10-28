@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function drift_module_layouts(): array {
-	return [ 'hero', 'content', 'suite_tiles', 'app_suites', 'stats', 'cards', 'spotlight', 'split_text', 'image_text', 'full_image', 'video', 'pricing', 'team', 'testimonials', 'roadmap', 'faq', 'cta', 'contact', 'newsletter' ];
+	return [ 'hero', 'content', 'suite_tiles', 'app_suites', 'stats', 'cards', 'spotlight', 'split_text', 'image_text', 'full_image', 'video', 'pricing', 'table', 'team', 'testimonials', 'roadmap', 'faq', 'cta', 'contact', 'newsletter' ];
 }
 
 /**
@@ -94,6 +94,7 @@ function drift_render_modules( int $post_id ): bool {
 			case 'full_image':
 			case 'video':
 			case 'pricing':
+			case 'table':
 			case 'team':
 			case 'testimonials':
 			case 'roadmap':
@@ -182,13 +183,16 @@ function drift_buttons( $buttons, bool $big = false ): void {
 		if ( empty( $link['url'] ) || empty( $link['title'] ) ) {
 			continue;
 		}
-		$style = in_array( $button['style'] ?? '', $styles, true ) ? $button['style'] : 'dark';
-		$out  .= sprintf(
-			'<a class="btn btn--%1$s%2$s" href="%3$s"%4$s>%5$s</a>',
+		$style  = in_array( $button['style'] ?? '', $styles, true ) ? $button['style'] : 'dark';
+		// PDFs (e.g. a proposal in the Media Library) download instead of opening a viewer.
+		$is_pdf = 'pdf' === strtolower( pathinfo( (string) wp_parse_url( $link['url'], PHP_URL_PATH ), PATHINFO_EXTENSION ) );
+		$out   .= sprintf(
+			'<a class="btn btn--%1$s%2$s" href="%3$s"%4$s%5$s>%6$s</a>',
 			esc_attr( $style ),
 			$big ? ' btn--big' : '',
 			esc_url( $link['url'] ),
 			empty( $link['target'] ) ? '' : ' target="_blank" rel="noopener"',
+			$is_pdf ? ' download' : '',
 			esc_html( $link['title'] )
 		);
 	}

@@ -28,6 +28,26 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_drift_page_noindex",
+            "label": "Hide from search engines",
+            "name": "page_noindex",
+            "aria_label": "",
+            "type": "true_false",
+            "instructions": "For pages you send by link, like proposals. Adds noindex and leaves the page out of the sitemap. Anyone with the link can still open it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -48,7 +68,7 @@
         "the_content"
     ],
     "active": true,
-    "description": "Per-page suite. Read with drift_page_suite().",
+    "description": "Per-page suite (drift_page_suite()) and search visibility (drift_page_noindex()).",
     "show_in_rest": 0,
-    "modified": 1793174375
+    "modified": 1793200520
 }

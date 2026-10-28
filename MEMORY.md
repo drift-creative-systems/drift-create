@@ -36,9 +36,11 @@ Running record of decisions, state and open issues. Newest first.
 | 2026-10-28 | Page suite field tints a page via a body class; blank module accents inherit it | Suite landing pages are duplicates of one layout; one dropdown re-themes the page. |
 | 2026-10-28 | Roadmap = repeater on each app (not a CPT), shown on the app page, `/apps/{app}/roadmap/` (endpoint) and a hub module; Now / Next / Later, optional quarter, no dates on plans | One place per app; quarters, not dates, so the public roadmap doesn't make promises. Endpoint = no extra pages to create. |
 | 2026-10-28 | `/roadmap/` page is noindex below 5 items, 404 with none | Avoid thin pages in search. |
+| 2026-10-28 | Proposals (first: Drift: Surface) are noindex web pages built from modules + a generic **Table** module, with the PDF as a download button. No one-off "landing page" module | Send a link instead of a PDF. A generic table is reusable; a whole-proposal module would only fit one page. Surface sits under Music Suite (pink), so no new accent. |
 | 0.2.0 | Suites set the accent colour; per-app colours dropped | Brand system: one accent per product suite. |
 
 ## Open issues / to check
+- [ ] **Test 1.10 on WP:** ACF Sync (Page modules, Page settings), Table module empty / 1–3 value columns / highlighted row / two in a row / phone scroll + keyboard focus, PDF button downloads, noindex toggle (view source robots tag; `/wp-sitemap-pages-1.xml`; with Yoast or Rank Math active). Rank Math's own sitemap doesn't get the exclusion: tick noindex in Rank Math too if it's used.
 - [ ] **Contrast:** `#7A7F87` on white ≈ 4.0:1, which fails AA for body text. Proposed `--grey-text: #6B7078`. Needs brand sign-off (DESIGN.md §2).
 - [ ] **jQuery** is now loaded on the front end (about 30 KB) for a 20-line menu script. That's the Bonsai standard, but it costs a little INP/LCP. Revisit if PageSpeed suffers.
 - [ ] Seeded blurbs for Greenroom, Stageside, Wristband and Wristband Fan are first drafts. Review the copy before launch.

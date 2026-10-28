@@ -2846,6 +2846,384 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_table": {
+                    "key": "layout_drift_table",
+                    "name": "table",
+                    "label": "Table",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_table_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the eyebrow rule and the highlighted row's edge. Blank = the page suite.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Two Table modules in a row sit close together, so you can leave the second one's heading blank.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_lead",
+                            "label": "Intro",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_head_label",
+                            "label": "First column heading",
+                            "name": "head_label",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "e.g. \"Item\", \"Per artist\". Leave all headings blank for no header row.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_head_1",
+                            "label": "Column 2 heading",
+                            "name": "head_1",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_head_2",
+                            "label": "Column 3 heading",
+                            "name": "head_2",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_head_3",
+                            "label": "Column 4 heading",
+                            "name": "head_3",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_rows",
+                            "label": "Rows",
+                            "name": "rows",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Columns with no heading and no values are left out.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 1,
+                            "max": 0,
+                            "collapsed": "field_drift_table_rows_label",
+                            "button_label": "Add row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_table_rows_label",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "Bold first column, e.g. \"Content load\".",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_table_rows"
+                                },
+                                {
+                                    "key": "field_drift_table_rows_detail",
+                                    "label": "Detail",
+                                    "name": "detail",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "Optional muted text after the label, e.g. \"we add the bio, releases, gigs and photos you send us\".",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "70",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_table_rows"
+                                },
+                                {
+                                    "key": "field_drift_table_rows_value_1",
+                                    "label": "Column 2",
+                                    "name": "value_1",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_table_rows"
+                                },
+                                {
+                                    "key": "field_drift_table_rows_value_2",
+                                    "label": "Column 3",
+                                    "name": "value_2",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_table_rows"
+                                },
+                                {
+                                    "key": "field_drift_table_rows_value_3",
+                                    "label": "Column 4",
+                                    "name": "value_3",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "20",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_table_rows"
+                                },
+                                {
+                                    "key": "field_drift_table_rows_highlight",
+                                    "label": "Highlight",
+                                    "name": "highlight",
+                                    "aria_label": "",
+                                    "type": "true_false",
+                                    "instructions": "Totals or a bundle price.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "20",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "parent_repeater": "field_drift_table_rows"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_table"
+                        },
+                        {
+                            "key": "field_drift_table_note",
+                            "label": "Small print",
+                            "name": "note",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "Optional text under the table. Simple formatting allowed, e.g. <strong>bold</strong>.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_table"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_team": {
                     "key": "layout_drift_team",
                     "name": "team",
@@ -4069,5 +4447,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793174329
+    "modified": 1793200520
 }

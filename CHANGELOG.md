@@ -3,6 +3,18 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.10.0] - 2026-10-28
+
+### Added
+- **Table** module (`table`): price lists, comparisons and worked examples. First column = bold label with an optional muted detail line, then up to three value columns (empty ones are left out), optional highlighted rows for totals or bundle prices, and small print. Black header row like the pricing PDFs; scrolls sideways on phones. Two Table modules in a row sit close together, so one heading can cover both.
+- **Page settings → Hide from search engines** (`page_noindex`): noindex, follow on the page (core, Yoast and Rank Math robots tags) and leaves it out of the core and Yoast sitemaps. For proposal pages sent by link.
+
+### Changed
+- Buttons that link to a `.pdf` get the `download` attribute, so a "Download the proposal" button saves the file instead of opening a viewer.
+
+### Upgrade
+- Run ACF Sync for the Page modules and Page settings field groups.
+
 ## [1.9.3] - 2026-10-28
 
 ### Added

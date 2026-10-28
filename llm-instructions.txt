@@ -55,16 +55,17 @@ ACF FIELD GROUPS
    video ....... section_id, eyebrow, accent_suite, heading, lead, source (embed|file), width (narrow|wide), video_url, video_file (id), poster (id), video_title, caption
    testimonials  section_id, eyebrow, accent_suite, heading, lead, testimonials (relationship ids; empty = all), limit, columns (1|2|3)
    pricing ..... section_id, eyebrow, accent_suite, heading, lead, plans[name*, price, period, description, features (one per line), link, featured, badge], note
+   table ....... section_id, eyebrow, accent_suite, heading, lead, head_label, head_1, head_2, head_3, rows[label*, detail, value_1, value_2, value_3, highlight], note (basic HTML). Value columns with no heading and no values are dropped.
    roadmap ..... section_id (blank → "roadmap"), eyebrow, heading, lead, roadmap_suites (empty = page suite, else all), stages (now|next|later), shipped_count, suite_filter, button (link)
    faq ......... section_id, eyebrow, heading, items[question, answer], output_schema
    cta ......... section_id, accent_suite, eyebrow, heading*, text, buttons
    contact ..... eyebrow, heading, lead (blank → Drift Settings)
    newsletter .. section_id (blank → "signup"), eyebrow, heading*, lead. Hidden until drift_newsletter_ready().
-   Button styles: dark | line | accent | line-light
+   Button styles: dark | line | accent | line-light (drift_buttons() adds `download` to .pdf links)
    accent_suite fields allow blank = inherit the page suite (drift_accent_style( '' ) returns '').
 2. App details (drift_app, side) — drift_suite, drift_tagline, drift_status, drift_platform (checkbox array), drift_icon (image id; avatar), drift_accent, drift_demo
 2a. Roadmap (drift_app, normal) — drift_roadmap[item, stage (now|next|later|shipped), target, shipped (Ymd), note]. Read via drift_app_roadmap() (repeater meta drift_roadmap_{i}_{field}).
-2d. Page settings (page, side) — page_suite. Read via drift_page_suite().
+2d. Page settings (page, side) — page_suite, page_noindex (true_false). Read via drift_page_suite() / drift_page_noindex() (inc/meta.php: robots for core, Yoast, Rank Math; core + Yoast sitemap exclusion).
 2c. Testimonial details (drift_testimonial) — drift_quote*, drift_role, drift_company. Read via drift_testimonial_meta().
 2b. Team details (drift_team) — drift_role, drift_suite (optional), drift_bio, drift_links[link]. Read via drift_team_meta() (reads repeater meta drift_links_{i}_link directly).
    Same keys as the pre-ACF meta box. Read via drift_app_meta() / get_post_meta(), not get_field().
