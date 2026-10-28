@@ -38,7 +38,7 @@
             },
             "choices": {
                 "music": "Music Suite",
-                "agency": "WP Agency Kit",
+                "agency": "Agency Kit",
                 "seo": "SEO"
             },
             "default_value": "",
@@ -129,5 +129,5 @@
     "active": true,
     "description": "Field names are the meta keys (drift_*), so templates read them with get_post_meta() via drift_team_meta().",
     "show_in_rest": 0,
-    "modified": 1791558000
+    "modified": 1793173824
 }

@@ -4,7 +4,7 @@
  *
  * Brand: Drift Brand System (assets/brand/, DESIGN.md) — Poppins + Inter,
  * black / white / #7A7F87, one accent per product suite (Music #FF4FA3,
- * WP Agency Kit #1F7BFF, SEO #57E35B).
+ * Agency Kit #1F7BFF, SEO #57E35B).
  *
  * Pages are built from ACF Flexible Content modules (modules/{layout}/).
  * Apps, Team and Testimonials are post types with ACF "details" field groups. Sitewide

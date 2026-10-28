@@ -5,7 +5,7 @@ For any AI assistant working on this theme. Read DESIGN.md for visual rules and 
 PROJECT
 - Theme: Drift Creative Systems (folder: drift-create), v1.0.0
 - Repo: https://github.com/drift-creative-systems/drift-create (public). Branches: main = released, develop = work.
-- Purpose: marketing site for Drift apps (Music Suite, WP Agency Kit, SEO)
+- Purpose: marketing site for Drift apps (Music Suite, Agency Kit, SEO)
 - Agency: The Bonsai Digital Collective (Devon, UK)
 - Stack: WordPress 6.3+, PHP 8.0+, ACF Pro (required), jQuery, plain CSS. No build step. No WooCommerce. Classic editor (block editor disabled).
 

@@ -629,6 +629,125 @@
             "append": ""
         },
         {
+            "key": "field_drift_settings_tab_suites",
+            "label": "Suites",
+            "name": "",
+            "aria_label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_drift_settings_suite_details",
+            "label": "Suite details",
+            "name": "suite_details",
+            "aria_label": "",
+            "type": "repeater",
+            "instructions": "Optional. One row per suite. Suites without a row use the theme defaults and have no landing page link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_drift_settings_suite_details_suite",
+            "button_label": "Add suite",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_drift_settings_suite_details_suite",
+                    "label": "Suite",
+                    "name": "suite",
+                    "aria_label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "music": "Music Suite",
+                        "agency": "Agency Kit",
+                        "seo": "SEO"
+                    },
+                    "default_value": "music",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_drift_settings_suite_details"
+                },
+                {
+                    "key": "field_drift_settings_suite_details_tagline",
+                    "label": "Tagline",
+                    "name": "tagline",
+                    "aria_label": "",
+                    "type": "text",
+                    "instructions": "One line. Blank = the theme default.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "45",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_drift_settings_suite_details"
+                },
+                {
+                    "key": "field_drift_settings_suite_details_landing_page",
+                    "label": "Landing page",
+                    "name": "landing_page",
+                    "aria_label": "",
+                    "type": "post_object",
+                    "instructions": "Suite tiles, app pages and the roadmap link here.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_drift_settings_suite_details"
+                }
+            ]
+        },
+        {
             "key": "field_drift_settings_tab_seo",
             "label": "SEO",
             "name": "",
@@ -684,5 +803,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1792972800
+    "modified": 1793173824
 }

@@ -26,15 +26,48 @@ add_action( 'init', static function () {
 } );
 
 /**
- * Product suites → label + accent (Drift Brand System, "Product Accent Examples").
+ * Product suites → label, accent (Drift Brand System, "Product Accent
+ * Examples") and a default tagline. Drift Settings → Suites can override the
+ * tagline and set a landing page; read those with drift_suite_details().
  *
- * @return array<string, array{label: string, accent: string}>
+ * @return array<string, array{label: string, accent: string, tagline: string}>
  */
 function drift_suites(): array {
 	return [
-		'music'  => [ 'label' => 'Music Suite', 'accent' => '#FF4FA3' ],
-		'agency' => [ 'label' => 'WP Agency Kit', 'accent' => '#1F7BFF' ],
-		'seo'    => [ 'label' => 'SEO', 'accent' => '#57E35B' ],
+		'music'  => [ 'label' => 'Music Suite', 'accent' => '#FF4FA3', 'tagline' => 'Apps for artists, venues and live events.' ],
+		'agency' => [ 'label' => 'Agency Kit', 'accent' => '#1F7BFF', 'tagline' => 'Tools for agencies that build and look after client sites.' ],
+		'seo'    => [ 'label' => 'SEO', 'accent' => '#57E35B', 'tagline' => '' ],
+	];
+}
+
+/**
+ * A suite with its Drift Settings → Suites overrides applied: label, accent,
+ * tagline and the landing page URL ('' when none is set or it isn't published).
+ *
+ * @param string $key Suite key.
+ * @return array{label: string, accent: string, tagline: string, url: string} Empty array for an unknown suite.
+ */
+function drift_suite_details( string $key ): array {
+	static $settings = null;
+	$suites = drift_suites();
+	if ( ! isset( $suites[ $key ] ) ) {
+		return [];
+	}
+	if ( null === $settings ) {
+		$settings = [];
+		foreach ( (array) drift_option( 'suite_details', [] ) as $row ) {
+			if ( ! empty( $row['suite'] ) ) {
+				$settings[ (string) $row['suite'] ] = $row;
+			}
+		}
+	}
+	$row     = $settings[ $key ] ?? [];
+	$landing = (int) ( $row['landing_page'] ?? 0 );
+	return [
+		'label'   => $suites[ $key ]['label'],
+		'accent'  => $suites[ $key ]['accent'],
+		'tagline' => (string) ( ( $row['tagline'] ?? '' ) ?: $suites[ $key ]['tagline'] ),
+		'url'     => $landing && 'publish' === get_post_status( $landing ) ? (string) get_permalink( $landing ) : '',
 	];
 }
 

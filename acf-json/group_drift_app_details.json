@@ -18,7 +18,7 @@
             },
             "choices": {
                 "music": "Music Suite",
-                "agency": "WP Agency Kit",
+                "agency": "Agency Kit",
                 "seo": "SEO"
             },
             "default_value": "music",
@@ -176,5 +176,5 @@
     "active": true,
     "description": "Field names match the pre-0.3 meta keys (drift_*), so templates read them with get_post_meta().",
     "show_in_rest": 0,
-    "modified": 1791626400
+    "modified": 1793173824
 }

@@ -370,7 +370,7 @@
                                     },
                                     "choices": {
                                         "music": "Music Suite",
-                                        "agency": "WP Agency Kit",
+                                        "agency": "Agency Kit",
                                         "seo": "SEO"
                                     },
                                     "default_value": "music",
@@ -495,7 +495,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "music",
@@ -1707,7 +1707,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "music",
@@ -1924,7 +1924,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "music",
@@ -2222,7 +2222,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "music",
@@ -2562,7 +2562,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "music",
@@ -2666,7 +2666,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "",
@@ -2773,7 +2773,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "music",
@@ -3118,7 +3118,7 @@
                             },
                             "choices": {
                                 "music": "Music Suite",
-                                "agency": "WP Agency Kit",
+                                "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
                             "default_value": "music",
@@ -3506,5 +3506,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1792972800
+    "modified": 1793173824
 }

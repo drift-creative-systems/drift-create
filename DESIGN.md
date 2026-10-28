@@ -61,7 +61,7 @@ Components use these, **not** `--black` / `--white` directly. Light values are o
 | Suite | Key | Accent |
 |---|---|---|
 | Music Suite | `music` | `#FF4FA3` |
-| WP Agency Kit | `agency` | `#1F7BFF` |
+| Agency Kit | `agency` | `#1F7BFF` |
 | SEO | `seo` | `#57E35B` |
 
 - Defined in PHP in `drift_suites()` (`inc/apps.php`). The CSS tokens `--music`, `--agency` and `--seo` mirror them. **Change both together.**
