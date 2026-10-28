@@ -1,0 +1,52 @@
+{
+    "key": "group_drift_page_settings",
+    "title": "Page settings",
+    "fields": [
+        {
+            "key": "field_drift_page_suite",
+            "label": "Page suite",
+            "name": "page_suite",
+            "aria_label": "",
+            "type": "select",
+            "instructions": "Tints the page in the suite colour. App suites, Suite tiles and Roadmap modules show only this suite unless set otherwise. Blank = Drift-wide page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "music": "Music Suite",
+                "agency": "Agency Kit",
+                "seo": "SEO"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Per-page suite. Read with drift_page_suite().",
+    "show_in_rest": 0,
+    "modified": 1793173888
+}

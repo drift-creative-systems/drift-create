@@ -5,6 +5,8 @@
  *
  * $args['section_id'] string  Anchor ID (default "apps").
  * $args['suites']     array   Rows of [ suite, heading, lead ] in display order.
+ *                             Empty = the page suite, or every suite when the
+ *                             page has none.
  * $args['featured']   int     App ID shown as the large black card.
  *
  * @package Drift_Create
@@ -12,8 +14,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$suites   = drift_suites();
-$rows     = ! empty( $args['suites'] ) && is_array( $args['suites'] ) ? $args['suites'] : array_map( static fn( $key ) => [ 'suite' => $key ], array_keys( $suites ) );
+$suites = drift_suites();
+$rows   = ! empty( $args['suites'] ) && is_array( $args['suites'] ) ? $args['suites'] : [];
+if ( ! $rows ) {
+	$page_suite = drift_page_suite();
+	$rows       = array_map( static fn( $key ) => [ 'suite' => $key ], $page_suite ? [ $page_suite ] : array_keys( $suites ) );
+}
 $featured = (int) ( $args['featured'] ?? 0 );
 $anchor   = sanitize_title( (string) ( $args['section_id'] ?? 'apps' ) );
 

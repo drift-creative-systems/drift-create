@@ -145,15 +145,16 @@ function drift_section_id( string $fallback = '' ): void {
 }
 
 /**
- * Inline style setting the --app accent from a suite key.
+ * Inline style setting the --app accent from a suite key. A blank or unknown
+ * suite returns '' so the element inherits the page suite's accent (body
+ * class, see drift_page_suite()), or the Music default.
  *
- * @param string $suite Suite key (music, agency, seo).
+ * @param string $suite Suite key (music, agency, seo) or ''.
  * @return string Escaped style attribute value.
  */
 function drift_accent_style( string $suite ): string {
 	$suites = drift_suites();
-	$accent = isset( $suites[ $suite ] ) ? $suites[ $suite ]['accent'] : $suites['music']['accent'];
-	return esc_attr( '--app: ' . $accent );
+	return isset( $suites[ $suite ] ) ? esc_attr( '--app: ' . $suites[ $suite ]['accent'] ) : '';
 }
 
 /**

@@ -72,6 +72,32 @@ function drift_suite_details( string $key ): array {
 }
 
 /**
+ * The current page's suite: Page settings → Page suite on pages, the app's
+ * own suite on app pages, '' everywhere else. Tints the page (body class
+ * page-suite-{key}) and is the default suite for suite-aware modules.
+ *
+ * @return string Suite key or ''.
+ */
+function drift_page_suite(): string {
+	if ( is_singular( 'drift_app' ) ) {
+		return drift_app_meta( (int) get_queried_object_id() )['suite'];
+	}
+	if ( ! is_singular( 'page' ) ) {
+		return '';
+	}
+	$suite = (string) get_post_meta( (int) get_queried_object_id(), 'page_suite', true );
+	return isset( drift_suites()[ $suite ] ) ? $suite : '';
+}
+
+add_filter( 'body_class', static function ( array $classes ): array {
+	$suite = drift_page_suite();
+	if ( $suite ) {
+		$classes[] = 'page-suite-' . $suite;
+	}
+	return $classes;
+} );
+
+/**
  * Status → label. The key is also the .pill--{status} / .card--{status} modifier.
  *
  * @return array<string, string>

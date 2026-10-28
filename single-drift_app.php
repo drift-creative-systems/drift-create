@@ -13,12 +13,20 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	$m       = drift_app_meta( get_the_ID() );
+	$suite   = drift_suite_details( $m['suite'] );
 	$layouts = function_exists( 'have_rows' ) ? drift_page_layouts( get_the_ID() ) : [];
 	?>
 	<article class="app" style="--app: <?php echo esc_attr( $m['accent'] ); ?>">
 		<header class="app__hero">
 			<div class="wrap">
-				<p class="app__crumb"><a href="<?php echo esc_url( home_url( '/#apps' ) ); ?>">&larr; All apps</a></p>
+				<?php // Back to the suite's landing page when one is set (Drift Settings → Suites). ?>
+				<p class="app__crumb">
+					<?php if ( $suite['url'] ) : ?>
+						<a href="<?php echo esc_url( $suite['url'] ); ?>">&larr; <?php echo esc_html( $suite['label'] ); ?></a>
+					<?php else : ?>
+						<a href="<?php echo esc_url( home_url( '/#apps' ) ); ?>">&larr; All apps</a>
+					<?php endif; ?>
+				</p>
 				<p class="eyebrow"><?php echo esc_html( $m['suite_label'] ); ?></p>
 				<?php echo drift_app_icon( get_the_ID(), 'app__icon', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 				<h1 class="app__title"><?php the_title(); ?></h1>

@@ -338,7 +338,7 @@
                             "name": "suites",
                             "aria_label": "",
                             "type": "repeater",
-                            "instructions": "Cards come from Apps (wp-admin → Apps). Choose which suites to show and in what order. A suite with no apps is hidden.",
+                            "instructions": "Cards come from Apps (wp-admin → Apps). Choose which suites to show and in what order. No rows = the page suite only, or every suite on pages without one. A suite with no apps is hidden.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -348,7 +348,7 @@
                             },
                             "layout": "table",
                             "pagination": 0,
-                            "min": 1,
+                            "min": 0,
                             "max": 0,
                             "collapsed": "field_drift_app_suites_suites_suite",
                             "button_label": "Add suite",
@@ -485,7 +485,7 @@
                             "name": "accent_suite",
                             "aria_label": "",
                             "type": "select",
-                            "instructions": "Suite colour for the eyebrow rule and card hover line.",
+                            "instructions": "Suite colour for the eyebrow rule and card hover line. Blank = the page suite.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -498,10 +498,10 @@
                                 "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
-                            "default_value": "music",
+                            "default_value": "",
                             "return_format": "value",
                             "multiple": 0,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -1689,7 +1689,7 @@
                             "name": "accent_suite",
                             "aria_label": "",
                             "type": "select",
-                            "instructions": "Suite colour for the eyebrow rule and \"Accent\" buttons.",
+                            "instructions": "Suite colour for the eyebrow rule and \"Accent\" buttons. Blank = the page suite.",
                             "required": 0,
                             "conditional_logic": [
                                 [
@@ -1710,10 +1710,10 @@
                                 "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
-                            "default_value": "music",
+                            "default_value": "",
                             "return_format": "value",
                             "multiple": 0,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -1914,7 +1914,7 @@
                             "name": "accent_suite",
                             "aria_label": "",
                             "type": "select",
-                            "instructions": "Suite colour for the play button and eyebrow rule.",
+                            "instructions": "Suite colour for the play button and eyebrow rule. Blank = the page suite.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1927,10 +1927,10 @@
                                 "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
-                            "default_value": "music",
+                            "default_value": "",
                             "return_format": "value",
                             "multiple": 0,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -2212,7 +2212,7 @@
                             "name": "accent_suite",
                             "aria_label": "",
                             "type": "select",
-                            "instructions": "Suite colour for the feature ticks, badge and highlighted plan button.",
+                            "instructions": "Suite colour for the feature ticks, badge and highlighted plan button. Blank = the page suite.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -2225,10 +2225,10 @@
                                 "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
-                            "default_value": "music",
+                            "default_value": "",
                             "return_format": "value",
                             "multiple": 0,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -2552,7 +2552,7 @@
                             "name": "accent_suite",
                             "aria_label": "",
                             "type": "select",
-                            "instructions": "Suite colour for the eyebrow rule. Each member card uses its own suite colour.",
+                            "instructions": "Suite colour for the eyebrow rule. Each member card uses its own suite colour. Blank = the page suite.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -2565,10 +2565,10 @@
                                 "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
-                            "default_value": "music",
+                            "default_value": "",
                             "return_format": "value",
                             "multiple": 0,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -2763,7 +2763,7 @@
                             "name": "accent_suite",
                             "aria_label": "",
                             "type": "select",
-                            "instructions": "Suite colour for the quote marks and eyebrow rule.",
+                            "instructions": "Suite colour for the quote marks and eyebrow rule. Blank = the page suite.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -2776,10 +2776,10 @@
                                 "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
-                            "default_value": "music",
+                            "default_value": "",
                             "return_format": "value",
                             "multiple": 0,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -3108,7 +3108,7 @@
                             "name": "accent_suite",
                             "aria_label": "",
                             "type": "select",
-                            "instructions": "Suite colour for the rule and \"Accent\" buttons.",
+                            "instructions": "Suite colour for the rule and \"Accent\" buttons. Blank = the page suite.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -3121,10 +3121,10 @@
                                 "agency": "Agency Kit",
                                 "seo": "SEO"
                             },
-                            "default_value": "music",
+                            "default_value": "",
                             "return_format": "value",
                             "multiple": 0,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -3506,5 +3506,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793173824
+    "modified": 1793173888
 }

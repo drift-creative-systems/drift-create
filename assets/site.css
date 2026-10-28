@@ -102,6 +102,11 @@
 	--show-dark: flex;
 	color-scheme: dark;
 }
+/* Page suite (Page settings → Page suite; app pages use their suite). Keep in
+   step with drift_suites() and the tokens above. */
+.page-suite-music { --app: var(--music); }
+.page-suite-agency { --app: var(--agency); }
+.page-suite-seo { --app: var(--seo); }
 .light-only { display: var(--show-light); }
 .dark-only { display: var(--show-dark); }
 
