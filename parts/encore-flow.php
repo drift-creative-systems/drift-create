@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <div class="flow" aria-hidden="true">
 	<div class="flow__panel flow__table">
-		<p class="flow__label">Airtable · Gigs</p>
+		<p class="flow__label">Drift Hub · Gigs</p>
 		<div class="flow__row flow__row--head"><span>Date</span><span>Venue</span><span>Status</span></div>
 		<div class="flow__row"><span>14 Nov</span><span>Phoenix, Exeter</span><span class="tag tag--green">On Sale</span></div>
 		<div class="flow__row flow__row--new"><span>20 Nov</span><span>The Fleece, Bristol</span><span class="tag tag--amber">Few Left</span></div>
