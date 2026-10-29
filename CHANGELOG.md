@@ -3,6 +3,14 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.12.0] - 2026-10-29
+
+### Added
+- **Cookie settings** link in the footer legal links, after the privacy policy. Opens the CookieScript consent banner (`CookieScript.instance.show()`). Added after the "Footer legal links" menu items, or after the core privacy policy link when no menu is set.
+
+### Fixed
+- Encore flow label now says "Drift Hub" instead of "Airtable".
+
 ## [1.11.0] - 2026-10-28
 
 ### Added

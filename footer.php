@@ -3,7 +3,8 @@
  * Site footer. Tagline, company details, links and social icons: Drift Settings. Mailing
  * list sign-up (#newsletter): Drift Settings → Newsletter. Legal links:
  * Appearance → Menus → "Footer legal links" (falls back to the privacy
- * policy page set in Settings → Privacy).
+ * policy page set in Settings → Privacy), followed by a CookieScript
+ * "Cookie settings" link.
  *
  * @package Drift_Create
  */
@@ -64,6 +65,7 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) . ' ' . drift_brand_name() ); ?> · Theme by <a href="https://bonsaidigitalcollective.co.uk/">The Bonsai Digital Collective</a></p>
 			<p class="foot__company"><?php echo esc_html( (string) drift_option( 'footer_company', 'Drift Creative Systems Ltd. Registered in England and Wales, company number 17548220. Registered office: 167-169 Great Portland Street, 5th Floor, London W1W 5PF' ) ); ?></p>
 			<?php
+			$drift_cookie_link = '<li><a href="#" onclick="CookieScript.instance.show();return false;">Cookie settings</a></li>';
 			if ( has_nav_menu( 'legal' ) ) {
 				wp_nav_menu( [
 					'theme_location'       => 'legal',
@@ -72,9 +74,10 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 					'menu_class'           => 'foot__legal',
 					'depth'                => 1,
 					'fallback_cb'          => false,
+					'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s' . $drift_cookie_link . '</ul>',
 				] );
 			} elseif ( get_privacy_policy_url() ) {
-				echo '<nav aria-label="Legal"><ul class="foot__legal"><li>' . get_the_privacy_policy_link() . '</li></ul></nav>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core function, escaped internally.
+				echo '<nav aria-label="Legal"><ul class="foot__legal"><li>' . get_the_privacy_policy_link() . '</li>' . $drift_cookie_link . '</ul></nav>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core function, escaped internally.
 			}
 			?>
 		</div>
