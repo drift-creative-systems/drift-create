@@ -45,13 +45,14 @@ while ( have_posts() ) :
 					<?php if ( $m['tagline'] ) : ?><p class="hero__lead"><?php echo esc_html( $m['tagline'] ); ?></p><?php endif; ?>
 					<?php echo drift_platform_tags( $m['platforms'], 'app__platforms' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 				<?php endif; ?>
+				<?php // Status is a label, not a button: it sits on its own line so the call to action is the only solid button. ?>
+				<p class="app__status"><span class="pill pill--<?php echo esc_attr( $m['status'] ); ?>"><?php echo esc_html( $m['label'] ); ?></span></p>
 				<p class="btns">
-					<span class="pill pill--<?php echo esc_attr( $m['status'] ); ?>"><?php echo esc_html( $m['label'] ); ?></span>
-					<?php if ( $m['demo'] ) : ?><a class="btn btn--accent" href="<?php echo esc_url( $m['demo'] ); ?>" target="_blank" rel="noopener">View demo</a><?php endif; ?>
+					<?php if ( $m['demo'] ) : ?><a class="btn btn--line" href="<?php echo esc_url( $m['demo'] ); ?>" target="_blank" rel="noopener">View demo</a><?php endif; ?>
 					<?php if ( $roadmap_view ) : ?>
 						<a class="btn btn--line" href="#contact">Suggest a feature</a>
 					<?php else : ?>
-						<a class="btn btn--line" href="#contact"><?php echo drift_app_is_available( $m['status'] ) ? 'Book a demo' : 'Register interest'; ?></a>
+						<a class="btn btn--accent" href="#contact"><?php echo drift_app_is_available( $m['status'] ) ? 'Book a demo' : 'Register interest'; ?></a>
 					<?php endif; ?>
 				</p>
 			</div>

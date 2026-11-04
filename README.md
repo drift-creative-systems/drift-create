@@ -59,7 +59,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Roadmap** | Every app's roadmap items as Now / Next / Later columns plus Recently shipped; optional suite filter and button. Suites = picked, else the page suite, else all |
 | **FAQ** | Accordion, optional FAQPage schema |
 | **CTA band** | Black band with heading, text, buttons and a suite accent |
-| **Contact form** | Demo / enquiry form (always `#contact`) |
+| **Contact form** | Demo / enquiry form (always `#contact`). Optional **App** fixes it to one app and hides the "Interested in" list |
 | **Newsletter sign-up** | Heading and text beside the mailing list form (Brevo). Hidden until Brevo is set up |
 
 ### Mailing list (Brevo)
@@ -78,6 +78,11 @@ Every module except Contact has an **Anchor ID** field, so menus and buttons can
 The editor is hidden on Pages and Apps, so both are built only from modules. A page or app with **no modules** still shows any older editor content. A page whose first module isn't a Hero or Content module shows the page title as its H1.
 
 On **app pages** the app hero (from App details) always shows first and holds the H1; modules follow it. The contact form is added at the bottom automatically unless the app has a Contact module.
+
+### Thank-you pages and ads landing pages
+
+- **Thank-you page:** build a page from modules (turn on **Hide from search engines**), then pick it under **Drift Settings → Contact → Thank-you page**. Demo requests then land on `/{page}/demo/{app-slug}/` (e.g. `/thank-you/demo/surface/`), general enquiries on the page itself. Each URL pushes a `drift_enquiry` event (`enquiry_type`: demo / general, `app`: slug) to the dataLayer for GTM / GA4. In Google Ads, track a conversion on "URL contains `/thank-you/demo/surface/`". Leave the setting blank to keep the in-place "Thanks, message sent" message.
+- **Ads landing page:** turn on **Page settings → Ads landing page** (and Hide from search engines). The menu, footer columns and social links go and the logo stops being a link, so the form is the only way on. Add a Contact module with **App** set so the form is fixed to that app.
 
 ### Suites, landing pages and roadmaps
 
@@ -101,7 +106,7 @@ drift-create/
 │   ├── testimonials.php   drift_testimonial CPT (admin-only), drift_testimonial_meta(), drift_testimonials()
 │   ├── brand.php          Brand name/line, logo mark SVG, favicons, document title
 │   ├── meta.php           Meta description + OG (skipped if an SEO plugin is active)
-│   ├── contact.php        admin-post form handler → wp_mail, drift_contact_form()
+│   ├── contact.php        admin-post form handler → wp_mail, thank-you URLs, drift_contact_form(), drift_demo_url()
 │   ├── newsletter.php     admin-post sign-up handler → Brevo double opt-in, drift_newsletter_form()
 │   ├── modules.php        Flexible content renderer + module helpers
 │   ├── upgrade.php        First-run seed + version upgrades

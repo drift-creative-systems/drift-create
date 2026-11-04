@@ -1,6 +1,8 @@
 <?php
 /**
- * Site footer. Tagline, company details, links and social icons: Drift Settings. Mailing
+ * Site footer. Tagline, company details, links and social icons: Drift Settings.
+ * The Suites column lists suites with a landing page. Ads landing pages
+ * (Page settings) keep only the brand and the legal base. Mailing
  * list sign-up (#newsletter): Drift Settings → Newsletter. Legal links:
  * Appearance → Menus → "Footer legal links" (falls back to the privacy
  * policy page set in Settings → Privacy), followed by a CookieScript
@@ -27,21 +29,33 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 				<p class="foot__word" aria-hidden="true">DRIFT<span><?php echo esc_html( drift_brand_line() ); ?></span></p>
 			<?php endif; ?>
 			<p class="foot__tag"><?php echo esc_html( (string) drift_option( 'footer_tagline', 'Modern. Minimal. Purposeful.' ) ); ?></p>
-			<?php echo drift_social_links( 'foot__social' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in drift_social_links(). ?>
+			<?php echo drift_is_landing() ? '' : drift_social_links( 'foot__social' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in drift_social_links(). ?>
 		</div>
+		<?php if ( ! drift_is_landing() ) : ?>
 		<div class="foot__cols">
 			<div>
-				<h2>Apps</h2>
+				<h2>Suites</h2>
 				<ul>
-					<?php foreach ( drift_apps() as $app ) : ?>
-						<li><a href="<?php echo esc_url( get_permalink( $app ) ); ?>"><?php echo esc_html( $app->post_title ); ?></a></li>
+					<?php
+					// Suites with a landing page (Drift Settings → Suites), WP Suite first. A full app list gets too long.
+					$drift_suite_keys = array_unique( array_merge( [ 'agency', 'music' ], array_keys( drift_suites() ) ) );
+					foreach ( $drift_suite_keys as $drift_suite_key ) :
+						$drift_suite = drift_suite_details( $drift_suite_key );
+						if ( empty( $drift_suite['url'] ) ) {
+							continue;
+						}
+						?>
+						<li><a href="<?php echo esc_url( $drift_suite['url'] ); ?>"><?php echo esc_html( $drift_suite['label'] ); ?></a></li>
+						<?php if ( 'agency' === $drift_suite_key ) : ?>
+							<li><a href="<?php echo esc_url( $drift_suite['url'] . '#free' ); ?>">Free WordPress plugins</a></li>
+						<?php endif; ?>
 					<?php endforeach; ?>
 				</ul>
 			</div>
 			<div>
 				<h2>Get in touch</h2>
 				<ul>
-					<li><a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>">Book a demo</a></li>
+					<li><a href="<?php echo esc_url( drift_demo_url() ); ?>">Book a demo</a></li>
 					<?php
 					foreach ( (array) $drift_footer_links as $row ) :
 						$link = $row['link'] ?? null;
@@ -61,6 +75,7 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 				</div>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 		<div class="foot__base">
 			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) . ' ' . drift_brand_name() ); ?> · Theme by <a href="https://bonsaidigitalcollective.co.uk/">The Bonsai Digital Collective</a></p>
 			<p class="foot__company"><?php echo esc_html( (string) drift_option( 'footer_company', 'Drift Creative Systems Ltd. Registered in England and Wales, company number 17548220. Registered office: 167-169 Great Portland Street, 5th Floor, London W1W 5PF' ) ); ?></p>

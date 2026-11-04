@@ -10,7 +10,12 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
 	<div class="wrap top__inner">
+		<?php // Ads landing pages: the logo isn't a link, so the only way on is the form. ?>
+		<?php if ( drift_is_landing() ) : ?>
+		<span class="brand">
+		<?php else : ?>
 		<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php echo esc_attr( drift_brand_name() ); ?> — home">
+		<?php endif; ?>
 			<?php
 			$drift_header_logo = drift_logo( 'header_logo', 'brand__logo', true );
 			if ( $drift_header_logo ) :
@@ -33,7 +38,10 @@
 				<?php echo drift_mark( 'brand__mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?>
 				<span class="brand__word">DRIFT<span class="brand__line"><?php echo esc_html( drift_brand_line() ); ?></span></span>
 			<?php endif; ?>
-		</a>
+		<?php echo drift_is_landing() ? '</span>' : '</a>'; ?>
+		<?php if ( drift_is_landing() ) : ?>
+			<a class="btn btn--dark top__demo" href="#contact">Book a demo</a>
+		<?php else : ?>
 		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span></span><span class="sr">Menu</span></button>
 		<nav id="menu" class="menu" aria-label="Main">
 			<?php
@@ -47,8 +55,9 @@
 				);
 			}
 			?>
-			<a class="btn btn--dark" href="<?php echo esc_url( home_url( '/#contact' ) ); ?>">Book a demo</a>
+			<a class="btn btn--dark" href="<?php echo esc_url( drift_demo_url() ); ?>">Book a demo</a>
 		</nav>
+		<?php endif; ?>
 		<?php // Hidden until assets/site.js wires it up; aria-pressed = dark mode on. ?>
 		<button class="theme-toggle" type="button" aria-pressed="false" title="Dark mode" hidden>
 			<svg class="light-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>

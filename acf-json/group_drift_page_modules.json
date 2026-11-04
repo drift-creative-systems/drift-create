@@ -4352,6 +4352,35 @@
                             "placeholder": "",
                             "new_lines": "",
                             "parent_layout": "layout_drift_contact"
+                        },
+                        {
+                            "key": "field_drift_contact_app",
+                            "label": "App",
+                            "name": "app",
+                            "aria_label": "",
+                            "type": "post_object",
+                            "instructions": "Optional. Fixes the form to one app and hides the \"Interested in\" list, e.g. on an ads landing page. On an app page the form already picks that app.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "drift_app"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": [],
+                            "parent_layout": "layout_drift_contact"
                         }
                     ],
                     "min": "",
@@ -4503,5 +4532,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793206624
+    "modified": 1793778950
 }

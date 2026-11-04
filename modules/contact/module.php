@@ -13,4 +13,5 @@ drift_contact_form( is_singular( 'drift_app' ) ? get_the_title() : '', [
 	'eyebrow' => (string) get_sub_field( 'eyebrow' ),
 	'heading' => (string) get_sub_field( 'heading' ),
 	'lead'    => (string) get_sub_field( 'lead' ),
+	'app_id'  => (int) get_sub_field( 'app' ),
 ] );

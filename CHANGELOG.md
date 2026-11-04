@@ -3,6 +3,28 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.13.0] - 2026-11-04
+
+Ready for Google Ads: separate thank-you URLs per app, ads landing pages, and a clearer call to action on app pages.
+
+### Added
+- **Thank-you pages** (Drift Settings → Contact → Thank-you page). After a successful send, demo requests go to `/{thank-you page}/demo/{app}/` (e.g. `/thank-you/demo/surface/`) and general enquiries to the thank-you page itself, so Google Ads and GA4 can count each app's demo requests on their own. The page gets `noindex`, a `drift_enquiry` dataLayer event (`enquiry_type`, `app`) and the app in the tab title. An unknown app slug is a 404. Blank setting = the old in-place "Thanks, message sent" message. Honeypot hits go to the general thank-you URL, never an app's.
+- **Page settings → Ads landing page** (`page_landing`): hides the header menu, footer columns and social links, the logo stops being a link, and a "Book a demo" button stays in the bar. Legal links stay.
+- **Contact module → App** (`app`): fixes the form to one app and hides the "Interested in" list.
+- Enquiry emails include the page the form was sent from.
+
+### Changed
+- "Interested in" options are grouped by suite and post the app slug (old title values still work).
+- **Book a demo** in the header and footer jumps to the form on the current page when it has one (app pages, pages with a Contact module), instead of always going to the home page.
+- **App pages:** the status ("Demo available", "Live") is a text label with the suite dot on its own line, not a solid pill next to the buttons. **Book a demo** / **Register interest** is now the accent button; "View demo" moves to the outline style.
+- Live / demo status on app cards is a text label too.
+- **Footer:** the Apps column is now **Suites**: each suite with a landing page (WP Suite first) plus "Free WordPress plugins" (`{WP Suite page}#free`). The full app list got too long.
+
+### Upgrade
+- Run ACF Sync for Page modules, Page settings and Drift Settings.
+- Create a Thank-you page (built from modules, "Hide from search engines" on), then pick it under Drift Settings → Contact. Rewrite rules flush by themselves.
+- Google Ads: conversion = page URL contains `/thank-you/demo/surface/`.
+
 ## [1.12.0] - 2026-10-29
 
 ### Added

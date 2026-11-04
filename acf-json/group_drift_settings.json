@@ -435,6 +435,34 @@
             "append": ""
         },
         {
+            "key": "field_drift_settings_contact_thanks",
+            "label": "Thank-you page",
+            "name": "contact_thanks_page",
+            "aria_label": "",
+            "type": "post_object",
+            "instructions": "Where the form goes after sending. Demo requests go to {page}/demo/{app}/ (e.g. /thank-you/demo/surface/), general enquiries to the page itself, so Google Ads and GA4 can count each app's demo requests on their own. Blank = back to the form with a message, as before.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_drift_settings_tab_newsletter",
             "label": "Newsletter",
             "name": "",
@@ -823,5 +851,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1793174400
+    "modified": 1793778950
 }

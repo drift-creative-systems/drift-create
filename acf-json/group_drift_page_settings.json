@@ -48,6 +48,26 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_drift_page_landing",
+            "label": "Ads landing page",
+            "name": "page_landing",
+            "aria_label": "",
+            "type": "true_false",
+            "instructions": "For pages you send ad traffic to. Hides the menu and the footer columns, so the only way on is the form. Turn on \"Hide from search engines\" too, so the page doesn't compete with the main one in search.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -70,5 +90,5 @@
     "active": true,
     "description": "Per-page suite (drift_page_suite()) and search visibility (drift_page_noindex()).",
     "show_in_rest": 0,
-    "modified": 1793200520
+    "modified": 1793778950
 }

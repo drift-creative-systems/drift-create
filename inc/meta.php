@@ -43,6 +43,23 @@ function drift_page_noindex(): bool {
 }
 
 /**
+ * Whether the current page has Page settings → "Ads landing page" on: no
+ * menu, no footer columns, the form is the only way on.
+ *
+ * @return bool
+ */
+function drift_is_landing(): bool {
+	return is_singular( 'page' ) && (bool) get_post_meta( (int) get_queried_object_id(), 'page_landing', true );
+}
+
+add_filter( 'body_class', static function ( array $classes ): array {
+	if ( drift_is_landing() ) {
+		$classes[] = 'is-landing';
+	}
+	return $classes;
+} );
+
+/**
  * IDs of published pages with "Hide from search engines" on, for sitemaps.
  *
  * @return int[]
