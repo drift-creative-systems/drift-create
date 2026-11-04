@@ -35,7 +35,7 @@ add_action( 'init', static function () {
 function drift_suites(): array {
 	return [
 		'music'  => [ 'label' => 'Music Suite', 'accent' => '#FF4FA3', 'tagline' => 'Apps for artists, venues and live events.' ],
-		'agency' => [ 'label' => 'Agency Kit', 'accent' => '#1F7BFF', 'tagline' => 'Tools for agencies that build and look after client sites.' ],
+		'agency' => [ 'label' => 'WP Suite', 'accent' => '#1F7BFF', 'tagline' => 'Plugins for agencies that build and look after WordPress sites.' ],
 		'seo'    => [ 'label' => 'SEO', 'accent' => '#57E35B', 'tagline' => '' ],
 	];
 }

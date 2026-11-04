@@ -28,7 +28,7 @@ foreach ( (array) get_sub_field( 'counted' ) as $key ) {
 	}
 }
 foreach ( (array) get_sub_field( 'stats' ) as $row ) {
-	if ( ! empty( $row['value'] ) ) {
+	if ( '' !== trim( (string) ( $row['value'] ?? '' ) ) ) {
 		$stats[] = [ 'value' => (string) $row['value'], 'label' => (string) ( $row['label'] ?? '' ) ];
 	}
 }
