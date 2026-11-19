@@ -65,6 +65,7 @@
             },
             "choices": {
                 "live": "Available now",
+                "wporg": "Free on WordPress.org",
                 "demo": "Demo available",
                 "development": "In development",
                 "soon": "Coming soon"
@@ -204,5 +205,5 @@
     "active": true,
     "description": "Field names match the pre-0.3 meta keys (drift_*), so templates read them with get_post_meta().",
     "show_in_rest": 0,
-    "modified": 1793174023
+    "modified": 1795078800
 }

@@ -151,9 +151,9 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .btn--line-light:hover { background: var(--band-fg); color: var(--band); }
 .btn--big { min-height: 3.25rem; padding-inline: 1.6em; font-size: 1.05rem; }
 .pill { display: inline-block; padding: 0.3em 0.85em; border-radius: 999px; font-family: var(--font-primary); font-size: 0.75rem; font-weight: 500; background: var(--soft); color: var(--muted); white-space: nowrap; }
-/* Live / demo: a text label with the suite dot, not a filled pill, so it can't be mistaken for a button. */
-.pill--live, .pill--demo { background: none; color: var(--fg); padding-inline: 0; }
-.pill--live::before, .pill--demo::before { content: ""; display: inline-block; width: 0.5em; height: 0.5em; margin-right: 0.45em; border-radius: 50%; background: var(--app); vertical-align: 0.05em; }
+/* Live / WordPress.org / demo: a text label with the suite dot, not a filled pill, so it can't be mistaken for a button. */
+.pill--live, .pill--wporg, .pill--demo { background: none; color: var(--fg); padding-inline: 0; }
+.pill--live::before, .pill--wporg::before, .pill--demo::before { content: ""; display: inline-block; width: 0.5em; height: 0.5em; margin-right: 0.45em; border-radius: 50%; background: var(--app); vertical-align: 0.05em; }
 
 /* Header */
 .top { position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
@@ -227,7 +227,7 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 .card--featured .card__suite, .card--featured .card__text { color: var(--band-muted); }
 .card--featured .card__title { font-size: clamp(2.25rem, 1.5rem + 3vw, 4rem); letter-spacing: -0.035em; }
 .card--featured .card__text { font-size: 1.15rem; max-width: 40ch; }
-.card--featured .pill--live, .card--featured .pill--demo { background: none; color: var(--band-fg); }
+.card--featured .pill--live, .card--featured .pill--wporg, .card--featured .pill--demo { background: none; color: var(--band-fg); }
 .cards--small { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
 .card__platforms { margin: -0.75rem 0 1.5rem; }
 .card--featured .tag { border-color: var(--band-line); color: var(--band-muted); }
@@ -363,6 +363,10 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 /* App hero status line */
 .app__status { margin: 1.25rem 0 0; }
 .app__status + .btns { margin-top: 0.75rem; }
+/* Drift: Ticker stats strip (only printed once a free plugin is live on WordPress.org). */
+.app__status + .drift-ticker-strip { margin-top: 0.75rem; }
+.app__hero .drift-ticker-strip + .btns { margin-top: 1.25rem; }
+.card--featured .drift-ticker-strip__stats, .card--featured .drift-ticker-strip__stats li + li::before { color: var(--band-muted); }
 
 /* Ads landing pages (Page settings): no menu, so the demo button sits in the bar on its own. */
 .is-landing .top__demo { margin-left: auto; }

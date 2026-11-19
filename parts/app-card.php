@@ -23,5 +23,6 @@ $m = drift_app_meta( $app->ID );
 	<?php if ( $m['tagline'] ) : ?><p class="card__tagline"><?php echo esc_html( $m['tagline'] ); ?></p><?php endif; ?>
 	<p class="card__text"><?php echo esc_html( get_the_excerpt( $app ) ); ?></p>
 	<?php echo drift_platform_tags( $m['platforms'], 'card__platforms' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
+	<?php echo function_exists( 'drift_ticker_strip' ) ? drift_ticker_strip( $app->ID, [ 'context' => 'card' ] ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Drift: Ticker plugin; escaped there. ?>
 	<p class="card__more" aria-hidden="true"><?php echo drift_app_is_available( $m['status'] ) ? 'See it' : 'Register interest'; ?> &rarr;</p>
 </article>

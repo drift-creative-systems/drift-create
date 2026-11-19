@@ -47,12 +47,22 @@ while ( have_posts() ) :
 				<?php endif; ?>
 				<?php // Status is a label, not a button: it sits on its own line so the call to action is the only solid button. ?>
 				<p class="app__status"><span class="pill pill--<?php echo esc_attr( $m['status'] ); ?>"><?php echo esc_html( $m['label'] ); ?></span></p>
+				<?php
+				// Drift: Ticker (plugin): WordPress.org stats and download button, only once the plugin is live there.
+				$ticker_button = '';
+				if ( ! $roadmap_view && function_exists( 'drift_ticker_strip' ) ) {
+					echo drift_ticker_strip( get_the_ID(), [ 'button' => false ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the plugin.
+					$ticker_button = drift_ticker_button( get_the_ID() );
+				}
+				?>
 				<p class="btns">
+					<?php echo $ticker_button; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the plugin. ?>
 					<?php if ( $m['demo'] ) : ?><a class="btn btn--line" href="<?php echo esc_url( $m['demo'] ); ?>" target="_blank" rel="noopener">View demo</a><?php endif; ?>
 					<?php if ( $roadmap_view ) : ?>
 						<a class="btn btn--line" href="#contact">Suggest a feature</a>
 					<?php else : ?>
-						<a class="btn btn--accent" href="#contact"><?php echo drift_app_is_available( $m['status'] ) ? 'Book a demo' : 'Register interest'; ?></a>
+						<?php // The download is the main action for a free plugin, so the contact button steps down to the outline style. ?>
+						<a class="btn <?php echo $ticker_button ? 'btn--line' : 'btn--accent'; ?>" href="#contact"><?php echo drift_app_is_available( $m['status'] ) ? 'Book a demo' : 'Register interest'; ?></a>
 					<?php endif; ?>
 				</p>
 			</div>

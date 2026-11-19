@@ -20,6 +20,9 @@ $counted = [
 	'platforms' => [ count( array_unique( array_merge( [], ...wp_list_pluck( $metas, 'platforms' ) ) ) ), 'platform', 'platforms' ],
 ];
 
+// Drift: Ticker (plugin) adds WordPress.org stats (wporg_* keys) when it's active.
+$counted = (array) apply_filters( 'drift_stats_counted', $counted, (string) get_sub_field( 'accent_suite' ) );
+
 $stats = [];
 foreach ( (array) get_sub_field( 'counted' ) as $key ) {
 	if ( isset( $counted[ $key ] ) && $counted[ $key ][0] ) {

@@ -3,6 +3,19 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.14.0] - 2026-11-19
+
+Works with the new **Drift: Ticker** plugin: live WordPress.org stats for the free plugins. Everything below is inactive until Ticker is installed and a plugin is live on WordPress.org, so the site looks the same until then.
+
+### Added
+- **Status "Free on WordPress.org"** (`wporg`). Drift: Ticker sets it on an app when its plugin is approved on WordPress.org. Counts as available (cards say "See it", the Stats module's "Apps available now" includes it) and shows as a text label with the suite dot, like "Available now".
+- **App pages:** a stats strip under the status ("1,240 downloads · 100+ active installs · ★ 4.9 (12)") and a **Download free from WordPress.org** button first in the button row. When it shows, **Book a demo** / **Register interest** steps down to the outline style so the download is the one solid button.
+- **App cards:** the same stats, smaller, under the platform tags (no button: the card is already a link).
+- **Stats module:** new "Counted from Apps" choices from Ticker (WordPress.org downloads "across N free plugins", number of free plugins, active installs, average rating, last 30 days) through a new `drift_stats_counted` filter. They count the module's Accent suite, else the page's suite, else every plugin.
+
+### Upgrade
+- Run ACF Sync for App details (new status choice). Install Drift: Ticker and add each free plugin's WordPress.org slug to its app.
+
 ## [1.13.0] - 2026-11-04
 
 Ready for Google Ads: separate thank-you URLs per app, ads landing pages, and a clearer call to action on app pages.

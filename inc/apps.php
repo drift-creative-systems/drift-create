@@ -99,12 +99,15 @@ add_filter( 'body_class', static function ( array $classes ): array {
 
 /**
  * Status → label. The key is also the .pill--{status} / .card--{status} modifier.
+ * "wporg" is set by the Drift: Ticker plugin when a free plugin is approved
+ * on WordPress.org (Ticker only writes it while this list has it).
  *
  * @return array<string, string>
  */
 function drift_app_statuses(): array {
 	return [
 		'live'        => 'Available now',
+		'wporg'       => 'Free on WordPress.org',
 		'demo'        => 'Demo available',
 		'development' => 'In development',
 		'soon'        => 'Coming soon',
@@ -183,13 +186,14 @@ function drift_apps(): array {
 }
 
 /**
- * Whether an app's status means it can be seen today (live or demo).
+ * Whether an app's status means it can be seen today (live, free on
+ * WordPress.org, or demo).
  *
  * @param string $status Status key.
  * @return bool
  */
 function drift_app_is_available( string $status ): bool {
-	return in_array( $status, [ 'live', 'demo' ], true );
+	return in_array( $status, [ 'live', 'wporg', 'demo' ], true );
 }
 
 /**
