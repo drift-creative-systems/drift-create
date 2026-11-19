@@ -55,3 +55,53 @@ add_action( 'wp_enqueue_scripts', static function () {
 		drift_enqueue_module_style( $layout );
 	}
 }, 20 );
+
+/*
+ * Blog. Listings and single posts are in index.php; the footer's Blog column
+ * is in footer.php. Posts page: Settings → Reading → Posts page.
+ */
+
+/**
+ * URL of the posts page, or the home URL with ?post_type=post if none is set.
+ */
+function drift_blog_url(): string {
+	$page = (int) get_option( 'page_for_posts' );
+	return $page ? (string) get_permalink( $page ) : add_query_arg( 'post_type', 'post', home_url( '/' ) );
+}
+
+/**
+ * Categories with at least one published post, Uncategorised left out.
+ *
+ * @return WP_Term[]
+ */
+function drift_blog_categories(): array {
+	$terms = get_categories(
+		[
+			'hide_empty' => true,
+			'exclude'    => [ (int) get_option( 'default_category' ) ],
+			'orderby'    => 'name',
+		]
+	);
+	return is_array( $terms ) ? $terms : [];
+}
+
+/**
+ * First category of a post, skipping Uncategorised. Null if there isn't one.
+ */
+function drift_post_category( int $post_id ): ?WP_Term {
+	foreach ( get_the_category( $post_id ) as $term ) {
+		if ( (int) $term->term_id !== (int) get_option( 'default_category' ) ) {
+			return $term;
+		}
+	}
+	return null;
+}
+
+/**
+ * Whether the site has any published posts. The footer's Blog column only
+ * shows once it does.
+ */
+function drift_has_blog_posts(): bool {
+	$counts = wp_count_posts( 'post' );
+	return ! empty( $counts->publish );
+}

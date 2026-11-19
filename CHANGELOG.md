@@ -3,6 +3,19 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.15.0] - 2026-11-19
+
+A blog: a posts page, category pages and single post styling, plus a Blog column in the footer.
+
+### Added
+- **Posts page and archives** (`index.php`): set Settings → Reading → Posts page (live site: "Blog", `/blog/`). Shows a card grid with the featured image, category · date, title, excerpt and "Read →", with All / category filter pills when more than one category is in use. Category, tag and date archives and search use the same layout. Pagination: "← Newer" / "Older →".
+- **Single posts:** "Blog · Category · date" above the title, a link back to all posts at the end, and prose styles for figures, videos, code blocks and inline code (block library CSS is dequeued, so these weren't styled before).
+- **Footer Blog column:** "Latest posts" plus a link per category in use. Shows only once there's a published post. Uncategorised is never listed.
+- Helpers in `inc/setup.php`: `drift_blog_url()`, `drift_blog_categories()`, `drift_post_category()`, `drift_has_blog_posts()`.
+
+### Notes
+- These files were applied to the live site through the theme file editor on 2026-11-19 while the theme was still on 1.14.0, so releasing 1.15.0 changes nothing on the live site except the version number.
+
 ## [1.14.0] - 2026-11-19
 
 Works with the new **Drift: Ticker** plugin: live WordPress.org stats for the free plugins. Everything below is inactive until Ticker is installed and a plugin is live on WordPress.org, so the site looks the same until then.

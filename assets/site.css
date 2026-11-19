@@ -371,3 +371,30 @@ h1, h2, h3, .h2, .h3 { margin: 0 0 0.5em; font-family: var(--font-primary); font
 /* Ads landing pages (Page settings): no menu, so the demo button sits in the bar on its own. */
 .is-landing .top__demo { margin-left: auto; }
 .is-landing .brand { margin-right: 0; }
+
+/* Blog: posts page, category archives and single posts (index.php). */
+.blog-list { padding-top: clamp(2rem, 4vw, 3rem); }
+.post-card .card__title { font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); line-height: 1.2; }
+.blog-head__lead { max-width: 40rem; margin: 1.25rem 0 0; font-size: 1.125rem; color: var(--muted); }
+.blog-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.blog-filter .pill { padding: 0.55em 1.1em; font-size: 0.85rem; text-decoration: none; border: 1px solid transparent; transition: border-color 0.2s, background 0.2s, color 0.2s; }
+.blog-filter .pill:hover { border-color: var(--fg); }
+.blog-filter .pill.is-current { background: var(--fg); color: var(--bg); }
+.post-card__media { margin: calc(-1 * clamp(1.4rem, 2.5vw, 2rem)) calc(-1 * clamp(1.4rem, 2.5vw, 2rem)) 1.5rem; aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; background: var(--soft); }
+.post-card__media img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.post-meta { margin: 0 0 0.75rem; font-family: var(--font-primary); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; color: var(--muted); }
+.post-meta a { color: inherit; }
+.post-single .post-meta { margin-bottom: 1.25rem; }
+.post-single .h2 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem); }
+.post-single .prose { padding-block: 1.5rem 2rem; }
+.post-single__back { margin: 0; }
+.prose figure { margin: 2em 0; }
+.prose video { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+.prose figure img { border-radius: var(--radius); border: 1px solid var(--line); }
+.prose pre { overflow-x: auto; padding: 1.25rem 1.5rem; border-radius: var(--radius); background: var(--soft); font-size: 0.9rem; line-height: 1.55; tab-size: 4; }
+.prose :not(pre) > code { padding: 0.1em 0.35em; border-radius: 4px; background: var(--soft); font-size: 0.9em; }
+.blog-pages { margin-top: 3rem; }
+.blog-pages .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.blog-pages .page-numbers { padding: 0.4em 0.85em; border-radius: 999px; text-decoration: none; }
+.blog-pages .page-numbers.current { background: var(--fg); color: var(--bg); }
+.blog-empty { color: var(--muted); }

@@ -1,7 +1,8 @@
 <?php
 /**
  * Site footer. Tagline, company details, links and social icons: Drift Settings.
- * The Suites column lists suites with a landing page. Ads landing pages
+ * The Suites column lists suites with a landing page. The Blog column shows
+ * once there's a published post: the posts page, then each category in use. Ads landing pages
  * (Page settings) keep only the brand and the legal base. Mailing
  * list sign-up (#newsletter): Drift Settings → Newsletter. Legal links:
  * Appearance → Menus → "Footer legal links" (falls back to the privacy
@@ -52,6 +53,17 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 					<?php endforeach; ?>
 				</ul>
 			</div>
+			<?php if ( drift_has_blog_posts() ) : ?>
+				<div>
+					<h2>Blog</h2>
+					<ul>
+						<li><a href="<?php echo esc_url( drift_blog_url() ); ?>">Latest posts</a></li>
+						<?php foreach ( drift_blog_categories() as $drift_blog_cat ) : ?>
+							<li><a href="<?php echo esc_url( get_category_link( $drift_blog_cat ) ); ?>"><?php echo esc_html( $drift_blog_cat->name ); ?></a></li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			<?php endif; ?>
 			<div>
 				<h2>Get in touch</h2>
 				<ul>
