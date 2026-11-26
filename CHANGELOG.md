@@ -3,6 +3,17 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.17.0] - 2026-11-26
+
+A visual "Add module" picker when ACF Extended is active.
+
+### Added
+- **Module picker:** with **Advanced Custom Fields: Extended** active, "Add module" opens a modal with a thumbnail for each module, 4 to a row, and category tabs: Intros, Apps, Content, Media, People & proof, Calls to action. Without ACF Extended the normal ACF menu is used, so nothing breaks.
+- **Thumbnails:** a wireframe SVG per module in `assets/images/modules/{layout}.svg`, drawn in the Drift colours by `bin/module-thumbnails.py`. A .jpg/.png/.webp with the same name (e.g. a real screenshot) takes priority. Served by `drift_acfe_module_thumbnail()` in `inc/acf.php`.
+
+### Upgrade
+- Run ACF Sync for Page modules.
+
 ## [1.16.0] - 2026-11-26
 
 A Logos module for the labels, artists and agencies we work with.

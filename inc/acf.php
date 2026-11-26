@@ -74,3 +74,30 @@ add_filter( 'acf/load_field/name=drift_platform', static function ( array $field
 	$field['choices'] = drift_platforms();
 	return $field;
 } );
+
+/**
+ * ACF Extended "Add module" picker: thumbnails from the theme.
+ *
+ * The Page modules field has ACF Extended's modal picker (category tabs,
+ * 4 columns) turned on in its JSON. Each layout's thumbnail is
+ * assets/images/modules/{layout}.svg, a wireframe drawn by
+ * bin/module-thumbnails.py. A .jpg/.png/.webp with the same name (e.g. a real
+ * screenshot) takes priority. Never upload one in the field group screen: that
+ * saves a media ID that only exists on one site. Without ACF Extended this
+ * filter never runs and the plain ACF "Add module" menu is used.
+ *
+ * @param mixed $thumbnail Thumbnail from the field group (unused).
+ * @param array $field     The page_modules field.
+ * @param array $layout    The layout being listed.
+ * @return mixed URL of the theme file, or the original value.
+ */
+function drift_acfe_module_thumbnail( $thumbnail, $field, $layout ) {
+	foreach ( [ 'jpg', 'png', 'webp', 'svg' ] as $extension ) {
+		$file = 'assets/images/modules/' . sanitize_file_name( (string) ( $layout['name'] ?? '' ) ) . '.' . $extension;
+		if ( file_exists( get_theme_file_path( $file ) ) ) {
+			return get_theme_file_uri( $file );
+		}
+	}
+	return $thumbnail;
+}
+add_filter( 'acfe/flexible/thumbnail/name=page_modules', 'drift_acfe_module_thumbnail', 10, 3 );

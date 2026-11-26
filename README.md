@@ -5,6 +5,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 - **Version:** 1.0.0
 - **Repo:** https://github.com/drift-creative-systems/drift-create
 - **Requires:** WordPress 6.3+, PHP 8.0+, **ACF Pro**
+- **Recommended:** **Advanced Custom Fields: Extended** (free) for the visual "Add module" picker with thumbnails
 - **Text domain:** `drift-create`
 
 ---
@@ -100,7 +101,7 @@ drift-create/
 ├── functions.php          Constants + requires inc/*
 ├── inc/
 │   ├── setup.php          Theme supports, menus, asset enqueue (+ per-module CSS)
-│   ├── acf.php            ACF JSON paths, Drift Settings options page, drift_option(), choice filters
+│   ├── acf.php            ACF JSON paths, Drift Settings options page, drift_option(), choice filters, ACF Extended module thumbnails
 │   ├── apps.php           drift_app CPT, suites, page suite, statuses, platforms, drift_app_meta(), drift_apps()
 │   ├── roadmap.php        App roadmaps: drift_app_roadmap(), /roadmap/ endpoint, canonical / title / robots
 │   ├── team.php           drift_team CPT (admin-only), drift_team_meta(), drift_team_members()
@@ -117,7 +118,8 @@ drift-create/
 ├── parts/                 app-card, app-suites, filter, roadmap, contact, newsletter, encore-flow
 ├── vendor/                Composer (plugin-update-checker) — committed
 ├── acf-json/              Field groups — commit every change
-├── assets/                site.css (base + components), site.js (jQuery), brand/
+├── assets/                site.css (base + components), site.js (jQuery), brand/, images/modules/ (picker thumbnails)
+├── bin/                   module-thumbnails.py (draws the picker thumbnails)
 ├── front-page.php, page.php, single-drift_app.php, index.php, 404.php, header.php, footer.php
 └── DESIGN.md, CHANGELOG.md, MEMORY.md, CLAUDE.md, llm-instructions.txt
 ```
@@ -127,7 +129,8 @@ drift-create/
 1. In ACF, add a layout to **Page modules** (`page_modules`). Use a snake_case name, e.g. `logo_strip`. Include an **Anchor ID** (`section_id`) field.
 2. Create `modules/logo_strip/module.php` (use `get_sub_field()`, escape everything, return early if the key field is empty). Add `module.css` if it needs styles.
 3. Add `logo_strip` to `drift_module_layouts()` and the `switch` in `drift_render_modules()` (`inc/modules.php`).
-4. Commit the updated `acf-json/group_drift_page_modules.json`.
+4. Give the layout a **Category** (ACF Extended tab in the picker) and a thumbnail: add a drawing function named after the layout to `bin/module-thumbnails.py`, add it to `MODULES` and run `python -I bin/module-thumbnails.py`. A real screenshot saved as `assets/images/modules/logo_strip.png` (or .jpg/.webp) wins over the SVG. Don't upload a thumbnail in the field group screen (that saves a media ID from one site).
+5. Commit the updated `acf-json/group_drift_page_modules.json`.
 
 ---
 

@@ -201,7 +201,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Intros"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_content": {
                     "key": "layout_drift_content",
@@ -274,7 +278,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Intros"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_suite_tiles": {
                     "key": "layout_drift_suite_tiles",
@@ -421,7 +429,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Apps"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_app_suites": {
                     "key": "layout_drift_app_suites",
@@ -597,7 +609,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Apps"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_stats": {
                     "key": "layout_drift_stats",
@@ -777,7 +793,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "People & proof"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_cards": {
                     "key": "layout_drift_cards",
@@ -1182,7 +1202,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Content"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_spotlight": {
                     "key": "layout_drift_spotlight",
@@ -1435,7 +1459,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Apps"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_split_text": {
                     "key": "layout_drift_split_text",
@@ -1508,7 +1536,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Intros"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_image_text": {
                     "key": "layout_drift_image_text",
@@ -1739,7 +1771,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Content"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_full_image": {
                     "key": "layout_drift_full_image",
@@ -2206,7 +2242,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Media"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_video": {
                     "key": "layout_drift_video",
@@ -2504,7 +2544,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Media"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_pricing": {
                     "key": "layout_drift_pricing",
@@ -2844,7 +2888,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Content"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_table": {
                     "key": "layout_drift_table",
@@ -3278,7 +3326,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Content"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_team": {
                     "key": "layout_drift_team",
@@ -3489,7 +3541,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "People & proof"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_testimonials": {
                     "key": "layout_drift_testimonials",
@@ -3694,7 +3750,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "People & proof"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_logos": {
                     "key": "layout_drift_logos",
@@ -3953,7 +4013,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "People & proof"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_roadmap": {
                     "key": "layout_drift_roadmap",
@@ -4168,7 +4232,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Apps"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_faq": {
                     "key": "layout_drift_faq",
@@ -4329,7 +4397,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Content"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_cta": {
                     "key": "layout_drift_cta",
@@ -4522,7 +4594,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Calls to action"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_contact": {
                     "key": "layout_drift_contact",
@@ -4643,7 +4719,11 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Calls to action"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 },
                 "layout_drift_newsletter": {
                     "key": "layout_drift_newsletter",
@@ -4756,12 +4836,25 @@
                         }
                     ],
                     "min": "",
-                    "max": ""
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Calls to action"
+                    ],
+                    "acfe_flexible_thumbnail": ""
                 }
             },
             "min": "",
             "max": "",
-            "button_label": "Add module"
+            "button_label": "Add module",
+            "acfe_flexible_advanced": 1,
+            "acfe_flexible_modal": {
+                "acfe_flexible_modal_enabled": "1",
+                "acfe_flexible_modal_title": "Add module",
+                "acfe_flexible_modal_size": "xlarge",
+                "acfe_flexible_modal_col": "4",
+                "acfe_flexible_modal_categories": "1"
+            },
+            "acfe_flexible_layouts_thumbnails": 1
         }
     ],
     "location": [
@@ -4791,5 +4884,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1795691022
+    "modified": 1795691506
 }
