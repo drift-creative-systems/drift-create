@@ -3696,6 +3696,265 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_drift_logos": {
+                    "key": "layout_drift_logos",
+                    "name": "logos",
+                    "label": "Logos",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_drift_logos_section_id",
+                            "label": "Anchor ID",
+                            "name": "section_id",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "Optional. Lets menus and buttons link here, e.g. \"apps\" for /#apps. Lowercase, no spaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_logos"
+                        },
+                        {
+                            "key": "field_drift_logos_eyebrow",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_logos"
+                        },
+                        {
+                            "key": "field_drift_logos_accent_suite",
+                            "label": "Accent",
+                            "name": "accent_suite",
+                            "aria_label": "",
+                            "type": "select",
+                            "instructions": "Suite colour for the eyebrow rule. Blank = the page suite.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "music": "Music Suite",
+                                "agency": "Agency Kit",
+                                "seo": "SEO"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_layout": "layout_drift_logos"
+                        },
+                        {
+                            "key": "field_drift_logos_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria_label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_drift_logos"
+                        },
+                        {
+                            "key": "field_drift_logos_lead",
+                            "label": "Intro",
+                            "name": "lead",
+                            "aria_label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_layout": "layout_drift_logos"
+                        },
+                        {
+                            "key": "field_drift_logos_logos",
+                            "label": "Logos",
+                            "name": "logos",
+                            "aria_label": "",
+                            "type": "repeater",
+                            "instructions": "Labels, artists, agencies… Up to 5 show in one row; 6 or more become a slider. Transparent PNG, SVG or WebP works best.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "field_drift_logos_logo_name",
+                            "button_label": "Add logo",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_drift_logos_logo_image",
+                                    "label": "Logo",
+                                    "name": "image",
+                                    "aria_label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "png, svg, webp, jpg, jpeg",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_drift_logos_logos"
+                                },
+                                {
+                                    "key": "field_drift_logos_logo_image_dark",
+                                    "label": "Dark mode logo",
+                                    "name": "image_dark",
+                                    "aria_label": "",
+                                    "type": "image",
+                                    "instructions": "Optional. A light version for the dark theme.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "png, svg, webp, jpg, jpeg",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_drift_logos_logos"
+                                },
+                                {
+                                    "key": "field_drift_logos_logo_name",
+                                    "label": "Name",
+                                    "name": "name",
+                                    "aria_label": "",
+                                    "type": "text",
+                                    "instructions": "Used as the alt text.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_drift_logos_logos"
+                                },
+                                {
+                                    "key": "field_drift_logos_logo_url",
+                                    "label": "Website",
+                                    "name": "url",
+                                    "aria_label": "",
+                                    "type": "url",
+                                    "instructions": "Optional. Opens in a new tab.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "https://",
+                                    "parent_repeater": "field_drift_logos_logos"
+                                }
+                            ],
+                            "parent_layout": "layout_drift_logos"
+                        },
+                        {
+                            "key": "field_drift_logos_mono",
+                            "label": "Greyscale",
+                            "name": "mono",
+                            "aria_label": "",
+                            "type": "true_false",
+                            "instructions": "Logos show in grey and turn to full colour on hover.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_drift_logos"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_drift_roadmap": {
                     "key": "layout_drift_roadmap",
                     "name": "roadmap",
@@ -4532,5 +4791,5 @@
     "active": true,
     "description": "Flexible content page builder for Pages and Apps. Templates: modules/{layout}/module.php.",
     "show_in_rest": 0,
-    "modified": 1793778950
+    "modified": 1795691022
 }

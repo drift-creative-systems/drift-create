@@ -51,6 +51,7 @@ Marketing site theme for **Drift**: product suites, app cards, an app spotlight 
 | **Split text** | Heading left, rich text right |
 | **Image + text** | Image left or right, optional grey background, buttons |
 | **Testimonials** | Quote cards in 1–3 columns: all, the first N, or picked |
+| **Logos** | "Who we work with" logos (labels, artists, agencies): image, optional dark-mode version, name and website link. Up to 5 in one row; 6+ become a slider with prev / next buttons. Greyscale until hover (switchable) |
 | **Team** | Team members as cards: photo, name, role, suite, "Read bio" toggle, links. Everyone, picked people, or one suite |
 | **Full-width image** | Edge to edge or page width; natural or short/medium/tall crop with focal point; caption; optional overlay heading, text and buttons |
 | **Video** | YouTube/Vimeo link (click to play, privacy-enhanced) or uploaded MP4/WebM; poster, caption, narrow or wide |

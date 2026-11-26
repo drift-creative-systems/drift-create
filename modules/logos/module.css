@@ -1,0 +1,41 @@
+/* Module: Logos — partner / client logos on soft tiles. Up to 5 = one static
+   row (wraps, centred, on smaller screens); 6+ = a scroll-snap slider showing
+   --per tiles at a time, with prev / next buttons (assets/site.js). */
+.logos { --gap: clamp(0.75rem, 1.5vw, 1.25rem); --per: 5; }
+.logos__top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; }
+/* The heading row's gap replaces suite__head's bottom margin (set below the row instead). */
+.logos__top .suite__head { flex: 1 1 32rem; margin-bottom: 0; }
+.logos__top .suite__head > :last-child { margin-bottom: 0; }
+.logos__track { display: flex; gap: var(--gap); margin: 0; padding: 0; list-style: none; }
+.logos__item { flex: 0 0 calc((100% - (var(--per) - 1) * var(--gap)) / var(--per)); min-width: 0; }
+
+/* Static row: fewer than 5 logos keep the 5-up tile size and sit centred. */
+.logos__track:not(.logos__track--slider) { flex-wrap: wrap; justify-content: center; }
+
+/* Tile. Fixed ratio so the row doesn't shift as logos load (CLS). */
+.logos__tile { display: grid; place-items: center; aspect-ratio: 3 / 2; padding: clamp(1rem, 2vw, 1.75rem); background: var(--soft); border-radius: var(--radius); text-decoration: none; }
+.logos__img { width: auto; max-width: 100%; max-height: clamp(2.5rem, 4vw, 3.75rem); object-fit: contain; }
+a.logos__tile { transition: background-color 0.25s var(--ease); }
+a.logos__tile:hover { background: var(--line); }
+
+/* Greyscale until hovered / focused. */
+.logos--mono .logos__img { filter: grayscale(1); opacity: 0.7; transition: filter 0.25s var(--ease), opacity 0.25s var(--ease); }
+.logos--mono .logos__tile:hover .logos__img, .logos--mono .logos__tile:focus-visible .logos__img { filter: none; opacity: 1; }
+
+/* Slider. */
+.logos__viewport { overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain; scrollbar-width: none; border-radius: var(--radius); }
+.logos__viewport::-webkit-scrollbar { display: none; }
+.logos__viewport:focus-visible { outline-offset: 4px; }
+.logos__track--slider .logos__item { scroll-snap-align: start; }
+.logos__nav { display: flex; gap: 0.5rem; }
+.logos__nav[hidden] { display: none; }
+.logos__btn { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--fg); border-radius: 50%; background: transparent; color: var(--fg); cursor: pointer; transition: background-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease); }
+.logos__btn:hover:not(:disabled) { background: var(--fg); color: var(--bg); }
+.logos__btn:disabled { opacity: 0.3; cursor: default; }
+
+.logos__top + .logos__viewport, .logos__top + .logos__track { margin-top: clamp(2rem, 4vw, 3rem); }
+
+@media (max-width: 960px) { .logos { --per: 4; } }
+@media (max-width: 760px) { .logos { --per: 3; } }
+@media (max-width: 480px) { .logos { --per: 2; } }
+@media (prefers-reduced-motion: reduce) { .logos__viewport { scroll-behavior: auto; } }

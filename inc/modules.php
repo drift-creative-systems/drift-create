@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string[]
  */
 function drift_module_layouts(): array {
-	return [ 'hero', 'content', 'suite_tiles', 'app_suites', 'stats', 'cards', 'spotlight', 'split_text', 'image_text', 'full_image', 'video', 'pricing', 'table', 'team', 'testimonials', 'roadmap', 'faq', 'cta', 'contact', 'newsletter' ];
+	return [ 'hero', 'content', 'suite_tiles', 'app_suites', 'stats', 'cards', 'spotlight', 'split_text', 'image_text', 'full_image', 'video', 'pricing', 'table', 'team', 'testimonials', 'logos', 'roadmap', 'faq', 'cta', 'contact', 'newsletter' ];
 }
 
 /**
@@ -97,6 +97,7 @@ function drift_render_modules( int $post_id ): bool {
 			case 'table':
 			case 'team':
 			case 'testimonials':
+			case 'logos':
 			case 'roadmap':
 			case 'faq':
 			case 'cta':

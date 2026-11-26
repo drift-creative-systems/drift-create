@@ -1,4 +1,4 @@
-/* Drift Create: mobile menu, light / dark toggle, focus the contact form's "sent" notice, click-to-play videos, filters. */
+/* Drift Create: mobile menu, light / dark toggle, focus the contact form's "sent" notice, click-to-play videos, filters, logo slider. */
 (function ($) {
 	'use strict';
 
@@ -113,4 +113,44 @@
 		$btn.attr('aria-pressed', 'true');
 		bonsai_applyFilter($btn.closest('[data-filter-scope]'), String($btn.data('filter') || ''));
 	});
+
+	// Logos slider (modules/logos): prev / next scroll the track by one view;
+	// buttons disable at either end. Swipe / trackpad / arrow keys scroll it natively.
+	function bonsai_syncLogos($logos) {
+		var el = $logos.find('.logos__viewport').get(0);
+		if (!el) {
+			return;
+		}
+		var max = el.scrollWidth - el.clientWidth - 1;
+		$logos.find('.logos__btn[data-dir="-1"]').prop('disabled', el.scrollLeft <= 1);
+		$logos.find('.logos__btn[data-dir="1"]').prop('disabled', el.scrollLeft >= max);
+		// All logos fit (e.g. wide screen, few extras): no need for the buttons.
+		$logos.find('.logos__nav').prop('hidden', max <= 0);
+	}
+
+	var $logoSliders = $('.logos').has('.logos__viewport');
+	if ($logoSliders.length) {
+		$logoSliders.each(function () {
+			var $logos = $(this);
+			bonsai_syncLogos($logos);
+			$logos.find('.logos__viewport').on('scroll.bonsai_logos', function () {
+				bonsai_syncLogos($logos);
+			});
+		});
+		$(document).on('click.bonsai_logos', '.logos__btn', function () {
+			var el = $(this).closest('.logos').find('.logos__viewport').get(0);
+			if (el) {
+				el.scrollBy({ left: Number($(this).data('dir')) * el.clientWidth, behavior: 'smooth' });
+			}
+		});
+		var bonsai_logosTimer;
+		$(window).on('resize.bonsai_logos', function () {
+			clearTimeout(bonsai_logosTimer);
+			bonsai_logosTimer = setTimeout(function () {
+				$logoSliders.each(function () {
+					bonsai_syncLogos($(this));
+				});
+			}, 150);
+		});
+	}
 })(jQuery);

@@ -3,6 +3,17 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.16.0] - 2026-11-26
+
+A Logos module for the labels, artists and agencies we work with.
+
+### Added
+- **Logos module** (`logos`): eyebrow, heading, intro, accent, then a repeater of logos (image, optional dark-mode image, name = alt text, optional website link that opens in a new tab). Up to 5 logos sit in one centred row. 6 or more become a slider: 5 per view on desktop, 4 / 3 / 2 on smaller screens, prev / next buttons beside the heading (disabled at the ends, hidden when everything fits), swipe and keyboard scrolling. **Greyscale** (on by default) shows logos in grey until hovered.
+- Slider script in `assets/site.js` (`bonsai_syncLogos`). Without JS the row still scrolls sideways.
+
+### Upgrade
+- Run ACF Sync for Page modules (new Logos layout).
+
 ## [1.15.0] - 2026-11-19
 
 A blog: a posts page, category pages and single post styling, plus a Blog column in the footer.
