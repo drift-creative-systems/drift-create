@@ -282,6 +282,7 @@
                         "tiktok": "TikTok",
                         "bluesky": "Bluesky",
                         "spotify": "Spotify",
+                        "tidal": "Tidal",
                         "soundcloud": "SoundCloud",
                         "github": "GitHub",
                         "email": "Email"
@@ -851,5 +852,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1793778950
+    "modified": 1795771416
 }

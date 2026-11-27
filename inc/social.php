@@ -49,6 +49,10 @@ function drift_social_networks(): array {
 			'label' => 'Spotify',
 			'icon'  => '<circle cx="12" cy="12" r="9"/><path d="M7 9c2-1 6-2 10 .5M8 11.973c2.5-1.473 5.5-.973 7.5.527M9 15c1.5-1 4-1 5 .5"/>',
 		],
+		'tidal'      => [
+			'label' => 'Tidal',
+			'icon'  => '<path d="M5 5l3.5 3.5L5 12 1.5 8.5z"/><path d="M12 5l3.5 3.5L12 12 8.5 8.5z"/><path d="M19 5l3.5 3.5L19 12l-3.5-3.5z"/><path d="M12 12l3.5 3.5L12 19l-3.5-3.5z"/>',
+		],
 		'soundcloud' => [
 			'label' => 'SoundCloud',
 			'icon'  => '<path d="M17 11h1c1.38 0 3 1.274 3 3 0 1.657-1.5 3-3 3h-6V7c3 0 4.5 1.5 5 4z"/><path d="M9 8v9M6 17v-7M3 16v-2"/>',

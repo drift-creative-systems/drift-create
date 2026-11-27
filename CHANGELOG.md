@@ -3,6 +3,14 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.17.1] - 2026-11-27
+
+### Added
+- **Tidal** in Drift Settings → Footer → Social links, with a line icon of the Tidal mark.
+
+### Upgrade
+- Run ACF Sync for Drift Settings (only needed for the select to show Tidal without the theme filter).
+
 ## [1.17.0] - 2026-11-26
 
 A visual "Add module" picker when ACF Extended is active.
@@ -154,7 +162,7 @@ Ready for Google Ads: separate thank-you URLs per app, ads landing pages, and a 
 ## [1.7.0] - 2026-10-09
 
 ### Added
-- **Social links** in the footer. Drift Settings → Footer → Social links: pick a network (Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Bluesky, Spotify, SoundCloud, GitHub, Email) and add the profile URL (or an email address). They show as round line icons under the footer tagline, in the order set. Empty = no icons. `drift_social_networks()` / `drift_social_links()` in `inc/social.php`.
+- **Social links** in the footer. Drift Settings → Footer → Social links: pick a network (Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Bluesky, Spotify, Tidal, SoundCloud, GitHub, Email) and add the profile URL (or an email address). They show as round line icons under the footer tagline, in the order set. Empty = no icons. `drift_social_networks()` / `drift_social_links()` in `inc/social.php`.
 
 ## [1.6.0] - 2026-10-09
 
