@@ -3,6 +3,14 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.18.1] - 2026-11-28
+
+### Changed
+- **App hero:** apps that are free on WordPress.org (status `wporg` with a `drift_wporg_slug`) show **Get support**, linking to the plugin's WordPress.org support forum in a new tab, instead of Book a demo. Every other app keeps Book a demo / Register interest → `#contact`.
+
+### Fixed
+- **Footer logo alt text:** an uploaded footer logo now has `alt="Drift Creative Systems"` (from `drift_brand_name()`). Unlike the header logos it isn't inside a labelled link, so the empty alt left it unnamed. `drift_logo()` takes an optional `$alt`. The header logos are unchanged.
+
 ## [1.18.0] - 2026-11-28
 
 ### Added

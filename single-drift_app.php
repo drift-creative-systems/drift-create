@@ -61,8 +61,17 @@ while ( have_posts() ) :
 					<?php if ( $roadmap_view ) : ?>
 						<a class="btn btn--line" href="#contact">Suggest a feature</a>
 					<?php else : ?>
-						<?php // The download is the main action for a free plugin, so the contact button steps down to the outline style. ?>
-						<a class="btn <?php echo $ticker_button ? 'btn--line' : 'btn--accent'; ?>" href="#contact"><?php echo drift_app_is_available( $m['status'] ) ? 'Book a demo' : 'Register interest'; ?></a>
+						<?php
+						// The download is the main action for a free plugin, so this button steps down to the outline style.
+						// Free on WordPress.org: support lives in the plugin's forum there, so link to that instead of a demo.
+						$wporg_slug = 'wporg' === $m['status'] ? sanitize_title( (string) get_post_meta( get_the_ID(), 'drift_wporg_slug', true ) ) : '';
+						$btn_class  = $ticker_button ? 'btn--line' : 'btn--accent';
+						?>
+						<?php if ( $wporg_slug ) : ?>
+							<a class="btn <?php echo esc_attr( $btn_class ); ?>" href="<?php echo esc_url( 'https://wordpress.org/support/plugin/' . $wporg_slug . '/' ); ?>" target="_blank" rel="noopener">Get support<span class="sr"> (opens in a new tab)</span></a>
+						<?php else : ?>
+							<a class="btn <?php echo esc_attr( $btn_class ); ?>" href="#contact"><?php echo drift_app_is_available( $m['status'] ) ? 'Book a demo' : 'Register interest'; ?></a>
+						<?php endif; ?>
 					<?php endif; ?>
 				</p>
 			</div>

@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DRIFT_CREATE_VERSION', '1.18.0' );
+define( 'DRIFT_CREATE_VERSION', '1.18.1' );
 
 require_once get_theme_file_path( 'inc/setup.php' );
 require_once get_theme_file_path( 'inc/acf.php' );
