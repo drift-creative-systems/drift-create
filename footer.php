@@ -21,7 +21,8 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 	<div class="wrap foot__inner">
 		<div class="foot__brand">
 			<?php
-			$drift_footer_logo = drift_logo( 'footer_logo', 'foot__logo' );
+			// Not inside a labelled link (unlike the header), so it needs its own alt text.
+			$drift_footer_logo = drift_logo( 'footer_logo', 'foot__logo', false, drift_brand_name() );
 			if ( $drift_footer_logo ) :
 				echo $drift_footer_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image().
 			else :

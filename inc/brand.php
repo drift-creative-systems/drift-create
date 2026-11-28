@@ -39,22 +39,23 @@ function drift_mark( string $class = 'mark' ): string {
 
 /**
  * An uploaded logo from Drift Settings → Brand (header_logo, header_logo_dark, footer_logo,
- * hero_logo). Empty alt: every spot it's used is already labelled (link
- * aria-label) or aria-hidden.
+ * hero_logo). Empty alt by default: the header logos sit in a link with an
+ * aria-label. Pass $alt where the logo isn't labelled (the footer).
  *
  * @param string $name  Option field name.
  * @param string $class CSS class for the img.
  * @param bool   $eager Above the fold — skip lazy loading.
+ * @param string $alt   Alt text. Default '' (decorative / already labelled).
  * @return string Image markup, or '' when none is set (use the built-in logo).
  */
-function drift_logo( string $name, string $class, bool $eager = false ): string {
+function drift_logo( string $name, string $class, bool $eager = false, string $alt = '' ): string {
 	$image = (int) drift_option( $name, 0 );
 	if ( ! $image ) {
 		return '';
 	}
 	return (string) wp_get_attachment_image( $image, 'full', false, [
 		'class'    => $class,
-		'alt'      => '',
+		'alt'      => $alt,
 		'loading'  => $eager ? false : 'lazy',
 		'decoding' => 'async',
 	] );
