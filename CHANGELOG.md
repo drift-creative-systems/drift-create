@@ -3,6 +3,11 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.18.2] - 2026-11-28
+
+### Added
+- **aggregateRating** in the app SoftwareApplication schema: the plugin's WordPress.org star rating (`ratingValue` 0–5, `ratingCount`, `bestRating` 5, `worstRating` 1), from Drift: Ticker. It's left out until the plugin has at least one rating. With it, app pages are eligible for Google's software rich result (stars in search).
+
 ## [1.18.1] - 2026-11-28
 
 ### Changed

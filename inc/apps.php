@@ -159,7 +159,8 @@ function drift_app_meta( int $id ): array {
  * SoftwareApplication schema for an app that's live on WordPress.org, or []
  * when it isn't (or Drift: Ticker isn't active). Yoast only outputs WebPage
  * and Organization, so the app page prints this as its own JSON-LD block.
- * Free on WordPress.org means a £0 offer is true; apps that aren't there
+ * Free on WordPress.org means a £0 offer is true, and the star rating there
+ * becomes aggregateRating once it has any ratings. Apps that aren't there
  * get no schema rather than a made-up price, version or download link.
  *
  * @param int $id App post ID.
@@ -175,7 +176,7 @@ function drift_app_schema( int $id ): array {
 	if ( ! $version || ! $url ) {
 		return [];
 	}
-	return [
+	$schema = [
 		'@type'               => 'SoftwareApplication',
 		'name'                => wp_strip_all_tags( get_the_title( $id ) ),
 		'url'                 => get_permalink( $id ),
@@ -190,6 +191,22 @@ function drift_app_schema( int $id ): array {
 			'priceCurrency' => 'GBP',
 		],
 	];
+
+	// WordPress.org star rating (Ticker stores it as 0–100; "stars" is that / 20).
+	// Only with at least one rating: Google rejects a zero ratingCount.
+	$count = (int) drift_ticker_get( $slug, 'num_ratings' );
+	$stars = drift_ticker_get( $slug, 'stars' );
+	if ( $count > 0 && $stars ) {
+		$schema['aggregateRating'] = [
+			'@type'       => 'AggregateRating',
+			'ratingValue' => (float) $stars,
+			'ratingCount' => $count,
+			'bestRating'  => 5,
+			'worstRating' => 1,
+		];
+	}
+
+	return $schema;
 }
 
 /**
