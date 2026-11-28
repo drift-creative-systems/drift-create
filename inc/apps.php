@@ -156,6 +156,43 @@ function drift_app_meta( int $id ): array {
 }
 
 /**
+ * SoftwareApplication schema for an app that's live on WordPress.org, or []
+ * when it isn't (or Drift: Ticker isn't active). Yoast only outputs WebPage
+ * and Organization, so the app page prints this as its own JSON-LD block.
+ * Free on WordPress.org means a £0 offer is true; apps that aren't there
+ * get no schema rather than a made-up price, version or download link.
+ *
+ * @param int $id App post ID.
+ * @return array Schema, without @context.
+ */
+function drift_app_schema( int $id ): array {
+	if ( ! function_exists( 'drift_ticker_app_slug' ) || ! function_exists( 'drift_ticker_get' ) ) {
+		return [];
+	}
+	$slug    = drift_ticker_app_slug( $id );
+	$version = $slug ? drift_ticker_get( $slug, 'version' ) : null;
+	$url     = $slug ? drift_ticker_get( $slug, 'url' ) : null;
+	if ( ! $version || ! $url ) {
+		return [];
+	}
+	return [
+		'@type'               => 'SoftwareApplication',
+		'name'                => wp_strip_all_tags( get_the_title( $id ) ),
+		'url'                 => get_permalink( $id ),
+		'applicationCategory' => 'WebApplication',
+		'operatingSystem'     => 'WordPress',
+		'softwareVersion'     => (string) $version,
+		'downloadUrl'         => (string) $url,
+		'sameAs'              => [ (string) $url ],
+		'offers'              => [
+			'@type'         => 'Offer',
+			'price'         => '0',
+			'priceCurrency' => 'GBP',
+		],
+	];
+}
+
+/**
  * The app's platforms as a row of tags, or '' when none are set.
  *
  * @param string[] $platforms Platform keys from drift_app_meta().

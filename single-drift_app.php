@@ -101,6 +101,15 @@ while ( have_posts() ) :
 	</article>
 
 	<?php
+	// SoftwareApplication JSON-LD (Yoast doesn't add it). Only on the app page itself, not /roadmap/.
+	$schema = $roadmap_view ? [] : drift_app_schema( get_the_ID() );
+	if ( $schema ) {
+		printf(
+			'<script type="application/ld+json">%s</script>' . "\n",
+			wp_json_encode( [ '@context' => 'https://schema.org' ] + $schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG )
+		);
+	}
+
 	$others = $roadmap_view ? [] : array_filter( drift_apps(), static fn( $a ) => $a->ID !== get_the_ID() );
 	if ( $others ) :
 		?>

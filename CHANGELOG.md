@@ -3,6 +3,12 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.18.0] - 2026-11-28
+
+### Added
+- **SoftwareApplication schema** on app pages. Yoast only outputs WebPage and Organization, so `single-drift_app.php` prints its own JSON-LD block: name, url, `applicationCategory` WebApplication, `operatingSystem` WordPress, `softwareVersion`, `downloadUrl` and `sameAs` (the WordPress.org page), and a £0 GBP offer. Built by `drift_app_schema()` in `inc/apps.php`.
+- The version and WordPress.org URL come from **Drift: Ticker**, so the schema only prints for apps that are live on WordPress.org. Apps that aren't there (paid, demo, coming soon) get none, which keeps us from claiming a price, version or download link we can't back up. It isn't printed on `/roadmap/` either.
+
 ## [1.17.1] - 2026-11-27
 
 ### Added
