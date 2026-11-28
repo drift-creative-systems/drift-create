@@ -35,8 +35,8 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 		<?php if ( ! drift_is_landing() ) : ?>
 		<div class="foot__cols">
 			<div>
-				<h2>Suites</h2>
-				<ul>
+				<p id="foot-suites" class="foot__label">Suites</p>
+				<ul aria-labelledby="foot-suites">
 					<?php
 					// Suites with a landing page (Drift Settings → Suites), WP Suite first. A full app list gets too long.
 					$drift_suite_keys = array_unique( array_merge( [ 'agency', 'music' ], array_keys( drift_suites() ) ) );
@@ -55,8 +55,8 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 			</div>
 			<?php if ( drift_has_blog_posts() ) : ?>
 				<div>
-					<h2>Blog</h2>
-					<ul>
+					<p id="foot-blog" class="foot__label">Blog</p>
+					<ul aria-labelledby="foot-blog">
 						<li><a href="<?php echo esc_url( drift_blog_url() ); ?>">Latest posts</a></li>
 						<?php foreach ( drift_blog_categories() as $drift_blog_cat ) : ?>
 							<li><a href="<?php echo esc_url( get_category_link( $drift_blog_cat ) ); ?>"><?php echo esc_html( $drift_blog_cat->name ); ?></a></li>
@@ -65,8 +65,8 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 				</div>
 			<?php endif; ?>
 			<div>
-				<h2>Get in touch</h2>
-				<ul>
+				<p id="foot-contact" class="foot__label">Get in touch</p>
+				<ul aria-labelledby="foot-contact">
 					<li><a href="<?php echo esc_url( drift_demo_url() ); ?>">Book a demo</a></li>
 					<?php
 					foreach ( (array) $drift_footer_links as $row ) :
@@ -81,7 +81,7 @@ $drift_footer_links = drift_option( 'footer_links', [ [ 'link' => [ 'title' => '
 			</div>
 			<?php if ( drift_newsletter_in_footer() ) : ?>
 				<div id="newsletter" class="foot__signup">
-					<h2><?php echo esc_html( (string) drift_option( 'newsletter_heading', 'Newsletter' ) ); ?></h2>
+					<p class="foot__label"><?php echo esc_html( (string) drift_option( 'newsletter_heading', 'Newsletter' ) ); ?></p>
 					<p class="foot__lead"><?php echo esc_html( (string) drift_option( 'newsletter_lead', 'New apps, releases and the odd look behind the scenes. No spam.' ) ); ?></p>
 					<?php drift_newsletter_form( 'newsletter', [ 'button_class' => 'btn--line-light' ] ); ?>
 				</div>
