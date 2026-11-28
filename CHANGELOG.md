@@ -3,6 +3,11 @@
 All notable changes to this theme are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.18.3] - 2026-11-28
+
+### Fixed
+- **App cards:** the "Free on WordPress.org" status no longer runs out of the card on narrow cards. The icon / suite / status row now wraps, so the status drops onto its own line when there isn't room.
+
 ## [1.18.2] - 2026-11-28
 
 ### Added
